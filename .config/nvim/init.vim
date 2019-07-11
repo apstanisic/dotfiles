@@ -1,6 +1,6 @@
 silent! nmap <C-b> :NERDTreeToggle<CR>
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " This is for ide capabilities
 " Plug 'Quramy/tsuquyomi'
