@@ -272,7 +272,6 @@ bar {
 #    }
 
 status_command SCRIPT_DIR=~/.config/i3blocks/blockets i3blocks
-# status_command SCRIPT_DIR=~/.config/i3blocks i3blocks
 
 #### My colors
     colors {

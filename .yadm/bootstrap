@@ -1,7 +1,0 @@
-#!/bin/sh
-
-echo "Updating the yadm repo origin URL"
-yadm remote set-url origin "git@github.com:apstanisic/dotfiles.git"
-
-# Install vim-plug plugins
-nvim +PlugInstall
