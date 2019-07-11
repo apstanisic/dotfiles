@@ -1,2 +1,2 @@
 # dotfiles
-My dotfiles managed with yadm
+My dotfiles managed with GNU Stow
