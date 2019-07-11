@@ -40,20 +40,26 @@ markup=none
 [memory]
 label=
 command=$SCRIPT_DIR/memory
-interval=3
+interval=1
 separator=false
 
 
 [cpu_usage]
 command=$SCRIPT_DIR/cpu_usage
 label=
-interval=3
+interval=1
 separator=false
 #min_width=CPU: 100.00%
 #T_WARN=50
 #T_CRIT=80
 #DECIMALS=0
 
+# Alternative cpu usage in bash
+#[cpu]
+#command=$SCRIPT_DIR/cpu
+#label=111
+#interval=3
+#separator=false
 
 
 

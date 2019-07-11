@@ -13,3 +13,6 @@ export PATH="$PATH:$HOME/.local/share/flutter/bin"
 
 # Import all aliases
 source ~/.config/aliases/combined
+
+export EDITOR="nvim"
+export VISUAL="code"
