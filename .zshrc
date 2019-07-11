@@ -18,15 +18,18 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 
 ### Spaceship config
 SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
+#  user          # Username section
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
-  terraform     # Terraform workspace section
-  exec_time     # Execution time
+#  exec_time     # Execution time
   line_sep      # Line break
   char          # Prompt character
 )
+
+
+
+
+
 # Don't show empty line at begining
 # SPACESHIP_PROMPT_ADD_NEWLINE=false
 # Show whole path

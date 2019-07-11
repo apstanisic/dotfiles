@@ -1,0 +1,25 @@
+#/bin/sh
+
+alias v='nvim'
+alias e='exit'
+alias q='exit'
+alias c='clear'
+alias ls='ls --color'
+alias cdp='cd ~/Projects'
+alias cdc='cd ~ && clear'
+alias ns='npm start'
+alias ys='yarn start'
+alias sudowl='xhost si:localuser:root'
+alias rmsudowl='xhost -si:localuser:root'
+alias ks='killall steam'
+alias au='sudo apt update'
+alias auu='sudo apt update && sudo apt upgrade -y'
+alias ai='sudo apt install'
+alias dk='docker'
+alias dkc='docker-compose'
+alias wt='curl wttr.in'
+alias ta='tmux attach -t'
+export EDITOR="vim"
+export PAGER="less"
+
+#source ~/.config/nnn/config
