@@ -1,0 +1,56 @@
+* {
+  
+  red:       #d32f2f;
+  grey:      #54565f;
+  darkgrey:  #212121;
+  white:     #f2f2f2;
+  blue:      #1976d2;
+  black:     #000000;
+
+  background-color: @black;
+  border-color: @darkgrey;
+  text-color: @white;
+  spacing: 0;
+}
+
+#window {
+  border-radius: 10;
+  border: 1;
+}
+
+#inputbar {
+  border: 0 0 1 0;
+}
+
+#prompt {
+  padding: 8;
+  border: 0 1 0 0;
+}
+
+#entry {
+  padding: 10;
+}
+
+#listview {
+  scrollbar: true;
+}
+
+#element {
+  padding: 8;
+}
+
+#element selected {
+  background-color: @blue;
+}
+
+#element active {
+  text-color: @blue;
+}
+
+#element urgent {
+  background-color: @red;
+}
+#scrollbar {
+  handle-color: @grey;
+}
+/* vim:ft=css
