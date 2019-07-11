@@ -1,0 +1,11 @@
+#! /bin/bash
+
+sudo add-apt-repository ppa:samoilov-lex/sway
+sudo apt-get update
+
+sudo apt install -y sway swaylock swayidle swaybg
+sudo apt install -y xwayland i3blocks rofi wl-clipboard
+
+# For screenshot
+sudo apt install -y slurp grim
+

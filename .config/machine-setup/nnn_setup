@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo apt install nnn
+sudo apt install trash-cli
+sudo apt install atool
+sudo apt install moreutils
