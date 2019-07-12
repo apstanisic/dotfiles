@@ -70,7 +70,7 @@ echo "Installing yarn"
 sudo apt install --no-install-recommends yarn
 
 echo "Cloning config repo"
-git clone https://github.com/apstanisic/dotfiles.git .dotfiles
+git clone https://github.com/apstanisic/dotfiles.git ~/.dotfiles
 
 echo "Setup dotfiles"
-sh .dotfiles/init
+sh ~/.dotfiles/init.sh
