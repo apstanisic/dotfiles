@@ -3,3 +3,4 @@
 source ~/.config/aliases/common
 source ~/.config/aliases/git
 source ~/.config/aliases/temp
+source ~/.config/aliases/fzf
