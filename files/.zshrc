@@ -4,7 +4,7 @@ antibody bundle < ~/.config/zsh_plugins.txt
 # Static loading, run this method on plugin change
 # antibody bundle < ~/.config/zsh_plugins.txt > ~/.config/zsh_plugins.sh
 
-source "${ZDOTDI:-$HOME}/.config/machine-setup/paths"
+source "${ZDOTDI:-$HOME}/.config/paths"
 # Vim mode, small timeout
 export KEYTIMEOUT=1
 
