@@ -1,0 +1,38 @@
+[
+    {
+        "iconPath": "/home/aleksandar/.config/albert/org.albert.extension.websearch/{f4148e0b-7a1a-4bf2-9ca9-4adad2df1ea8}.",
+        "name": "Google",
+        "trigger": "g ",
+        "url": "https://www.google.com/search?q=%s"
+    },
+    {
+        "iconPath": ":youtube",
+        "name": "Youtube",
+        "trigger": "yt ",
+        "url": "https://www.youtube.com/results?search_query=%s"
+    },
+    {
+        "iconPath": ":github",
+        "name": "GitHub",
+        "trigger": "gh ",
+        "url": "https://github.com/search?utf8=✓&q=%s"
+    },
+    {
+        "iconPath": "/home/aleksandar/.config/albert/org.albert.extension.websearch/{2a1d6775-2142-4b18-b533-cb25a2285f24}.",
+        "name": "Subreddit",
+        "trigger": "r ",
+        "url": "https://www.reddit.com/r/%s"
+    },
+    {
+        "iconPath": "/home/aleksandar/.config/albert/org.albert.extension.websearch/{9ae68653-32b5-43bd-a5b6-77e25e2f15d2}.",
+        "name": "Reddit",
+        "trigger": "rs ",
+        "url": "https://www.reddit.com/search/?q=%s"
+    },
+    {
+        "iconPath": ":duckduckgo",
+        "name": "DuckDuckGo",
+        "trigger": "dd ",
+        "url": "https://duckduckgo.com/?q=%s"
+    }
+]

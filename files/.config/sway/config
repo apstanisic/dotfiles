@@ -66,6 +66,7 @@ bindsym Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H
 bindsym $mod+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
 bindsym $mod+delete+end exec shutdown now
+bindsym ctrl+$mod+delete exec shutdown now
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
