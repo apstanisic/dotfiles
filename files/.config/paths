@@ -10,6 +10,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 # Add deno executable if installed
 export PATH="$PATH:$HOME/.deno/bin"
 export PATH="$PATH:$HOME/.local/share/flutter/bin"
+export PATH="$PATH:$HOME/.yarn/bin"
 
 # Import all aliases
 source ~/.config/aliases/combined
