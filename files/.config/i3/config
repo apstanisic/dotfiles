@@ -232,7 +232,9 @@ client.placeholder          $black  $black  $white  $grey  $blackest
 
 client.background           $black
 
-exec --no-startup-id nitrogen --restore
+
+# exec --no-startup-id nitrogen --restore
+exec --no-startup-id feh --bg-fill ~/Pictures/earth.jpg
 
 exec --no-startup-id redshift-gtk
 exec compton

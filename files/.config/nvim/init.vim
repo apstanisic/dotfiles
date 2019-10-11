@@ -2,7 +2,7 @@ silent! nmap <C-b> :NERDTreeToggle<CR>
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" This is for ide capabilities
+" This plugin for TypeScript IDE capabilities
 " Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree'

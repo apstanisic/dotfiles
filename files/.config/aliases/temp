@@ -5,3 +5,4 @@ alias stw='cd ~/Projects/nadji-auto/web && yarn start'
 
 alias na="~/dev-na"
 alias wb="~/dev-p"
+alias pct="./Downloads/pct/Popcorn-Time &"

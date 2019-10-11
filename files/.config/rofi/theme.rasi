@@ -2,20 +2,19 @@
   
   red:       #d32f2f;
   grey:      #54565f;
-  darkgrey:  #212121;
+  darkgrey:  #121212;
   white:     #f2f2f2;
   blue:      #1976d2;
   black:     #000000;
 
-  background-color: @black;
-  border-color: @darkgrey;
+  background-color: @darkgrey;
+  border-color: @grey;
   text-color: @white;
   spacing: 0;
 }
 
 #window {
-  border-radius: 10;
-  border: 1;
+  border-radius: 6;
 }
 
 #inputbar {
