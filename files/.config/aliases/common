@@ -31,6 +31,7 @@ alias dkc='docker-compose'
 alias wt='curl wttr.in'
 alias ta='tmux attach -t'
 alias again='sudo $(fc -ln -1)'
+alias cheat='curl cheat.sh'
 
 alias ...='cd ../..'
 alias ....='cd ../../..'
