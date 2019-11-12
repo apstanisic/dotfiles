@@ -1,3 +1,3 @@
 #!/bin/sh
 
-stow files --adopt -d ~/.dotfiles -t ~
+stow base --adopt -d ~/.dotfiles -t ~

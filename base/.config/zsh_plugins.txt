@@ -1,0 +1,10 @@
+sorin-ionescu/prezto path:modules/editor
+sorin-ionescu/prezto path:modules/history
+sorin-ionescu/prezto path:modules/directory
+robbyrussell/oh-my-zsh path:plugins/extract
+denysdovhan/spaceship-prompt
+#mafredri/zsh-async
+#sindresorhus/pure
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
