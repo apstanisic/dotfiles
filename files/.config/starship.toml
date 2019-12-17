@@ -1,0 +1,12 @@
+# Don't show empty line at begining
+add_newline = false
+
+[package]
+# Don't show packages version
+disabled = true
+
+[directory]
+# Show all folders path
+truncation_length = 0
+# Show whole path in repo
+truncate_to_repo = false
