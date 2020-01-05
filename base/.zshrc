@@ -43,8 +43,8 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate
 
 eval "$(starship init zsh)"
 
-if [[ $TILIX_ID ]]; then
-        source /etc/profile.d/vte-2.91.sh
-fi
+# if [[ $TILIX_ID ]]; then
+#        source /etc/profile.d/vte-2.91.sh
+# fi
 
 
