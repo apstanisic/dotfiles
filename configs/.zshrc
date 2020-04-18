@@ -122,16 +122,18 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
+###########################################################
+###########################################################
+###########################################################
 #
 # My config
-#
-
 
 # Use vim for nav (replaces bindkey -e earlier in file)
 bindkey -v
 
 # Import my paths and aliases
 source "${ZDOTDI:-$HOME}/.config/paths"
+source "${ZDOTDI:-$HOME}/.config/aliases/standard"
 
 # Disable timeout for vi mode
 export KEYTIMEOUT=1
@@ -144,5 +146,3 @@ if [[ $TILIX_ID ]]; then
     source /etc/profile.d/vte-2.91.sh
 fi
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -19,6 +19,3 @@ export PATH="$PATH:$HOME/.flutter/flutter/bin"
 # Yarn global modules path, must be after node
 export PATH="$PATH:`yarn global bin`"
 
-# Import all aliases
-source ~/.config/aliases/standard
-
