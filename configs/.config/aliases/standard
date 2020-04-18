@@ -50,6 +50,7 @@ alias again='sudo $(fc -ln -1)'
 # Using my own.
 alias ga='git add'
 alias gaa='git add --all'
+alias gac='git add --all && git commit'
 alias gc='git commit'
 alias gd='git diff'
 alias gst='git status'
