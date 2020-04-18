@@ -16,10 +16,6 @@ export PATH="$PATH:$DENO_INSTALL/bin"
 # Flutter does not have predefined path, so I choose ~/.flutter
 export PATH="$PATH:$HOME/.flutter/flutter/bin"
 
-# Just use fixed path for node. NVM is to slow, and workaround 
-# are prone to braking. Add nvm to path only when needed
-export PATH="$PATH:$HOME/.nvm/versions/node/v12.16.1/bin"
-
 # Yarn global modules path, must be after node
 export PATH="$PATH:`yarn global bin`"
 
