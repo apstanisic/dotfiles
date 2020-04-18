@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/aleksandar2/.dotfiles/base/.config/mpv'
+let g:netrw_dirhist_3='/home/aleksandar2/.dotfiles/base/.config/alacritty'
+let g:netrw_dirhist_2='/home/aleksandar2/.local/share/ulauncher/extensions/com.github.brpaz.ulauncher-file-search'
+let g:netrw_dirhist_1='/home/aleksandar2/.koofr/syncdb'

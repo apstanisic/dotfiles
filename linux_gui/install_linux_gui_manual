@@ -1,0 +1,44 @@
+#!/bin/bash
+
+echo "This file should not and can't be run as a script, it's only guide and reminder what to install "
+echo "Some gui things can't be installed as a script, and a lot of things change frequently "
+echo "so there is more cost in maintaining script then in using it"
+
+exit
+
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+sudo apt update
+
+sudo apt install brave-browser
+
+echo "Install VSCODE"
+
+sudo apt install tilix
+
+sudo add-apt-repository ppa:agornostal/ulauncher
+
+sudo apt update
+sudo apt install ulauncher
+
+echo "Install gnome extenisions"
+echo "dash to panel"
+
+sudo apt install gnome-tweaks
+sudo apt install syncthing
+sudo apt install nextcloud-desktop
+sudo apt install fd-find
+
+# Don't do this in pop os, it already does it for you
+# Remove snap apps that ubuntu installs and replace them with dev versions
+sudo snap remove gnome-*
+sudo apt install gnome-calculator gnome-calendar gnome-weather gnome-characters gnome-logs
+# Install flatpak
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# changed swappines from 60 to 10
+vim /etc/sysctl.conf

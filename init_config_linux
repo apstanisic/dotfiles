@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Copy configs folder from ~/.dotfiles to ~
+# --adopt is used to merge files in configs
+# with already existing content
+stow configs --adopt -d ~/.dotfiles -t ~

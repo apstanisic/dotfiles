@@ -1,0 +1,51 @@
+# Do not add newline before showing prompt
+add_newline = false
+
+# For some reason default char is to big in my terminal
+[character]
+symbol = "➜"
+error_symbol = "✖"
+# Sign for Vim. Resembles rotated V.
+vicmd_symbol = "ᐳ"
+# Show X when return error
+# use_symbol_for_status = true
+
+[directory]
+# Show max 8 directories
+truncation_length = 8
+# Show full path in git repo
+truncate_to_repo = false
+
+# Disable modules that I don't need
+[aws]
+disabled = true
+
+[battery]
+disabled = true
+
+[conda]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[golang]
+disabled = true
+
+[java]
+disabled = true
+
+[package]
+disabled = true
+
+[python]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[terraform]
+disabled = true
