@@ -45,3 +45,8 @@ sudo apt install -y materia-gtk-theme
 
 # changed swappines from 60 to 10
 vim /etc/sysctl.conf
+
+# Install clang for flutter linux
+sudo apt install clang
+# For sharing files
+gnome-user-share

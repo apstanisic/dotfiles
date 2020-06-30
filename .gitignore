@@ -1,3 +1,0 @@
-# Set repo to ignore ssh files just in case
-ssh/
-.ssh/

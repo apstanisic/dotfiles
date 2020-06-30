@@ -1,0 +1,28 @@
+// Place your key bindings in this file to override the defaults
+[
+  // Save all changed files
+  {
+    "key": "ctrl+alt+s",
+    "command": "workbench.action.files.saveAll"
+  },
+  // Show context menu
+  {
+    "key": "alt+enter",
+    "command": "editor.action.showContextMenu"
+  },
+  // Insert block comment
+  {
+    "key": "ctrl+shift+/",
+    "command": "editor.action.blockComment"
+  },
+  // Open docker in activity bar. C - for containers
+  {
+    "key": "ctrl+alt+c",
+    "command": "workbench.view.extension.dockerView"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  }
+]

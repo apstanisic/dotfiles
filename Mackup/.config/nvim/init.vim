@@ -14,3 +14,9 @@ call plug#end()
 
 " Toggle sidebar (same shortcut as vscode)
 silent! nmap <C-b> :NERDTreeToggle<CR>
+
+" A little better built in theme
+colorscheme desert
+
+" Tab is 4 spaces wide, not 8
+set tabstop=4

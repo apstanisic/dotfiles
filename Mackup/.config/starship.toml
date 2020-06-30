@@ -1,14 +1,11 @@
-# Do not add newline before showing prompt
+# Don't add newline before showing prompt
 add_newline = false
 
 # For some reason default char is to big in my terminal
 [character]
 symbol = "➜"
-error_symbol = "✖"
-# Sign for Vim. Resembles rotated V.
-vicmd_symbol = "ᐳ"
-# Show X when return error
-# use_symbol_for_status = true
+#vicmd_symbol = "↣"
+vicmd_symbol = "v"
 
 [directory]
 # Show max 8 directories
@@ -16,7 +13,9 @@ truncation_length = 8
 # Show full path in git repo
 truncate_to_repo = false
 
-# Disable modules that I don't need
+#
+# Disable all modules that I don't need
+# 
 [aws]
 disabled = true
 
