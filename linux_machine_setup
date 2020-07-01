@@ -26,8 +26,12 @@ sudo apt install -y android-tools-adb
 echo "Install Fira Code, Roboto, Font Awesome "
 sudo apt install -y fonts-firacode fonts-roboto fonts-font-awesome
 
-echo "Install Stow"
-sudo apt install -y stow
+# echo "Install Stow"
+# sudo apt install -y stow
+# Install pip
+sudo apt install python3-venv python3-pip
+
+pip install --upgrade mackup
 
 echo "Install neovim"
 sudo apt install -y neovim
@@ -42,7 +46,7 @@ nvim +PlugInstall +qall
 echo "Install node"
 # It's a lot faster loading time to use this node instead of nvm
 # Ubuntu built in node uses version 10, which is old.
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 
