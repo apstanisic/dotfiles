@@ -6,12 +6,14 @@ add_newline = false
 symbol = "➜"
 #vicmd_symbol = "↣"
 vicmd_symbol = "v"
+style_success = "bold purple"
 
 [directory]
 # Show max 8 directories
 truncation_length = 8
 # Show full path in git repo
 truncate_to_repo = false
+style = "bold blue"
 
 #
 # Disable all modules that I don't need

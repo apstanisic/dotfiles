@@ -1,6 +1,8 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Sensible defaults
+Plug 'tpope/vim-sensible'
 " Typescript
 Plug 'leafgarland/typescript-vim'
 " Sidebar

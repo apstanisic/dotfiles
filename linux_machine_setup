@@ -31,7 +31,7 @@ sudo apt install -y fonts-firacode fonts-roboto fonts-font-awesome
 # Install pip
 sudo apt install python3-venv python3-pip
 
-pip install --upgrade mackup
+pip3 install --upgrade mackup
 
 echo "Install neovim"
 sudo apt install -y neovim
