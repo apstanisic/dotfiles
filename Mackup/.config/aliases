@@ -35,7 +35,8 @@ alias kl='killall -9'
 # apt shortcuts
 alias sa='sudo apt'
 alias au='sudo apt update'
-alias auu='sudo apt update && sudo apt upgrade -y'
+alias auu='sudo apt update && sudo apt upgrade -y && sudo apt autoremove'
+alias update='auu && flatpak update -y'
 alias ai='sudo apt install'
 
 # Check weather in terminal for current IP

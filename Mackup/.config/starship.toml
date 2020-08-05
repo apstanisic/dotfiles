@@ -6,7 +6,6 @@ add_newline = false
 symbol = "➜"
 #vicmd_symbol = "↣"
 vicmd_symbol = "v"
-style_success = "bold purple"
 
 [directory]
 # Show max 8 directories
