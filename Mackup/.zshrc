@@ -273,3 +273,7 @@ fi
 # History search not working in vi mode
 bindkey '^r' history-incremental-search-backward
 
+
+# fnm
+export PATH=/home/aleksandar/.fnm:$PATH
+eval "`fnm env`"

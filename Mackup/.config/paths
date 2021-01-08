@@ -16,6 +16,9 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # Flutter does not have predefined path, so I choose ~/.flutter
 export PATH="$PATH:$HOME/.flutter/flutter/bin"
 
+# Dart global packages
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
 # Yarn global modules path, must be after node
 export PATH="$PATH:`yarn global bin`"
 
