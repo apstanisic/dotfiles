@@ -3,9 +3,9 @@ add_newline = false
 
 # For some reason default char is to big in my terminal
 [character]
-symbol = "➜"
-#vicmd_symbol = "↣"
-vicmd_symbol = "v"
+success_symbol= "[➜](green)"
+error_symbol= "[✖](red)"
+vicmd_symbol = "[➜](bold blue)"
 
 [directory]
 # Show max 8 directories

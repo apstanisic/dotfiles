@@ -20,7 +20,9 @@ export PATH="$PATH:$HOME/.flutter/flutter/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Yarn global modules path, must be after node
-export PATH="$PATH:`yarn global bin`"
+# export PATH="$PATH:`yarn global bin`"
 
 # Used for pip
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.fnm"
+export PATH="$PATH:/usr/share/code/bin"

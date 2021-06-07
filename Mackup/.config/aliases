@@ -14,6 +14,7 @@ alias c='clear'
 
 # Enter projects folder
 alias p='cd ~/Projects'
+alias oss='cd ~/Projects/open-source'
 
 # Show all files
 alias la='ls -a'
@@ -37,6 +38,7 @@ alias sa='sudo apt'
 alias au='sudo apt update'
 alias auu='sudo apt update && sudo apt upgrade -y && sudo apt autoremove'
 alias update='auu && flatpak update -y && flutter upgrade'
+alias u='update'
 alias ai='sudo apt install'
 
 # Check weather in terminal for current IP
@@ -66,3 +68,6 @@ alias ......='cd ../../../..'
 
 # Copy file to clipboard
 alias cb='xclip -sel c < '
+
+# Open file with proper app
+alias open='xdg-open'

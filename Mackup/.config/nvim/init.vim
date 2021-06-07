@@ -11,6 +11,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 " Surround parentheses, brackets, quotes...
 Plug 'tpope/vim-surround'
+" Dart syntax
+Plug 'dart-lang/dart-vim-plugin'
+
 
 call plug#end()
 
