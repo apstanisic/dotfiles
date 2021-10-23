@@ -4,49 +4,62 @@ echo "This file should not and can't be run as a script, it's only guide and rem
 echo "Some gui things can't be installed as a script, and a lot of things change frequently "
 echo "so there is more cost in maintaining script then in using it"
 
+
 exit
+# Update and upgrade
+sudo apt update
+sudo apt upgrade
 
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+# Install fonts
+sudo apt install -y fonts-firacode fonts-roboto fonts-font-awesome
 
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+# Tilix
+sudo apt install -y tilix
+
+# Gnome tweaks
+sudo apt install -y gnome-tweaks
+
+#
+# Brave Browser 
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
 sudo apt update
 
-sudo apt install brave-browser
+sudo apt install -y brave-browser
 
-echo "Install VSCODE"
+# It's available in PopOS by default
+echo "Install Visual Studio Code"
+sudo apt install -y code
 
-sudo apt install tilix
+sudo apt install -y celluloid
+sudo apt install -y qbittorrent
 
-sudo add-apt-repository ppa:agornostal/ulauncher
 
-sudo apt update
-sudo apt install ulauncher
+# echo "Install gnome extenisions"
+# echo "dash to panel, user themes, gsconnect, pop shell"
 
-echo "Install gnome extenisions"
-echo "dash to panel, user themes, gsconnect, pop shell"
-
-sudo apt install gnome-tweaks
-sudo apt install syncthing
-sudo apt install nextcloud-desktop
-sudo apt install fd-find
-
-# Don't do this in pop os, it already does it for you
-# Remove snap apps that ubuntu installs and replace them with dev versions
-sudo snap remove gnome-*
-sudo apt install gnome-calculator gnome-calendar gnome-weather gnome-characters gnome-logs
-# Install flatpak
-sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-# Theme (materia-gtk-theme), vimix or arc theme also looks good.
-sudo apt install -y materia-gtk-theme
 
 # changed swappines from 60 to 10
-vim /etc/sysctl.conf
+# vim /etc/sysctl.conf
 
-# Install clang for flutter linux
-sudo apt install clang
-# For sharing files
-gnome-user-share
+#
+# Flatpaks
+#
+# Spotify
+flatpak install flathub com.spotify.Client
+# Stremio
+flatpak install flathub com.stremio.Stremio
+# DBeaver
+flatpak install flathub io.dbeaver.DBeaverCommunity
+# Viber
+flatpak install flathub com.viber.Viber
+# Tor Browser
+flatpak install flathub com.github.micahflee.torbrowser-launcher
+# Github Desktop
+flatpak install flathub io.github.shiftey.Desktop
+# Postman
+flatpak install flathub com.getpostman.Postman
+# Tutanota
+flatpak install flathub com.tutanota.Tutanota

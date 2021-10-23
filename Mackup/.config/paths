@@ -4,25 +4,44 @@
 # for examlpe composer is not installed. It will be ready for 
 # installation
 
-# Add composer global packages 
-# https://getcomposer.org/doc/03-cli.md#composer-home
-export PATH="$PATH:$HOME/.config/composer/vendor/bin:$HOME/.composer/vendor/bin"
+#
+# Node/npm
+#
+# Volta (Node version manager)
+export VOLTA_HOME="$HOME/.volta"
+# Node global packages
+export PATH="$VOLTA_HOME/bin:$PATH"
 
-
-# Deno path
+#
+# Deno
+#
+# Deno path. This is default installation path. 
+# Deno installer said to add this to path
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+#
+# Flutter/Dart/Pub
+#
 # Flutter does not have predefined path, so I choose ~/.flutter
-export PATH="$PATH:$HOME/.flutter/flutter/bin"
+export PATH="$HOME/.local/share/flutter-sdk/bin:$PATH"
+# Dart global packages. This is path that Dart creates
+export PATH="$HOME/.pub-cache/bin:$PATH"
 
-# Dart global packages
-export PATH="$PATH":"$HOME/.pub-cache/bin"
+#
+# PHP/Composer
+#
+# Add composer global packages. It can have one of those two paths 
+# https://getcomposer.org/doc/03-cli.md#composer-home
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
-# Yarn global modules path, must be after node
-# export PATH="$PATH:`yarn global bin`"
+#
+# Python/pip
+#
+# Used for pip when installing system packages for user
+# Othervise it uses /usr/local/bin/ , which is already in path
+export PATH="$HOME/.local/bin:$PATH"
 
-# Used for pip
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.fnm"
-export PATH="$PATH:/usr/share/code/bin"
+## export PATH="/usr/share/code/bin:$PATH"
+

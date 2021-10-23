@@ -6,7 +6,6 @@ choco install -y brave
 choco install -y vlc
 choco install -y microsoft-windows-terminal
 choco install -y vscode
-choco install -y malwarebytes
 choco install -y 7zip
 choco install -y git
 choco install -y qbittorrent

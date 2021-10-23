@@ -5,18 +5,11 @@ alias v='nvim'
 
 # Exit shortcuts
 alias e='exit'
-alias q='exit'
-alias :q='exit'
-alias :wq='exit'
 
 # Clear screen
 alias c='clear'
 
-# Enter projects folder
-alias p='cd ~/Projects'
-alias oss='cd ~/Projects/open-source'
-
-# Show all files
+# Show hidden files
 alias la='ls -a'
 
 # Copy recursively by default
@@ -35,11 +28,11 @@ alias kl='killall -9'
 
 # apt shortcuts
 alias sa='sudo apt'
+alias ai='sudo apt install'
 alias au='sudo apt update'
 alias auu='sudo apt update && sudo apt upgrade -y && sudo apt autoremove'
 alias update='auu && flatpak update -y && flutter upgrade'
 alias u='update'
-alias ai='sudo apt install'
 
 # Check weather in terminal for current IP
 alias wt='curl wttr.in'
@@ -50,13 +43,13 @@ alias ta='tmux attach -t'
 # Rerun previous command with sudo
 alias again='sudo $(fc -ln -1)'
 
-# I do not like zimfw aliases for git.
-# Using my own.
+# I do not like zimfw aliases for git, using my own
 alias ga='git add'
 alias gaa='git add --all'
 alias gac='git add --all && git commit'
 alias gc='git commit'
 alias gd='git diff'
+# gs is already used in Ubuntu for ghostscript
 alias gst='git status'
 alias gp='git push'
 
@@ -64,10 +57,23 @@ alias gp='git push'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias ......='cd ../../../..'
+alias ......='cd ../../../../..'
 
 # Copy file to clipboard
 alias cb='xclip -sel c < '
 
 # Open file with proper app
 alias open='xdg-open'
+
+# Install/Update starship prompt with proper location
+# --yes is to not ask for confirmation, and --bin-dir is location, so we don't need root to install
+alias install-starship='sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin-dir $HOME/.local/bin'
+
+# Update Zim and it's plugins
+alias update-zim='zimfw upgrade && zimfw update'
+
+#  Update Zim and Starship
+alias update-shell='update-zim && install-starship'
+
+# Install flutter with all dependecies for Linux desktop development
+alias install-flutter='git clone https://github.com/flutter/flutter.git -b stable --depth 1 ~/.local/share/flutter-sdk && sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev && flutter precache && flutter config --enable-linux-desktop'
