@@ -1,4 +1,5 @@
 #!/bin/bash
+
 export DEBIAN_FRONTEND="noninteractive"
 
 echo "Set root password"
@@ -19,13 +20,25 @@ sudo apt install -y libssl-dev build-essential p7zip-full
 echo "Installing Android drivers"
 sudo apt-get install android-tools-adb android-tools-fastboot
 
+echo "Installing sqlite3"
+sudo apt install -y sqlite3
+
 echo "Install pip"
 sudo apt install -y python3-pip
 
 echo "Install Mackup"
 pip3 install --upgrade mackup
 
+# Clone dotfiles
 git clone https://github.com/apstanisic/dotfiles.git ~/dotfiles
+# Make paths and aliases available in shell
+source ~/dotfiles/Mackup/.config/paths
+source ~/dotfiles/Mackup/.config/aliases
+# Initialize Mackup
+cp ~/dotfiles/Mackup/.mackup.cfg ~/.mackup.cfg
+# Restore config
+mackup restore -f
+
 
 echo "Install neovim"
 sudo apt install -y neovim
@@ -55,32 +68,13 @@ echo "Installing Docker"
 # Install docker from ubuntu repositories
 sudo apt install -y docker.io docker-compose
 
-# echo "Installing PHP"
-# sudo apt install -y php
-
-echo "Installing sqlite3"
-sudo apt install -y sqlite3
-
-# echo "Installing composer"
-# sudo apt install -y composer
-
-# echo "Installing common PHP packages"
-# sudo apt install -y php-xml php-mbstring php-zip
-# sudo apt install -y libapache2-mod-php php-mysql
-
-
-
 # Set zsh as default shell
 sudo chsh -s /usr/bin/zsh aleksandar
+
+# Shell alias
+install-starship
 
 # Install zim (framework for zsh)
 curl https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh --create-dirs -o ~/.zim/zimfw.zsh -L
 zsh ~/.zim/zimfw.zsh install
 #curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
-
-# Shell alias
-install-starship
-##sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" 
-
-cp ~/dotfiles/Mackup/.mackup.cfg ~
-mackup restore --force

@@ -1,21 +1,25 @@
 # dotfiles
-My dotfiles
+Dotfiles and some scripts that are used to setup Linux machine.
+It's for Pop OS, and it assumes that some Pop repositories, and some changes.
+It requires Flatpak to be installed.
 
-Run `install_linux_terminal_apps` to install apps for development and basic tui setup.
+## Scripts
+---
+First run `setup_dev_tools` then `setup_gui_tools`
 
-Run `init_config_linux` to apply config
-Most of config files are stored in `configs` folder. Using GNU stow to apply them.
+### `setup_dev_tools`
+All CLI programs and tools. Anything that does not require GUI.
 
-In `linux_gui` folder are scripts to backup gnome (dconf) settings, and manual for installing
-gui apps. This manually is used for remembering all apps and steps I need to do to configure
-OS.
+### `setup_gui_tools`
+This are things that are only applicable for desktop. Fonts, GUI apps, browser, IDE, flatpaks.
+It will also restore previous GNOME config backup with keyboard shortcuts, Tilix config, extensions settings...
 
-Run `install_windows_apps.ps1` to install some common Windows apps.
+## dotfiles
+---
+Minimal dotfiles for apps that I use. It's as simple as possible. It uses Mackup for backup/restore.
 
-## Order
-
-First clone this repo in `~/.dotfiles`
-Then run `init_linux_config`. This will apply config files 
-Then run `install_linux_terminal_apps`. This will install all tools, services and apps.
-And in the end go to `linux_gui`, to restore Gnome settings and read `install_linux_gui_manual`
-to see which apps you want to install, and implement other settings.
+## dconf settings
+Gnome and some apps don't use dotfiles, they use dconf. I created a dconf dump
+with `dconf dump / > dconf_backup.dconf`, and then manually went and copied
+relevant settings to `manual_dconf_backup.dconf`. This only copied relevant info, 
+and that is not specific to this machine. It's portable when I switch to other device. It's also easier to see what settings are backed up, and it does not contain generated contents (notification, app drawer content...).

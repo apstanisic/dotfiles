@@ -1,11 +1,5 @@
 #!/bin/bash
 
-echo "This file should not and can't be run as a script, it's only guide and reminder what to install "
-echo "Some gui things can't be installed as a script, and a lot of things change frequently "
-echo "so there is more cost in maintaining script then in using it"
-
-
-exit
 # Update and upgrade
 sudo apt update
 sudo apt upgrade
@@ -63,3 +57,5 @@ flatpak install flathub io.github.shiftey.Desktop
 flatpak install flathub com.getpostman.Postman
 # Tutanota
 flatpak install flathub com.tutanota.Tutanota
+
+dconf load / < ~/dotfiles/manual_dconf_backup.dconf

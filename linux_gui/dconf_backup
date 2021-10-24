@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# Backup all dconf (gnome + some apps) settings in saved_settings.dconf file
-dconf dump / > "$(dirname "$0")/saved_settings.dconf"

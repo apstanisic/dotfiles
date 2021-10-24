@@ -66,7 +66,8 @@ alias cb='xclip -sel c < '
 alias open='xdg-open'
 
 # Install/Update starship prompt with proper location
-# --yes is to not ask for confirmation, and --bin-dir is location, so we don't need root to install
+# --yes is to not ask for confirmation, 
+# and --bin-dir is location, so we don't need root to install
 alias install-starship='sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin-dir $HOME/.local/bin'
 
 # Update Zim and it's plugins

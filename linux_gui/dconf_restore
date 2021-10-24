@@ -1,6 +1,0 @@
-#/bin/sh
-
-# Restore all settings that uses dconf (gnome, tilix...)
-dconf load / < "$(dirname "$0")/saved_settings.dconf"
-
-
