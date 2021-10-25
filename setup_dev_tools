@@ -104,7 +104,7 @@ echo "Finished settings zsh as default shell"
 
 echo "Installing Starship prompt"
 # Shell alias
-install-starship
+install_starship
 echo "Finished installing Starship prompt"
 
 echo  "Installing zim (framework for zsh)"
