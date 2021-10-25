@@ -42,20 +42,20 @@ sudo apt install -y qbittorrent
 # Flatpaks
 #
 # Spotify
-flatpak install flathub com.spotify.Client
+flatpak install -y flathub com.spotify.Client
 # Stremio
-flatpak install flathub com.stremio.Stremio
+flatpak install -y flathub com.stremio.Stremio
 # DBeaver
-flatpak install flathub io.dbeaver.DBeaverCommunity
+flatpak install -y flathub io.dbeaver.DBeaverCommunity
 # Viber
-flatpak install flathub com.viber.Viber
+flatpak install -y flathub com.viber.Viber
 # Tor Browser
-flatpak install flathub com.github.micahflee.torbrowser-launcher
+flatpak install -y flathub com.github.micahflee.torbrowser-launcher
 # Github Desktop
-flatpak install flathub io.github.shiftey.Desktop
+flatpak install -y flathub io.github.shiftey.Desktop
 # Postman
-flatpak install flathub com.getpostman.Postman
+flatpak install -y flathub com.getpostman.Postman
 # Tutanota
-flatpak install flathub com.tutanota.Tutanota
+flatpak install -y flathub com.tutanota.Tutanota
 
 dconf load / < ~/dotfiles/machine_setup/manual_dconf_backup.dconf
