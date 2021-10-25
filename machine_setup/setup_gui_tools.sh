@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Update and upgrade
 sudo apt update
@@ -58,4 +58,4 @@ flatpak install flathub com.getpostman.Postman
 # Tutanota
 flatpak install flathub com.tutanota.Tutanota
 
-dconf load / < ~/dotfiles/manual_dconf_backup.dconf
+dconf load / < ~/dotfiles/machine_setup/manual_dconf_backup.dconf
