@@ -5,6 +5,9 @@ export DEBIAN_FRONTEND="noninteractive"
 # echo "Set root password"
 # sudo passwd root
 
+# By default aliases are not enabled in non interactive shell script
+shopt -s expand_aliases
+
 #
 # Packages from repositories
 #

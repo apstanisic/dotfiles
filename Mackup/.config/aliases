@@ -74,7 +74,18 @@ alias install_starship='sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- 
 alias update_zim='zimfw upgrade && zimfw update'
 
 #  Update Zim and Starship
-alias update_shell='update-zim && install-starship'
+update_shell() 
+{
+    zimfw upgrade && zimfw update
+	install_starship
+}
 
 # Install flutter with all dependecies for Linux desktop development
-alias install_flutter='git clone https://github.com/flutter/flutter.git -b stable --depth 1 ~/.local/share/flutter-sdk && sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev && flutter precache && flutter config --enable-linux-desktop'
+install_flutter() 
+{
+    git clone https://github.com/flutter/flutter.git -b stable --depth 1 ~/.local/share/flutter-sdk 
+    sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev 
+    flutter precache 
+    flutter config --enable-linux-desktop
+}
+
