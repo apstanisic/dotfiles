@@ -68,13 +68,13 @@ alias open='xdg-open'
 # Install/Update starship prompt with proper location
 # --yes is to not ask for confirmation, 
 # and --bin-dir is location, so we don't need root to install
-alias install-starship='sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin-dir $HOME/.local/bin'
+alias install_starship='sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin-dir $HOME/.local/bin'
 
 # Update Zim and it's plugins
-alias update-zim='zimfw upgrade && zimfw update'
+alias update_zim='zimfw upgrade && zimfw update'
 
 #  Update Zim and Starship
-alias update-shell='update-zim && install-starship'
+alias update_shell='update-zim && install-starship'
 
 # Install flutter with all dependecies for Linux desktop development
-alias install-flutter='git clone https://github.com/flutter/flutter.git -b stable --depth 1 ~/.local/share/flutter-sdk && sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev && flutter precache && flutter config --enable-linux-desktop'
+alias install_flutter='git clone https://github.com/flutter/flutter.git -b stable --depth 1 ~/.local/share/flutter-sdk && sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev && flutter precache && flutter config --enable-linux-desktop'

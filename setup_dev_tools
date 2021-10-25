@@ -25,7 +25,7 @@ sudo apt install -y libssl-dev build-essential p7zip-full
 echo "Finished libssl-dev build-essential p7zip-full"
 
 echo "Installing Android drivers"
-sudo apt-get install android-tools-adb android-tools-fastboot
+sudo apt install -y android-tools-adb android-tools-fastboot
 echo "Finished installing Android drivers"
 
 echo "Installing sqlite3"
