@@ -43,5 +43,3 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 # Othervise it uses /usr/local/bin/ , which is already in path
 export PATH="$HOME/.local/bin:$PATH"
 
-## export PATH="/usr/share/code/bin:$PATH"
-

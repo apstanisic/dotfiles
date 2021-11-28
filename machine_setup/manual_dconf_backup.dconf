@@ -76,6 +76,14 @@ volume-up=['<Super>Insert']
 www=@as []
 
 
+#
+# Tilix in Quake mode
+#
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Alt>1'
+command='tilix --quake'
+name='Quake Terminal'
+
 
 #
 # Add minimize and maximize buttons

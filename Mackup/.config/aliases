@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# Neovim shortcut
+# Open neovim 
 alias v='nvim'
 
-# Exit shortcuts
+# Exit terminal
 alias e='exit'
 
 # Clear screen
@@ -18,20 +18,20 @@ alias cp='cp -R'
 # Go to home folder and clear screen
 alias cdc='cd ~ && clear'
 
-# Docker compose
+# Docker Compose
 alias dcm='docker-compose'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 
-# Kill shortcut
+# Kill program
 alias kl='killall -9'
 
-# apt shortcuts
+# apt 
 alias sa='sudo apt'
 alias ai='sudo apt install'
 alias au='sudo apt update'
 alias auu='sudo apt update && sudo apt upgrade -y && sudo apt autoremove'
-alias update='auu && flatpak update -y && flutter upgrade'
+alias update='auu && flatpak update -y'
 alias u='update'
 
 # Check weather in terminal for current IP
@@ -43,21 +43,28 @@ alias ta='tmux attach -t'
 # Rerun previous command with sudo
 alias again='sudo $(fc -ln -1)'
 
-# I do not like zimfw aliases for git, using my own
+# Git aliases
 alias ga='git add'
 alias gaa='git add --all'
 alias gac='git add --all && git commit'
 alias gc='git commit'
 alias gd='git diff'
+alias gp='git push'
 # gs is already used in Ubuntu for ghostscript
 alias gst='git status'
-alias gp='git push'
 
-# Alias to go up in folders
+# Alias to go up the path
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'
+alias .........='cd ../../../../../../../..'
+alias ..........='cd ../../../../../../../../..'
+
+# Enter Downloads folder
+alias dw='cd ~/Downloads'
 
 # Copy file to clipboard
 alias cb='xclip -sel c < '
