@@ -12,28 +12,29 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 sudo apt update
 sudo apt upgrade
 
-# Install fonts
+echo "Installing fonts"
 sudo apt install -y fonts-firacode fonts-roboto fonts-font-awesome
 
-# Tilix
+echo "Installing Tilix"
 sudo apt install -y tilix
 
-# Gnome tweaks
+echo "Installing Gnome Tweaks"
 sudo apt install -y gnome-tweaks
 
+echo "Installing Brave Browser"
 sudo apt install -y brave-browser
 
 # It's available in PopOS by default
-echo "Install Visual Studio Code"
+echo "Installing Visual Studio Code"
 sudo apt install -y code
 
+# Drag and drop does not work in Flatpak version
+echo "Installing Celluloid (MPV)"
 sudo apt install -y celluloid
-sudo apt install -y qbittorrent
 
-
-# echo "Install gnome extenisions"
-# echo "dash to panel, user themes, gsconnect, pop shell"
-
+# It's available in PopOS by default
+echo "Installing Lutris"
+sudo apt install -y lutris
 
 # changed swappines from 60 to 10
 # vim /etc/sysctl.conf
@@ -52,10 +53,15 @@ flatpak install -y flathub com.viber.Viber
 # Tor Browser
 flatpak install -y flathub com.github.micahflee.torbrowser-launcher
 # Github Desktop
-flatpak install -y flathub io.github.shiftey.Desktop
+# flatpak install -y flathub io.github.shiftey.Desktop
 # Postman
-flatpak install -y flathub com.getpostman.Postman
-# Tutanota
+# flatpak install -y flathub com.getpostman.Postman
+# Tutanota (email)
 flatpak install -y flathub com.tutanota.Tutanota
+# Transmission (torrent)
+flatpak install flathub com.transmissionbt.Transmission
+# Calibre (books)
+flatpak install flathub com.calibre_ebook.calibre
+
 
 dconf load / < ~/dotfiles/machine_setup/manual_dconf_backup.dconf

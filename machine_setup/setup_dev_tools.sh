@@ -19,13 +19,15 @@ echo "Installing apt-transport-https"
 sudo apt install -y apt-transport-https
 echo "Finished installing apt-transport-https"
 
-echo "Installing zsh git vim curl wget xclip tmux htop"
+# `ncdu` is used for checking what takes storage space
+echo "Installing zsh git vim curl wget xclip tmux htop ncdu"
 sudo apt install -y zsh git vim curl wget xclip tmux htop
 echo "Finished installing zsh git vim curl wget xclip tmux htop"
 
 echo "Installing libssl-dev build-essential p7zip-full"
 sudo apt install -y libssl-dev build-essential p7zip-full
 echo "Finished libssl-dev build-essential p7zip-full"
+
 
 echo "Installing Android drivers"
 sudo apt install -y android-tools-adb android-tools-fastboot
@@ -78,6 +80,8 @@ echo "Installing Node and global packages"
 curl https://get.volta.sh | bash
 # Install Node
 volta install node@lts
+# Install Yarn and pnpm
+volta install yarn pnpm
 # Prettier git diff
 volta install diff-so-fancy
 # Global Typescript
