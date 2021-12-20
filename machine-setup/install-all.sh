@@ -17,7 +17,7 @@ while :
 do
   sleep 1
   read -p 'Type "yes" when you added the key to GitHub: ' confirmed
-  if [ "$confirmed" -eq "yes" ]
+  if [ "$confirmed" = "yes" ]
   then
     break
   else
