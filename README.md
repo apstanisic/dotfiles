@@ -11,19 +11,28 @@ To bootstrap machine, run
 ```bash
 sudo apt install git
 git clone --branch main https://github.com/apstanisic/dotfiles.git ~/dotfiles
-bash ~/dotfiles/machine-setup/install-all.sh
-
+bash ~/dotfiles/machine-setup/init-all.sh
 ```
 
 ## Scripts
 
 ---
 
-First run `setup-dev-tools` then `setup-gui-tools`
+### `run-all`
+
+Run all scripts
 
 ### `setup-dev-tools`
 
 All CLI programs and tools. Anything that does not require GUI.
+
+### `setup-ssh`
+
+Sets up SSH
+
+### `sync-dotfiles`
+
+Sync dotfiles with GNU Stow
 
 ### `setup-gui-tools`
 
@@ -37,6 +46,8 @@ It will also restore previous GNOME config backup with keyboard shortcuts, Tilix
 Minimal dotfiles for apps that I use. It's as simple as possible. It uses GNU Stow for syncing
 
 ## dconf settings
+
+---
 
 Gnome and some apps don't use dotfiles, they use dconf. I created a dconf dump
 with `dconf dump / > dconf_backup.dconf`, and then manually went and copied
