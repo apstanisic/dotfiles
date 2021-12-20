@@ -3,7 +3,7 @@
 export DEBIAN_FRONTEND="noninteractive"
 
 sudo apt install git curl
-git clone https://github.com/apstanisic/dotfiles.git ~/.dotfiles.temp
+git clone --branch main https://github.com/apstanisic/dotfiles.git ~/.dotfiles.temp
 
 # Add big echo
 . ~/.dotfile.temp/machine-setup/big-echo.sh
@@ -25,7 +25,7 @@ done
 echo "Key added, we are continuing installation"
 
 BigEcho "Cloning dotfiles"
-git clone git@github.com:apstanisic/dotfiles.git ~/dotfiles
+git clone --branch main git@github.com:apstanisic/dotfiles.git ~/dotfiles
 BigEcho "Finished cloning dotfiles"
 
 rm -r ~/.dotfiles.temp

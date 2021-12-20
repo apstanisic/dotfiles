@@ -58,7 +58,7 @@ if [ -d "~/dotfiles" ]; then
   BigEcho "dotfiles already cloned"
 else
   BigEcho "Cloning dotfiles"
-  git clone git@github.com:apstanisic/dotfiles.git ~/dotfiles
+  git clone --branch main git@github.com:apstanisic/dotfiles.git ~/dotfiles
   BigEcho "Finished cloning dotfiles"
 fi
 
