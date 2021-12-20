@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-# Open neovim 
+# Open neovim
 alias v='nvim'
 
 # Exit terminal
@@ -29,7 +29,7 @@ alias nrd='npm run dev'
 # Kill program
 alias kl='killall -9'
 
-# apt 
+# apt
 alias sa='sudo apt'
 alias ai='sudo apt install'
 alias au='sudo apt update'
@@ -76,7 +76,7 @@ alias cb='xclip -sel c < '
 alias open='xdg-open'
 
 # Install/Update starship prompt with proper location
-# --yes is to not ask for confirmation, 
+# --yes is to not ask for confirmation,
 # and --bin-dir is location, so we don't need root to install
 alias install_starship='sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin-dir $HOME/.local/bin'
 
@@ -84,18 +84,18 @@ alias install_starship='sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- 
 alias update_zim='zimfw upgrade && zimfw update'
 
 #  Update Zim and Starship
-update_shell() 
+update_shell()
 {
     zimfw upgrade && zimfw update
 	install_starship
 }
 
 # Install flutter with all dependecies for Linux desktop development
-install_flutter() 
+install_flutter()
 {
-    git clone https://github.com/flutter/flutter.git -b stable --depth 1 ~/.local/share/flutter-sdk 
-    sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev 
-    flutter precache 
+    git clone https://github.com/flutter/flutter.git -b stable --depth 1 ~/.local/share/flutter-sdk
+    sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev
+    flutter precache
     flutter config --enable-linux-desktop
 }
 

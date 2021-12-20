@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 . ./big-echo.sh
 

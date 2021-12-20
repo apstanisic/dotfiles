@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 Yellow='\033[1;33m'
 NoColor='\033[0m'
