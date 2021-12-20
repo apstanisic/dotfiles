@@ -2,7 +2,7 @@
 
 export DEBIAN_FRONTEND="noninteractive"
 
-sudo apt install git
+sudo apt install git curl
 git clone git@github.com:apstanisic/dotfiles.git ~/.dotfiles.temp
 
 sh ~/.dotfile.temp/machine-setup/setup-dev-tools.sh
