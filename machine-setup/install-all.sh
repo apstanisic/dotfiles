@@ -16,12 +16,16 @@ while :
 do
   sleep 1
   read -p 'Type "yes" when you added the key to GitHub: ' confirmed
+  echo "Entered: $confirmed"
+
   if [ "$confirmed" = "yes" ]
   then
+    echo "Continuing"
     break
   else
     echo 'Enter "yes" to continue'
   fi
+
 done
 
 BigEcho "Key added, we are continuing installation"
