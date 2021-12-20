@@ -6,10 +6,10 @@ sudo apt install git curl
 git clone --branch main https://github.com/apstanisic/dotfiles.git ~/.dotfiles.temp
 
 # Add big echo
-. ~/.dotfile.temp/machine-setup/big-echo.sh
+. ~/.dotfiles.temp/machine-setup/big-echo.sh
 
 # Init SSH
-sh ~/.dotfile.temp/machine-setup/create-ssh.sh
+sh ~/.dotfiles.temp/machine-setup/create-ssh.sh
 
 # Wait until SSH is added to github
 BigEcho "Add SSH public key to Github, since we will need it later"
@@ -31,5 +31,5 @@ BigEcho "Finished cloning dotfiles"
 rm -r ~/.dotfiles.temp
 
 #
-sh ~/.dotfile/machine-setup/setup-dev-tools.sh
-sh ~/.dotfile/machine-setup/setup-gui-tools.sh
+sh ~/.dotfiles/machine-setup/setup-dev-tools.sh
+sh ~/.dotfiles/machine-setup/setup-gui-tools.sh
