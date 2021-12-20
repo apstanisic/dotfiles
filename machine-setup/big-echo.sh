@@ -14,13 +14,13 @@ BigEcho() {
 
 AptInstall () {
   BigEcho "Installing $1"
-  apt install -y $1
+  DEBIAN_FRONTEND="noninteractive" apt install -y $1
   BigEcho "Installed $1"
 }
 
 FlatpakInstall () {
   BigEcho "Installing $1"
-  flatpak install flathub $1
+  DEBIAN_FRONTEND="noninteractive" flatpak install flathub $1
   BigEcho "Installed $1"
 }
 

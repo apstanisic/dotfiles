@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export DEBIAN_FRONTEND="noninteractive"
 
 # Import echo function
 . ./big-echo.sh

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export DEBIAN_FRONTEND="noninteractive"
-
 sudo apt install git curl
 git clone --branch main https://github.com/apstanisic/dotfiles.git ~/.dotfiles.temp
 
