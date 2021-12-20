@@ -2,7 +2,6 @@
 
 . $HOME/dotfiles/machine-setup/big-echo.sh
 
-
 #
 # Packages from repositories
 #
@@ -12,8 +11,8 @@ BigEcho "Finished updating repositories"
 
 AptInstall zsh
 
-BigEcho "Settings zsh as default shell"
-chsh -s $(which zsh) aleksandar
+BigEcho "Setting zsh as default shell"
+chsh -s /usr/bin/zsh aleksandar
 BigEcho "Finished settings zsh as default shell"
 
 # needed for tools
