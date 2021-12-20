@@ -21,7 +21,7 @@ AptInstall () {
 
 FlatpakInstall () {
   BigEcho "Installing $1"
-  DEBIAN_FRONTEND="noninteractive" flatpak install flathub $1
+  DEBIAN_FRONTEND="noninteractive" flatpak install -y flathub  $1
   BigEcho "Installed $1"
 }
 

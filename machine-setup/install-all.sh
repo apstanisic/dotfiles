@@ -5,7 +5,10 @@
 
 
 # Add big echo
-. ~/dotfiles/machine-setup/big-echo.sh
+. $HOME/dotfiles/machine-setup/big-echo.sh
+
+BigEcho "Setting root password"
+sudo passwd root
 
 # Init SSH
 sh ~/dotfiles/machine-setup/setup-ssh.sh
@@ -34,5 +37,5 @@ BigEcho "Key added, we are continuing installation"
 sh ~/dotfiles/machine-setup/setup-dev-tools.sh
 sh ~/dotfiles/machine-setup/setup-gui-tools.sh
 
-cd ~/dotfiles && git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+cd ~/dotfiles && git remote set-url origin git@github.com:apstanisic/dotfiles.git
 cd ~

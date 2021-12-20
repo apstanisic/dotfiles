@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/dotfiles/machine-setup/big-echo.sh
+. $HOME/dotfiles/machine-setup/big-echo.sh
 
 
 # check if ssh file exists
@@ -16,6 +16,6 @@ fi
 
 # add to ssh agent
 eval "$(ssh-agent -s)" > /dev/null
-ssh-add ~/.ssh/id_ed25519
+ssh-add $HOME/.ssh/id_ed25519
 
 

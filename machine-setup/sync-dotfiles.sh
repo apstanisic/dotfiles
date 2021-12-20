@@ -1,2 +1,2 @@
 #!/bin/bash
-stow --no-folding --target ~ --dir ~/dotfiles --adopt .
+stow --no-folding --target $HOME --dir $HOME/dotfiles --adopt .

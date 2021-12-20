@@ -2,7 +2,7 @@
 
 
 # Import echo function
-. ~/dotfiles/machine-setup/big-echo.sh
+. $HOME/dotfiles/machine-setup/big-echo.sh
 
 #
 # Brave Browser keys
@@ -58,4 +58,4 @@ FlatpakInstall com.calibre_ebook.calibre
 # changed swappines from 60 to 10
 # vim /etc/sysctl.conf
 
-dconf load / < ~/dotfiles/machine-setup/manual-dconf-backup.dconf
+dconf load / < "$HOME/dotfiles/machine-setup/manual-dconf-backup.dconf"

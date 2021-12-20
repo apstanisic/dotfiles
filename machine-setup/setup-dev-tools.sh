@@ -1,6 +1,7 @@
 #!/bin/bash
 
-. ~/dotfiles/machine-setup/big-echo.sh
+. $HOME/dotfiles/machine-setup/big-echo.sh
+
 
 #
 # Packages from repositories
@@ -9,9 +10,14 @@ BigEcho "Updating repositories"
 sudo apt update -y & sudo apt upgrade -y
 BigEcho "Finished updating repositories"
 
+AptInstall zsh
+
+BigEcho "Settings zsh as default shell"
+chsh -s $(which zsh) aleksandar
+BigEcho "Finished settings zsh as default shell"
+
 # needed for tools
 AptInstall apt-transport-https
-AptInstall zsh
 AptInstall git
 AptInstall vim
 AptInstall curl
@@ -47,12 +53,10 @@ AptInstall docker-compose
 # We first need our dotfiles, so we can have configured paths and aliases
 #
 
-BigEcho "Settings zsh as default shell"
-sudo chsh -s $(which zsh) aleksandar
-BigEcho "Finished settings zsh as default shell"
 
 
-if [ -d "~/dotfiles" ]; then
+# cloning problem
+if [ -d "$HOME/dotfiles" ]; then
   BigEcho "dotfiles already cloned"
 else
   BigEcho "Cloning dotfiles"
