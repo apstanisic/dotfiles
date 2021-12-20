@@ -2,6 +2,8 @@
 
 export DEBIAN_FRONTEND="noninteractive"
 
+. ./big-echo.sh
+
 #
 # Packages from repositories
 #
@@ -52,9 +54,14 @@ sudo chsh -s $(which zsh) aleksandar
 BigEcho "Finished settings zsh as default shell"
 
 
-BigEcho "Cloning dotfiles"
-git clone git@github.com:apstanisic/dotfiles.git ~/dotfiles
-BigEcho "Finished cloning dotfiles"
+if [ -d "~/dotfiles" ]; then
+  BigEcho "dotfiles already cloned"
+else
+  BigEcho "Cloning dotfiles"
+  git clone git@github.com:apstanisic/dotfiles.git ~/dotfiles
+  BigEcho "Finished cloning dotfiles"
+fi
+
 
 # echo "Make paths and aliases available in shell"
 . ~/dotfiles/.config/paths
