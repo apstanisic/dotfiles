@@ -15,8 +15,9 @@ sh ~/.dotfiles.temp/machine-setup/create-ssh.sh
 BigEcho "Add SSH public key to Github, since we will need it later"
 while :
 do
+  sleep 1
   read -p 'Type "yes" when you added the key: ' confirmed
-  if [ $confirmed = "yes" ]; then
+  if [ "$confirmed" = "yes" ]; then
     break
   else
     echo 'Enter "yes" to continue'
