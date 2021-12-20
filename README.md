@@ -4,6 +4,12 @@ Dotfiles and some scripts that are used to setup Linux machine.
 It's for Pop OS, and it assumes that some Pop repositories, and some changes.
 It requires Flatpak to be installed.
 
+To bootstrap machine, run
+
+```bash
+curl -fsSL  https://raw.githubusercontent.com/apstanisic/dotfiles/main/machine-setup/install-all.sh | sh
+```
+
 ## Scripts
 
 ---
@@ -23,7 +29,7 @@ It will also restore previous GNOME config backup with keyboard shortcuts, Tilix
 
 ---
 
-Minimal dotfiles for apps that I use. It's as simple as possible. It uses Mackup for backup/restore.
+Minimal dotfiles for apps that I use. It's as simple as possible. It uses GNU Stow for syncing
 
 ## dconf settings
 
