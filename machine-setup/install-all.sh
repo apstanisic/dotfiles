@@ -11,6 +11,7 @@ sh ~/.dotfiles.temp/machine-setup/create-ssh.sh
 
 # Wait until SSH is added to github
 BigEcho "Add SSH public key to Github, since we will need it later"
+
 while :
 do
   sleep 1
@@ -22,7 +23,8 @@ do
     echo 'Enter "yes" to continue'
   fi
 done
-echo "Key added, we are continuing installation"
+
+BigEcho "Key added, we are continuing installation"
 
 BigEcho "Cloning dotfiles"
 git clone --branch main git@github.com:apstanisic/dotfiles.git ~/dotfiles

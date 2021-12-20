@@ -2,7 +2,7 @@
 
 
 # Import echo function
-. ./big-echo.sh
+. "$(dirname "$0")"/big-echo.sh
 
 #
 # Brave Browser keys

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./big-echo.sh
+. "$(dirname "$0")"/big-echo.sh
 
 # check if ssh file exists
 # use existing if exist

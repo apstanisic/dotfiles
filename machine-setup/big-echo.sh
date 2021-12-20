@@ -1,12 +1,13 @@
 #!/bin/bash
 
-Yellow='\033[1;33m'
-NoColor='\033[0m'
+bold_yellow=$(tput bold && tput setaf 11)
+normal=$(tput sgr0)
+
 
 BigEcho() {
   echo "##############################################"
   echo "#"
-  echo "# ${Yellow} $1 ${NoColor}"
+  echo "# ${bold_yellow} $1 ${normal}"
   echo "#"
   echo "##############################################"
 
