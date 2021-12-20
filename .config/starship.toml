@@ -1,0 +1,51 @@
+# Don't add newline before showing prompt
+add_newline = false
+
+# For some reason default char is to big in my terminal
+[character]
+success_symbol= "[➜](green)"
+error_symbol= "[✖](red)"
+vicmd_symbol = "[➜](bold blue)"
+
+[directory]
+# Show max 8 directories
+truncation_length = 8
+# Show full path in git repo
+truncate_to_repo = false
+style = "bold blue"
+
+#
+# Disable all modules that I don't need
+# 
+[aws]
+disabled = true
+
+[battery]
+disabled = true
+
+[conda]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[golang]
+disabled = true
+
+[java]
+disabled = true
+
+[package]
+disabled = true
+
+[python]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[terraform]
+disabled = true

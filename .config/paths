@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# Add all paths that will be needed. It does not matter if 
+# for examlpe composer is not installed. It will be ready for 
+# installation
+
+#
+# Node/npm
+#
+# Volta (Node version manager)
+export VOLTA_HOME="$HOME/.volta"
+# Node global packages
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+#
+# Deno
+#
+# Deno path. This is default installation path. 
+# Deno installer said to add this to path
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+#
+# Flutter/Dart/Pub
+#
+# Flutter does not have predefined path, so I choose ~/.flutter
+export PATH="$HOME/.local/share/flutter-sdk/bin:$PATH"
+# Dart global packages. This is path that Dart creates
+export PATH="$HOME/.pub-cache/bin:$PATH"
+
+#
+# PHP/Composer
+#
+# Add composer global packages. It can have one of those two paths 
+# https://getcomposer.org/doc/03-cli.md#composer-home
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+#
+# Python/pip
+#
+# Used for pip when installing system packages for user
+# Othervise it uses /usr/local/bin/ , which is already in path
+export PATH="$HOME/.local/bin:$PATH"
+
