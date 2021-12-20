@@ -15,7 +15,7 @@ BigEcho() {
 
 AptInstall () {
   BigEcho "Installing $1"
-  DEBIAN_FRONTEND="noninteractive" apt install -y $1
+  DEBIAN_FRONTEND="noninteractive" sudo apt install -y $1
   BigEcho "Installed $1"
 }
 

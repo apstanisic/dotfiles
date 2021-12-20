@@ -18,4 +18,4 @@ if [ -e $HOME/.config/aliases ]; then . $HOME/.config/aliases; fi # cargo
 if [ -e $HOME/.cargo/env ]; then . $HOME/.cargo/env; fi # cargo
 
 # NIX
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /home/aleksandar/.nix-profile/etc/profile.d/nix.sh ]; then . /home/aleksandar/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
