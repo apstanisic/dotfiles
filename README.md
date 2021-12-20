@@ -9,7 +9,10 @@ It requires Flatpak to be installed.
 To bootstrap machine, run
 
 ```bash
-curl -fsSL  https://raw.githubusercontent.com/apstanisic/dotfiles/main/machine-setup/install-all.sh | sh
+sudo apt install git
+git clone --branch main https://github.com/apstanisic/dotfiles.git ~/dotfiles
+bash ~/dotfiles/machine-setup/install-all.sh
+
 ```
 
 ## Scripts

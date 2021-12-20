@@ -1,6 +1,7 @@
 #!/bin/bash
 
-. "$(dirname "$0")"/big-echo.sh
+. ~/dotfiles/machine-setup/big-echo.sh
+
 
 # check if ssh file exists
 # use existing if exist

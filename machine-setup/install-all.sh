@@ -1,13 +1,14 @@
 #!/bin/bash
 
-sudo apt install git curl
-git clone --branch main https://github.com/apstanisic/dotfiles.git ~/.dotfiles.temp
+# sudo apt install git curl
+# git clone --branch main https://github.com/apstanisic/dotfiles.git ~/.dotfiles.temp
+
 
 # Add big echo
-. ~/.dotfiles.temp/machine-setup/big-echo.sh
+. ~/dotfiles/machine-setup/big-echo.sh
 
 # Init SSH
-sh ~/.dotfiles.temp/machine-setup/create-ssh.sh
+sh ~/dotfiles/machine-setup/setup-ssh.sh
 
 # Wait until SSH is added to github
 BigEcho "Add SSH public key to Github, since we will need it later"
@@ -15,7 +16,7 @@ BigEcho "Add SSH public key to Github, since we will need it later"
 
 while true;
 do
-  read -p 'Type "yes" when you added the key to GitHub: ' confirmed < /dev/tty
+  read -p 'Type "yes" when you added the key to GitHub: ' confirmed
   echo "$confirmed" ;
 
   if [ "$confirmed" = "yes" ]
@@ -29,12 +30,9 @@ done
 
 BigEcho "Key added, we are continuing installation"
 
-BigEcho "Cloning dotfiles"
-git clone --branch main git@github.com:apstanisic/dotfiles.git ~/dotfiles
-BigEcho "Finished cloning dotfiles"
-
-rm -r ~/.dotfiles.temp
-
 #
-sh ~/.dotfiles/machine-setup/setup-dev-tools.sh
-sh ~/.dotfiles/machine-setup/setup-gui-tools.sh
+sh ~/dotfiles/machine-setup/setup-dev-tools.sh
+sh ~/dotfiles/machine-setup/setup-gui-tools.sh
+
+cd ~/dotfiles && git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+cd ~

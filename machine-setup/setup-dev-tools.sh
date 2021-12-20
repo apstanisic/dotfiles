@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./big-echo.sh
+. ~/dotfiles/machine-setup/big-echo.sh
 
 #
 # Packages from repositories
@@ -66,7 +66,7 @@ fi
 . ~/dotfiles/.config/aliases
 
 BigEcho "Restoring config"
-sh ~/dotfiles/machine-setup/init-stow.sh
+sh ~/dotfiles/machine-setup/sync-dotfiles.sh
 BigEcho "Finished restoring config"
 
 
