@@ -92,6 +92,7 @@ NixInstall nixos.deno
 # Custom bin folder
 # sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin-dir $HOME/.local/bin
 NixInstall nixos.starship
+NixInstall nixos.gh
 # BigEcho "Finished installing Starship prompt"
 
 

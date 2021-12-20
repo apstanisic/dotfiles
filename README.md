@@ -4,6 +4,8 @@ Dotfiles and some scripts that are used to setup Linux machine.
 It's for Pop OS, and it assumes that some Pop repositories, and some changes.
 It requires Flatpak to be installed.
 
+## Installation
+
 To bootstrap machine, run
 
 ```bash
