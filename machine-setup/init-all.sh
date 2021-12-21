@@ -19,7 +19,7 @@ BigEcho "Add SSH public key to Github, since we will need it later"
 
 while true;
 do
-  read -p 'Type "yes" when you added the key to GitHub: ' confirmed
+  read -p 'Type "yes" when you have added the key to GitHub: ' confirmed
   echo "$confirmed" ;
 
   if [ "$confirmed" = "yes" ]

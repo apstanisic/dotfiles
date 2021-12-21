@@ -107,6 +107,10 @@ NixInstall nixpkgs.starship
 NixInstall nixpkgs.gh
 # better tmux 
 NixInstall nixpkgs.zellij
+# better cat
+NixInstall nixpkgs.bat
+# better ls
+NixInstall nixpkgs.exa
 
 # BigEcho "Finished installing Starship prompt"
 
