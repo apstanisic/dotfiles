@@ -75,6 +75,9 @@ BigEcho "Finished restoring config"
 
 BigEcho "Installing Nix"
 curl -L https://nixos.org/nix/install | sh
+# Source NIX so we can use it later
+# We need to source it after Nix is installed
+. /home/aleksandar/.nix-profile/etc/profile.d/nix.sh;
 BigEcho "Installed Nix"
 
 # Install volta (Node installer)
