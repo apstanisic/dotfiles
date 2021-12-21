@@ -95,12 +95,19 @@ VoltaInstall tldr
 # Nest CLI
 VoltaInstall @nestjs/cli
 
-NixInstall nixos.deno
 # BigEcho "Installing Starship prompt"
 # Custom bin folder
 # sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin-dir $HOME/.local/bin
-NixInstall nixos.starship
-NixInstall nixos.gh
+
+# Deno 
+NixInstall nixpkgs.deno
+# shell prompt
+NixInstall nixpkgs.starship
+# github cli
+NixInstall nixpkgs.gh
+# better tmux 
+NixInstall nixpkgs.zellij
+
 # BigEcho "Finished installing Starship prompt"
 
 
