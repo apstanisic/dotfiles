@@ -85,7 +85,8 @@ BigEcho "Installed Volta"
 # Install Node
 VoltaInstall node@lts
 # Install Yarn and pnpm
-VoltaInstall yarn pnpm
+VoltaInstall yarn
+VoltaInstall pnpm
 # Prettier git diff
 VoltaInstall diff-so-fancy
 # Global Typescript

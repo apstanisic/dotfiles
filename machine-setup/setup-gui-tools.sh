@@ -21,6 +21,7 @@ AptInstall fonts-firacode
 AptInstall fonts-roboto
 AptInstall fonts-font-awesome
 AptInstall tilix
+AptInstall alacritty
 AptInstall gnome-tweaks
 AptInstall brave-browser
 # It's available in PopOS by default
