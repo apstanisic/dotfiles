@@ -90,8 +90,6 @@ VoltaInstall node@lts
 # Install Yarn and pnpm
 VoltaInstall yarn
 VoltaInstall pnpm
-# Prettier git diff
-VoltaInstall diff-so-fancy
 # Global Typescript
 VoltaInstall typescript
 # Cheatsheet
@@ -115,6 +113,12 @@ NixInstall nixpkgs.zellij
 NixInstall nixpkgs.bat
 # better ls
 NixInstall nixpkgs.exa
+# better grep
+NixInstall nixpkgs.ripgrep
+# Fuzzy finder
+NixInstall nixpkgs.fzf
+# better git diff
+NixInstall nixpkgs.delta
 
 # BigEcho "Finished installing Starship prompt"
 

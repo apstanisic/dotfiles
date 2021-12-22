@@ -12,6 +12,12 @@ alias c='clear'
 # Show hidden files
 alias la='ls -a'
 
+alias x='exa --icons --group-directories-first'
+alias xa='x -a'
+alias xx='x -al'
+alias tree='x --tree'
+
+
 # Copy recursively by default
 alias cp='cp -R'
 
@@ -78,10 +84,15 @@ alias open='xdg-open'
 # Install/Update starship prompt with proper location
 # --yes is to not ask for confirmation,
 # and --bin-dir is location, so we don't need root to install
-alias install_starship='sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin-dir $HOME/.local/bin'
+install_starship() {
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin-dir $HOME/.local/bin
+}
 
 # Update Zim and it's plugins
-alias update_zim='zimfw upgrade && zimfw update'
+update_zim() {
+    zimfw upgrade
+    zimfw update
+}
 
 #  Update Zim and Starship
 update_shell()
