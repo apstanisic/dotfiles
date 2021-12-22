@@ -87,19 +87,14 @@ BigEcho "Installed Volta"
 
 # Install Node
 VoltaInstall node@lts
-# Install Yarn and pnpm
+# Some packages
 VoltaInstall yarn
 VoltaInstall pnpm
-# Global Typescript
 VoltaInstall typescript
+VoltaInstall @nestjs/cli
 # Cheatsheet
 VoltaInstall tldr
-# Nest CLI
-VoltaInstall @nestjs/cli
 
-# BigEcho "Installing Starship prompt"
-# Custom bin folder
-# sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin-dir $HOME/.local/bin
 
 # Deno 
 NixInstall nixpkgs.deno
@@ -119,9 +114,6 @@ NixInstall nixpkgs.ripgrep
 NixInstall nixpkgs.fzf
 # better git diff
 NixInstall nixpkgs.delta
-
-# BigEcho "Finished installing Starship prompt"
-
 
 
 # echo  "Installing zim (framework for zsh)"
