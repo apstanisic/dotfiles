@@ -14,6 +14,9 @@ truncation_length = 8
 truncate_to_repo = false
 style = "bold blue"
 
+[rust]
+disabled = false
+
 #
 # Disable all modules that I don't need
 # 
@@ -42,9 +45,6 @@ disabled = true
 disabled = true
 
 [ruby]
-disabled = true
-
-[rust]
 disabled = true
 
 [terraform]

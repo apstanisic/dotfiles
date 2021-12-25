@@ -114,6 +114,9 @@ NixInstall nixpkgs.ripgrep
 NixInstall nixpkgs.fzf
 # better git diff
 NixInstall nixpkgs.delta
+# better find
+NixInstall nixpkgs.fd
+
 
 
 # echo  "Installing zim (framework for zsh)"

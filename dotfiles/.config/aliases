@@ -40,7 +40,8 @@ alias sa='sudo apt'
 alias ai='sudo apt install'
 alias au='sudo apt update'
 alias auu='sudo apt update && sudo apt upgrade -y && sudo apt autoremove'
-alias update='auu && flatpak update -y'
+alias nxuu='nix-channel --update && nix-env -u'
+alias update='auu && flatpak update -y && nxuu'
 alias u='update'
 
 # Check weather in terminal for current IP
