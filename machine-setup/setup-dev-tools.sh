@@ -36,7 +36,6 @@ AptInstall sqlite3
 AptInstall stow
 # docker
 AptInstall docker.io
-AptInstall docker-compose
 
 #
 # Other installs and config
@@ -113,7 +112,8 @@ NixInstall nixpkgs.ncdu
 NixInstall nixpkgs.htop
 # multiplexer
 NixInstall nixpkgs.tmux
-
+# docker compose
+NixInstall nixpkgs.docker-compose
 
 # echo  "Installing zim (framework for zsh)"
 # curl -fLo ~/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh --create-dirs

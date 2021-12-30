@@ -14,7 +14,7 @@ BigEcho "Finished Brave Setup"
 
 
 # Remove .deb libre office
-sudo apt purge -y libreoffice-*
+sudo apt purge -y libreoffice*
 
 # Update and upgrade
 sudo apt update
