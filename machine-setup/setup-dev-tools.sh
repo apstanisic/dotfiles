@@ -21,9 +21,6 @@ AptInstall git
 AptInstall vim
 AptInstall curl
 AptInstall wget
-# copy manager. I switched to walyand because of screen tearing.
-# This is for X.org
-# AptInstall xclip
 # open ssl
 AptInstall libssl-dev
 # needed to build software
