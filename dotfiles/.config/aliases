@@ -12,6 +12,7 @@ alias c='clear'
 # Show hidden files
 alias la='ls -a'
 
+# Better "ls"
 alias x='exa --icons --group-directories-first'
 alias xa='x -a'
 alias xx='x -al'
@@ -25,7 +26,6 @@ alias cp='cp -R'
 alias cdc='cd ~ && clear'
 
 # Docker Compose
-alias dcm='docker-compose'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 
@@ -76,8 +76,9 @@ alias ..........='cd ../../../../../../../../..'
 # Enter Downloads folder
 alias dw='cd ~/Downloads'
 
-# Copy file to clipboard
-alias cb='xclip -sel c < '
+# Copy file to clipboard. Does not work in wayland
+# cb file.txt
+# alias cb='xclip -sel c < '
 
 # Open file with proper app
 alias open='xdg-open'
@@ -89,11 +90,6 @@ update_zim() {
     zimfw update
 }
 
-#  Update Zim and Starship
-update_shell()
-{
-    zimfw upgrade && zimfw update
-}
 
 # Install flutter with all dependecies for Linux desktop development
 install_flutter()

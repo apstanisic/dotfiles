@@ -159,3 +159,7 @@ fi
 
 # History search not working in vi mode
 bindkey '^r' history-incremental-search-backward
+
+# zoxide navigation
+eval "$(zoxide init zsh)"
+

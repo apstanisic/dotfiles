@@ -13,6 +13,9 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 BigEcho "Finished Brave Setup"
 
 
+# Remove .deb libre office
+sudo apt purge -y libreoffice-*
+
 # Update and upgrade
 sudo apt update
 sudo apt upgrade
@@ -51,6 +54,9 @@ FlatpakInstall com.tutanota.Tutanota
 FlatpakInstall com.transmissionbt.Transmission
 # Calibre (books)
 FlatpakInstall com.calibre_ebook.calibre
+# Libre Office
+FlatpakInstall org.libreoffice.LibreOffice
+
 # Github Desktop
 # FlatpakInstall io.github.shiftey.Desktop
 # Postman

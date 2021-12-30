@@ -21,14 +21,9 @@ AptInstall git
 AptInstall vim
 AptInstall curl
 AptInstall wget
-# copy manager
-AptInstall xclip
-# multiplexer
-AptInstall tmux
-# system monitor
-AptInstall htop
-# see what files takes space
-AptInstall ncdu
+# copy manager. I switched to walyand because of screen tearing.
+# This is for X.org
+# AptInstall xclip
 # open ssl
 AptInstall libssl-dev
 # needed to build software
@@ -38,9 +33,8 @@ AptInstall p7zip-full
 # android tools
 AptInstall android-tools-adb
 AptInstall android-tools-fastboot
-#
+# Sqlite
 AptInstall sqlite3
-AptInstall neovim
 # dotfile manager
 AptInstall stow
 # docker
@@ -51,8 +45,6 @@ AptInstall docker-compose
 # Other installs and config
 # We first need our dotfiles, so we can have configured paths and aliases
 #
-
-
 
 # cloning problem
 if [ -d "$HOME/dotfiles" ]; then
@@ -116,7 +108,14 @@ NixInstall nixpkgs.fzf
 NixInstall nixpkgs.delta
 # better find
 NixInstall nixpkgs.fd
-
+# Neovim
+NixInstall nixpkgs.neovim
+# see what files takes space
+NixInstall nixpkgs.ncdu
+# Htop
+NixInstall nixpkgs.htop
+# multiplexer
+NixInstall nixpkgs.tmux
 
 
 # echo  "Installing zim (framework for zsh)"
