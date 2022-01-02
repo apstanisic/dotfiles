@@ -21,6 +21,8 @@ alias tree='x --tree'
 
 # Copy recursively by default
 alias cp='cp -R'
+# Better copy with progress bar, so I know operation is not stuck
+# alias rs='rsync -a --info=progress2 -h --no-i-r'
 
 # Go to home folder and clear screen
 alias cdc='cd ~ && clear'

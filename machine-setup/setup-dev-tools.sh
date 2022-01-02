@@ -9,6 +9,16 @@ BigEcho "Updating repositories"
 sudo apt update -y & sudo apt upgrade -y
 BigEcho "Finished updating repositories"
 
+AptInstall curl
+
+# Nix only needs curl and xz-utils to be installed
+BigEcho "Installing Nix"
+curl -L https://nixos.org/nix/install | sh
+# Source NIX so we can use it later
+# We need to source it after Nix is installed
+. /home/aleksandar/.nix-profile/etc/profile.d/nix.sh;
+BigEcho "Installed Nix"
+
 AptInstall zsh
 
 BigEcho "Setting zsh as default shell"
@@ -18,8 +28,6 @@ BigEcho "Finished settings zsh as default shell"
 # needed for tools
 AptInstall apt-transport-https
 AptInstall git
-AptInstall vim
-AptInstall curl
 AptInstall wget
 # open ssl
 AptInstall libssl-dev
@@ -61,12 +69,6 @@ sh ~/dotfiles/machine-setup/sync-dotfiles.sh
 BigEcho "Finished restoring config"
 
 
-BigEcho "Installing Nix"
-curl -L https://nixos.org/nix/install | sh
-# Source NIX so we can use it later
-# We need to source it after Nix is installed
-. /home/aleksandar/.nix-profile/etc/profile.d/nix.sh;
-BigEcho "Installed Nix"
 
 # Install volta (Node installer)
 BigEcho "Installing Volta"
@@ -106,6 +108,8 @@ NixInstall nixpkgs.delta
 NixInstall nixpkgs.fd
 # Neovim
 NixInstall nixpkgs.neovim
+# Vim
+NixInstall nixpkgs.vim
 # see what files takes space
 NixInstall nixpkgs.ncdu
 # Htop
@@ -114,6 +118,10 @@ NixInstall nixpkgs.htop
 NixInstall nixpkgs.tmux
 # docker compose
 NixInstall nixpkgs.docker-compose
+# Better cp
+NixInstall nixpkgs.rsync
+# Sync with cloud providers and encrypt
+NixInstall nixpkgs.rclone
 
 # echo  "Installing zim (framework for zsh)"
 # curl -fLo ~/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh --create-dirs
