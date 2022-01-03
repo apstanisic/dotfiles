@@ -18,6 +18,7 @@ alias xa='x -a'
 alias xx='x -al'
 alias tree='x --tree'
 
+alias tr='trash-put'
 
 # Copy recursively by default
 alias cp='cp -R'

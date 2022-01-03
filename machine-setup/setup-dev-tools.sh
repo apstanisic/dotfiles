@@ -122,6 +122,8 @@ NixInstall nixpkgs.docker-compose
 NixInstall nixpkgs.rsync
 # Sync with cloud providers and encrypt
 NixInstall nixpkgs.rclone
+# rm with support for trash
+NixInstall nixpkgs.trash-cli
 
 # echo  "Installing zim (framework for zsh)"
 # curl -fLo ~/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh --create-dirs
