@@ -9,6 +9,9 @@ alias e='exit'
 # Clear screen
 alias c='clear'
 
+# Go to home folder and clear screen
+alias cdc='cd ~ && clear'
+
 # Show hidden files
 alias la='ls -a'
 
@@ -18,6 +21,7 @@ alias xa='x -a'
 alias xx='x -al'
 alias tree='x --tree'
 
+# Put files in trash instead of removing them
 alias tr='trash-put'
 
 # Copy recursively by default
@@ -25,8 +29,6 @@ alias cp='cp -R'
 # Better copy with progress bar, so I know operation is not stuck
 # alias rs='rsync -a --info=progress2 -h --no-i-r'
 
-# Go to home folder and clear screen
-alias cdc='cd ~ && clear'
 
 # Docker Compose
 alias dcu='docker-compose up'
@@ -43,8 +45,8 @@ alias sa='sudo apt'
 alias ai='sudo apt install'
 alias au='sudo apt update'
 alias auu='sudo apt update && sudo apt upgrade -y && sudo apt autoremove'
-alias nxuu='nix-channel --update && nix-env -u'
-alias update='auu && flatpak update -y && nxuu'
+# Update all packages
+alias update='topgrade'
 alias u='update'
 
 # Check weather in terminal for current IP
@@ -76,24 +78,16 @@ alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
 alias ..........='cd ../../../../../../../../..'
 
-# Enter Downloads folder
-alias dw='cd ~/Downloads'
 
 # Copy file to clipboard. Does not work in wayland
 # cb file.txt
 # alias cb='xclip -sel c < '
 
-# Open file with proper app
+# Open file with gui app
 alias open='xdg-open'
 
-
-# Update Zim and it's plugins
-update_zim() {
-    zimfw upgrade
-    zimfw update
-}
-
-
+# Maybe use Nix
+# Or fvm
 # Install flutter with all dependecies for Linux desktop development
 install_flutter()
 {

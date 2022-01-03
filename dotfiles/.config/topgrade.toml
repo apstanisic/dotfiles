@@ -1,0 +1,24 @@
+only = ["system", "flatpak", "nix", "cargo", "composer", "deno", "flutter", "gnome_shell_extensions", "node", "pip3", "pnpm", "tldr", "vim", "custom_commands"]
+
+# pnpm does not work currently
+# npm is always updating 250 packages. IDK why
+disable = ["pnpm", "node"]
+
+assume_yes = true
+
+cleanup = true
+
+[composer]
+self_update = true
+
+[npm]
+use_sudo = false
+
+[flatpak]
+use_sudo = false
+
+[commands]
+# "Volta" = "echo todo_volta"
+# topgrade runs this command with "zsh -c" which does not source
+# .zshrc, where zim puts it's function, so we source zimfw manually
+"Zim" = "source ${ZIM_HOME}/init.zsh && zimfw upgrade && zimfw update"

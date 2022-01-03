@@ -83,7 +83,6 @@ VoltaInstall pnpm
 VoltaInstall typescript
 VoltaInstall @nestjs/cli
 # Cheatsheet
-VoltaInstall tldr
 
 
 # Deno 
@@ -124,6 +123,10 @@ NixInstall nixpkgs.rsync
 NixInstall nixpkgs.rclone
 # rm with support for trash
 NixInstall nixpkgs.trash-cli
+# update all packages 
+NixInstall nixpkgs.topgrade
+# Cheatsheet (c client)
+NixInstall nixpkgs.tldr
 
 # echo  "Installing zim (framework for zsh)"
 # curl -fLo ~/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh --create-dirs
