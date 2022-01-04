@@ -163,3 +163,6 @@ bindkey '^r' history-incremental-search-backward
 # zoxide navigation
 eval "$(zoxide init zsh)"
 
+# Better history search
+export MCFLY_KEY_SCHEME=vim
+eval "$(mcfly init zsh)"

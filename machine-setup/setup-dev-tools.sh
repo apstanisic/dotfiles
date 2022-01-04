@@ -127,6 +127,12 @@ NixInstall nixpkgs.trash-cli
 NixInstall nixpkgs.topgrade
 # Cheatsheet (c client)
 NixInstall nixpkgs.tldr
+# Better ctrl+r
+NixInstall nixpkgs.mcfly
+# httpie in rust, similar as curl
+NixInstall nixpkgs.xh
+# better df
+NixInstall nixpkgs.duf
 
 # echo  "Installing zim (framework for zsh)"
 # curl -fLo ~/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh --create-dirs

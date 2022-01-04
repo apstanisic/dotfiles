@@ -13,13 +13,14 @@ alias c='clear'
 alias cdc='cd ~ && clear'
 
 # Show hidden files
-alias la='ls -a'
+alias la='ls -A'
 
 # Better "ls"
 alias x='exa --icons --group-directories-first'
 alias xa='x -a'
 alias xx='x -al'
 alias tree='x --tree'
+
 
 # Put files in trash instead of removing them
 alias tr='trash-put'
@@ -43,8 +44,7 @@ alias kl='killall -9'
 # apt
 alias sa='sudo apt'
 alias ai='sudo apt install'
-alias au='sudo apt update'
-alias auu='sudo apt update && sudo apt upgrade -y && sudo apt autoremove'
+
 # Update all packages
 alias update='topgrade'
 alias u='update'
@@ -68,6 +68,9 @@ alias gp='git push'
 # gs is already used in Ubuntu for ghostscript
 alias gst='git status'
 
+# Open file with gui app
+alias open='xdg-open'
+
 # Alias to go up the path
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -83,8 +86,6 @@ alias ..........='cd ../../../../../../../../..'
 # cb file.txt
 # alias cb='xclip -sel c < '
 
-# Open file with gui app
-alias open='xdg-open'
 
 # Maybe use Nix
 # Or fvm
