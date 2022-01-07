@@ -2,7 +2,7 @@ only = ["system", "flatpak", "nix", "cargo", "composer", "deno", "flutter", "gno
 
 # pnpm does not work currently
 # npm is always updating 250 packages. IDK why
-disable = ["pnpm", "node"]
+disable = ["pnpm", "node", "flutter"]
 
 assume_yes = true
 

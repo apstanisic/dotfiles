@@ -10,6 +10,7 @@ sudo apt update -y & sudo apt upgrade -y
 BigEcho "Finished updating repositories"
 
 AptInstall curl
+AptInstall zsh
 
 # Nix only needs curl and xz-utils to be installed
 BigEcho "Installing Nix"
@@ -19,38 +20,27 @@ curl -L https://nixos.org/nix/install | sh
 . /home/aleksandar/.nix-profile/etc/profile.d/nix.sh;
 BigEcho "Installed Nix"
 
-AptInstall zsh
 
 BigEcho "Setting zsh as default shell"
 chsh -s /usr/bin/zsh aleksandar
 BigEcho "Finished settings zsh as default shell"
 
-# needed for tools
+# Common apt packages
+# Prefer nix packages if available, unless it's "core" package
 AptInstall apt-transport-https
 AptInstall git
 AptInstall wget
-# open ssl
 AptInstall libssl-dev
-# needed to build software
 AptInstall build-essential
-# compression
 AptInstall p7zip-full
+# dotfile manager
+AptInstall stow
+AptInstall docker.io
 # android tools
 AptInstall android-tools-adb
 AptInstall android-tools-fastboot
-# Sqlite
-AptInstall sqlite3
-# dotfile manager
-AptInstall stow
-# docker
-AptInstall docker.io
 
-#
-# Other installs and config
 # We first need our dotfiles, so we can have configured paths and aliases
-#
-
-# cloning problem
 if [ -d "$HOME/dotfiles" ]; then
   BigEcho "dotfiles already cloned"
 else
@@ -70,29 +60,13 @@ BigEcho "Finished restoring config"
 
 
 
-# Install volta (Node installer)
-BigEcho "Installing Volta"
-curl https://get.volta.sh | bash
-BigEcho "Installed Volta"
-
-# Install Node
-VoltaInstall node@lts
-# Some packages
-VoltaInstall yarn
-VoltaInstall pnpm
-VoltaInstall typescript
-VoltaInstall @nestjs/cli
-# Cheatsheet
 
 
-# Deno 
-NixInstall nixpkgs.deno
+
+# CLI tools
+#
 # shell prompt
 NixInstall nixpkgs.starship
-# github cli
-NixInstall nixpkgs.gh
-# better tmux 
-NixInstall nixpkgs.zellij
 # better cat
 NixInstall nixpkgs.bat
 # better ls
@@ -115,8 +89,6 @@ NixInstall nixpkgs.ncdu
 NixInstall nixpkgs.htop
 # multiplexer
 NixInstall nixpkgs.tmux
-# docker compose
-NixInstall nixpkgs.docker-compose
 # Better cp
 NixInstall nixpkgs.rsync
 # Sync with cloud providers and encrypt
@@ -133,8 +105,32 @@ NixInstall nixpkgs.mcfly
 NixInstall nixpkgs.xh
 # better df
 NixInstall nixpkgs.duf
+# better tmux 
+NixInstall nixpkgs.zellij
 
-# echo  "Installing zim (framework for zsh)"
-# curl -fLo ~/.zim/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh --create-dirs
-# zsh ~/.zim/zimfw.zsh install
-# echo  "Finished installing zim"
+# Dev
+#
+# Deno 
+NixInstall nixpkgs.deno
+# docker compose
+NixInstall nixpkgs.docker-compose
+# Install Flutter
+NixInstall nixpkgs.flutter
+# github cli
+NixInstall nixpkgs.gh
+# Sqlite
+NixInstall nixpkgs.sqlite
+
+# Node
+#
+#Install volta (Node installer)
+BigEcho "Installing Volta"
+curl https://get.volta.sh | bash
+BigEcho "Installed Volta"
+# Install Node and global packages
+VoltaInstall node@lts
+VoltaInstall yarn
+VoltaInstall pnpm
+VoltaInstall typescript
+VoltaInstall @nestjs/cli
+

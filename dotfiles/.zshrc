@@ -166,3 +166,6 @@ eval "$(zoxide init zsh)"
 # Better history search
 export MCFLY_KEY_SCHEME=vim
 eval "$(mcfly init zsh)"
+
+# Set flutter to use brave instead of forcing me to install Chrome
+export CHROME_EXECUTABLE="/opt/brave.com/brave/brave-browser"
