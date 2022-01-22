@@ -72,6 +72,7 @@ alias gc='git commit'
 alias gd='git diff'
 alias gp='git push'
 # gs is already used in Ubuntu for ghostscript
+alias gs='git status'
 alias gst='git status'
 
 # Open file with gui app
