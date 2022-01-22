@@ -24,13 +24,11 @@ AptInstall fonts-firacode
 AptInstall fonts-roboto
 AptInstall fonts-font-awesome
 AptInstall tilix
-AptInstall alacritty
+# AptInstall alacritty
 AptInstall gnome-tweaks
 AptInstall brave-browser
 # It's available in PopOS by default
 AptInstall code
-# It's available in PopOS by default
-AptInstall lutris
 # Drag and drop does not work in Flatpak version
 AptInstall celluloid
 
@@ -47,7 +45,7 @@ FlatpakInstall io.dbeaver.DBeaverCommunity
 # Viber
 FlatpakInstall com.viber.Viber
 # Tor Browser
-FlatpakInstall com.github.micahflee.torbrowser-launcher
+# FlatpakInstall com.github.micahflee.torbrowser-launcher
 # Tutanota (email)
 FlatpakInstall com.tutanota.Tutanota
 # Transmission (torrent)
@@ -56,15 +54,10 @@ FlatpakInstall com.transmissionbt.Transmission
 FlatpakInstall com.calibre_ebook.calibre
 # Libre Office
 FlatpakInstall org.libreoffice.LibreOffice
-# Proton for games updater
-FlatpakInstall net.davidotek.pupgui2
 
 # Github Desktop
 # FlatpakInstall io.github.shiftey.Desktop
 # Postman
 # FlatpakInstall com.getpostman.Postman
-
-# changed swappines from 60 to 10
-# vim /etc/sysctl.conf
 
 dconf load / < "$HOME/dotfiles/machine-setup/manual-dconf-backup.dconf"
