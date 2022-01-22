@@ -16,10 +16,16 @@ alias cdc='cd ~ && clear'
 alias la='ls -A'
 
 # Better "ls"
-alias x='exa --icons --group-directories-first'
-alias xa='x -a'
-alias xx='x -al'
-alias tree='x --tree'
+# Short 
+alias xs='exa --icons --group-directories-first'
+# Short with hidden
+alias xa='xs -a'
+# Long without hidden
+alias x='xs -l'
+# Long with hidden
+alias xx='xs -al'
+# tree
+alias tree='xs --tree'
 
 
 # Put files in trash instead of removing them

@@ -27,6 +27,8 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/share/flutter-sdk/bin:$PATH"
 # Dart global packages. This is path that Dart creates
 export PATH="$HOME/.pub-cache/bin:$PATH"
+# For FVM
+export PATH="$HOME/.fvm/default/bin:$PATH"
 
 #
 # PHP/Composer

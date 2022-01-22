@@ -1,5 +1,9 @@
 only = ["system", "flatpak", "nix", "cargo", "composer", "deno", "flutter", "gnome_shell_extensions", "node", "pip3", "pnpm", "tldr", "vim", "custom_commands"]
 
+# Ignore failures for these steps
+# Ignore all failures
+ignore_failures = ["system", "flatpak", "nix", "cargo", "composer", "deno", "flutter", "gnome_shell_extensions", "node", "pip3", "pnpm", "tldr", "vim", "custom_commands"]
+
 # pnpm does not work currently
 # npm is always updating 250 packages. IDK why
 disable = ["pnpm", "node", "flutter"]

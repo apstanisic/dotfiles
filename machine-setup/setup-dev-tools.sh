@@ -59,10 +59,6 @@ sh ~/dotfiles/machine-setup/sync-dotfiles.sh
 BigEcho "Finished restoring config"
 
 
-
-
-
-
 # CLI tools
 #
 # shell prompt
@@ -91,13 +87,13 @@ NixInstall nixpkgs.htop
 NixInstall nixpkgs.tmux
 # Better cp
 NixInstall nixpkgs.rsync
-# Sync with cloud providers and encrypt
+# Sync and encrypt with cloud providers
 NixInstall nixpkgs.rclone
 # rm with support for trash
 NixInstall nixpkgs.trash-cli
 # update all packages 
 NixInstall nixpkgs.topgrade
-# Cheatsheet (c client)
+# Cheatsheet (c version)
 NixInstall nixpkgs.tldr
 # Better ctrl+r
 NixInstall nixpkgs.mcfly
@@ -114,7 +110,7 @@ NixInstall nixpkgs.zellij
 NixInstall nixpkgs.deno
 # docker compose
 NixInstall nixpkgs.docker-compose
-# Install Flutter
+# Flutter
 NixInstall nixpkgs.flutter
 # github cli
 NixInstall nixpkgs.gh

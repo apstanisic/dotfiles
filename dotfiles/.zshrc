@@ -169,3 +169,4 @@ eval "$(mcfly init zsh)"
 
 # Set flutter to use brave instead of forcing me to install Chrome
 export CHROME_EXECUTABLE="/opt/brave.com/brave/brave-browser"
+export FVM_HOME="$HOME/.fvm"
