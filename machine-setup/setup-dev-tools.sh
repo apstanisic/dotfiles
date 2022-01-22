@@ -79,8 +79,8 @@ NixInstall nixpkgs.fd
 NixInstall nixpkgs.neovim
 # Vim
 NixInstall nixpkgs.vim
-# see what files takes space
-NixInstall nixpkgs.ncdu
+# see what files takes space (Better ncdu)
+NixInstall nixpkgs.gdu
 # Htop
 NixInstall nixpkgs.htop
 # multiplexer
@@ -103,6 +103,8 @@ NixInstall nixpkgs.xh
 NixInstall nixpkgs.duf
 # better tmux 
 NixInstall nixpkgs.zellij
+# jumper
+NixInstall nixpkgs.zoxide
 
 # Dev
 #

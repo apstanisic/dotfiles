@@ -56,6 +56,8 @@ FlatpakInstall com.transmissionbt.Transmission
 FlatpakInstall com.calibre_ebook.calibre
 # Libre Office
 FlatpakInstall org.libreoffice.LibreOffice
+# Proton for games updater
+FlatpakInstall net.davidotek.pupgui2
 
 # Github Desktop
 # FlatpakInstall io.github.shiftey.Desktop
