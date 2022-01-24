@@ -2,10 +2,11 @@
 add_newline = false
 
 # For some reason default char is to big in my terminal
+# You must have Nerd Fonts installed
 [character]
-success_symbol= "[➜](green)"
-error_symbol= "[✖](red)"
-vicmd_symbol = "[➜](bold blue)"
+success_symbol= "[](green)"
+error_symbol= "[](red)"
+vicmd_symbol = "[](bold blue)"
 
 [directory]
 # Show max 8 directories
