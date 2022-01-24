@@ -112,8 +112,6 @@ NixInstall nixpkgs.zoxide
 NixInstall nixpkgs.deno
 # docker compose
 NixInstall nixpkgs.docker-compose
-# Flutter
-NixInstall nixpkgs.flutter
 # github cli
 NixInstall nixpkgs.gh
 # Sqlite
