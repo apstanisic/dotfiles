@@ -88,6 +88,7 @@ alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
 alias ..........='cd ../../../../../../../../..'
 
+alias "cloud-sync"="rclone sync --progress /home/aleksandar/HDD/Media KoofrEncrpypted:"
 
 # Copy file to clipboard. Does not work in wayland
 # cb file.txt
@@ -104,4 +105,5 @@ install_flutter()
     flutter precache
     flutter config --enable-linux-desktop
 }
+
 
