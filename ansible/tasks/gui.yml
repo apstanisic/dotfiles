@@ -8,6 +8,8 @@
   apt:
     name: tilix
 - name: Install vscode
+  # Not available in ubuntu, only in pop-os
+  ignore_errors: yes
   become: true
   apt:
     name: code
@@ -19,27 +21,14 @@
       - fonts-roboto
       - fonts-font-awesome
 - name: Install common Flatpak apps
+  # Not available in ubuntu, only in pop-os
+  ignore_errors: yes
   community.general.flatpak:
     name:
-      # Spotify
       - com.spotify.Client
-      # Stremio
       - com.stremio.Stremio
-      # DBeaver
       - io.dbeaver.DBeaverCommunity
-      # Transmission (torrent)
       - com.transmissionbt.Transmission
-      # Calibre (books)
       - com.calibre_ebook.calibre
-      # Libre Office
       - org.libreoffice.LibreOffice
-      # Video Player
       - io.github.celluloid_player.Celluloid
-      # Tutanota (email)
-      # - com.tutanota.Tutanota
-      # Viber
-      # - com.viber.Viber
-      # Wine Prefix Manager (in gaming.yml)
-      # - com.usebottles.bottles
-      # Tor Browser
-      # - com.github.micahflee.torbrowser-launcher

@@ -1,6 +1,6 @@
 - name: Install Lutris
   become: true
-  ansible.builtin.apt:
+  apt:
     name: lutris
   tags:
     - gaming

@@ -6,6 +6,10 @@
     inst: "nix-env -iA nixpkgs"
     nix_inst: "{{ set_src }} {{ inst }}"
   block:
+    - name: Install starship
+      shell: "{{ nix_inst }}.starship"
+    - name: Install bat
+      shell: "{{ nix_inst }}.bat"
     - name: Install exa
       shell: "{{ nix_inst }}.exa"
     - name: Install ripgrep
