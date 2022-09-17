@@ -5,6 +5,7 @@ alias v='nvim'
 
 # Exit terminal
 alias e='exit'
+alias q='exit'
 
 # Clear screen
 alias c='clear'
@@ -88,22 +89,9 @@ alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
 alias ..........='cd ../../../../../../../../..'
 
-alias "cloud-sync"="rclone sync --progress /home/aleksandar/HDD/Media KoofrEncrpypted:"
+alias cloud-sync="rclone sync --progress /home/aleksandar/HDD/Media KoofrEncrpypted:"
 
 # Copy file to clipboard. Does not work in wayland
 # cb file.txt
 # alias cb='xclip -sel c < '
-
-
-# Maybe use Nix
-# Or fvm
-# Install flutter with all dependecies for Linux desktop development
-install_flutter()
-{
-    git clone https://github.com/flutter/flutter.git -b stable --depth 1 ~/.local/share/flutter-sdk
-    sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev
-    flutter precache
-    flutter config --enable-linux-desktop
-}
-
 

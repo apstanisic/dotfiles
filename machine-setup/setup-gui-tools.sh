@@ -23,14 +23,13 @@ sudo apt upgrade
 AptInstall fonts-firacode
 AptInstall fonts-roboto
 AptInstall fonts-font-awesome
+
+# Terminal
 AptInstall tilix
-# AptInstall alacritty
-AptInstall gnome-tweaks
+# Browser
 AptInstall brave-browser
-# It's available in PopOS by default
+# VSCode (available in pop os repo by default)
 AptInstall code
-# Drag and drop does not work in Flatpak version
-AptInstall celluloid
 
 
 #
@@ -54,6 +53,10 @@ FlatpakInstall com.transmissionbt.Transmission
 FlatpakInstall com.calibre_ebook.calibre
 # Libre Office
 FlatpakInstall org.libreoffice.LibreOffice
+# Video Player
+FlatpakInstall io.github.celluloid_player.Celluloid
+# Wine Prefix Manager
+FlatpakInstall com.usebottles.bottles
 
 # Github Desktop
 # FlatpakInstall io.github.shiftey.Desktop

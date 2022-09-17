@@ -1,0 +1,16 @@
+- name: Install packages
+  become: true
+  apt:
+    pkg:
+      - curl
+      - apt-transport-https
+      - git
+      - wget
+      - libssl-dev
+      - build-essential
+      - zip
+      - p7zip-full
+      - stow
+      - docker.io
+      - android-tools-adb
+      - android-tools-fastboot

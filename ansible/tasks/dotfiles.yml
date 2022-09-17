@@ -1,0 +1,20 @@
+- name: Install git and stow
+  become: true
+  apt:
+    pkg:
+      - git
+      - stow
+  tags: 
+    - dotfiles
+- name: Clone dotfiles repo
+  ansible.builtin.git:
+    repo: 'https://github.com/apstanisic/dotfiles.git'
+    dest: '{{ ansible_env.HOME }}/dotfiles'
+    version: main
+  tags:
+    - dotfiles
+- name: Sync dotfiles
+  shell: stow --no-folding --target $HOME --dir $HOME/dotfiles --adopt dotfiles
+  tags:
+    - dotfiles
+

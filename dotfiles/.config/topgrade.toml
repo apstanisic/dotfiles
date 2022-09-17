@@ -1,28 +1,39 @@
-only = ["system", "flatpak", "nix", "cargo", "composer", "deno", "flutter", "gnome_shell_extensions", "node", "pip3", "pnpm", "tldr", "vim", "custom_commands"]
+only = [
+  "system",
+  "flatpak",
+  "nix",
+  "deno",
+  "node",
+  "custom_commands",
+  "tldr",
+  "gnome_shell_extensions",
+  "cargo",
+  "rustup",
+  "composer"
+]
 
-# Ignore failures for these steps
-# Ignore all failures
-ignore_failures = ["system", "flatpak", "nix", "cargo", "composer", "deno", "flutter", "gnome_shell_extensions", "node", "pip3", "pnpm", "tldr", "vim", "custom_commands"]
 
-# pnpm does not work currently
-# npm is always updating 250 packages. IDK why
-disable = ["pnpm", "node", "flutter"]
+# Do not stop execution and ask me to retry
+no_retry = true
 
+# Don't ask for confirmation
 assume_yes = true
 
+# Remove temporary files
 cleanup = true
 
+# Update composer if installed and outdated
 [composer]
 self_update = true
 
+# npm should never use sudo 
+# It should be installed with fnm, which does not require sudo
 [npm]
 use_sudo = false
 
-[flatpak]
-use_sudo = false
-
+# Custom commands
 [commands]
-# "Volta" = "echo todo_volta"
 # topgrade runs this command with "zsh -c" which does not source
 # .zshrc, where zim puts it's function, so we source zimfw manually
-"Zim" = "source ${ZIM_HOME}/init.zsh && zimfw upgrade && zimfw update"
+"Zim" = "source $HOME/.zim/init.zsh && zimfw upgrade && zimfw update"
+

@@ -2,6 +2,7 @@
 add_newline = false
 
 # For some reason default char is to big in my terminal
+# This looks prettier
 # You must have Nerd Fonts installed
 [character]
 success_symbol= "[](green)"
@@ -13,6 +14,7 @@ vicmd_symbol = "[](bold blue)"
 truncation_length = 8
 # Show full path in git repo
 truncate_to_repo = false
+# Show directory path in blue color
 style = "bold blue"
 
 [rust]

@@ -1,0 +1,34 @@
+# Use vim for nav
+bindkey -v
+
+# Disable timeout for vi mode
+export KEYTIMEOUT=1
+
+# Starship prompt
+eval "$(starship init zsh)"
+
+# Tilix fix
+if [[ $TILIX_ID ]]; then
+    source /etc/profile.d/vte-2.91.sh
+fi
+
+# History search not working in vi mode
+bindkey '^r' history-incremental-search-backward
+
+# zoxide navigation
+eval "$(zoxide init zsh)"
+
+# Better history search
+export MCFLY_KEY_SCHEME=vim
+eval "$(mcfly init zsh)"
+
+# Set flutter to use brave instead of forcing me to install Chrome
+export CHROME_EXECUTABLE="/opt/brave.com/brave/brave-browser"
+# Flutter version manager
+export FVM_HOME="$HOME/.fvm"
+
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+

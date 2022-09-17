@@ -12,4 +12,5 @@ so this folder contains config for Lutris to correct them.
 This is file that contains correct mappings
 
 ### gembird.gamecontroller.amgp
+
 This file contains other gamepad config, like better deadzones.

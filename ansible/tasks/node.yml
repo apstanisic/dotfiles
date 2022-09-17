@@ -1,0 +1,33 @@
+- name: Ensure dependencies
+  become: true
+  apt:
+    pkg: 
+     - curl
+     - unzip
+  tags:
+    - node
+- name: Install FNM
+  shell: curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+  tags:
+    - node
+- name: Install NodeJS
+  environment:
+    PATH: '{{ ansible_env.PATH }}:{{ ansible_env.HOME }}/.fnm'
+  shell: 
+    cmd: |
+      eval "$(fnm env)"
+      fnm install --lts
+  tags:
+    - node
+- name: Install pnpm
+  environment:
+    PATH: '{{ ansible_env.PATH }}:{{ ansible_env.HOME }}/.fnm'
+  shell:
+    cmd: |
+      eval "$(fnm env)"
+      npm install -g pnpm
+  tags:
+    - node
+#      community.general.npm:
+#        name: pnpm
+#        global: true

@@ -1,0 +1,10 @@
+# PATHS
+if [ -e $HOME/.config/paths ]; then . $HOME/.config/paths; fi 
+
+# ALIASES
+if [ -e $HOME/.config/aliases ]; then . $HOME/.config/aliases; fi 
+
+
+# NIX
+# added by Nix installer
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi 

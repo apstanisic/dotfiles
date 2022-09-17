@@ -1,0 +1,45 @@
+- name: Remove LibreOffice deb
+  become: true
+  apt:
+    name: libreoffice*
+    state: absent
+- name: Install tilix
+  become: true
+  apt:
+    name: tilix
+- name: Install vscode
+  become: true
+  apt:
+    name: code
+- name: Install fonts
+  become: true
+  apt:
+    pkg:
+      - fonts-firacode
+      - fonts-roboto
+      - fonts-font-awesome
+- name: Install common Flatpak apps
+  community.general.flatpak:
+    name:
+      # Spotify
+      - com.spotify.Client
+      # Stremio
+      - com.stremio.Stremio
+      # DBeaver
+      - io.dbeaver.DBeaverCommunity
+      # Transmission (torrent)
+      - com.transmissionbt.Transmission
+      # Calibre (books)
+      - com.calibre_ebook.calibre
+      # Libre Office
+      - org.libreoffice.LibreOffice
+      # Video Player
+      - io.github.celluloid_player.Celluloid
+      # Tutanota (email)
+      # - com.tutanota.Tutanota
+      # Viber
+      # - com.viber.Viber
+      # Wine Prefix Manager (in gaming.yml)
+      # - com.usebottles.bottles
+      # Tor Browser
+      # - com.github.micahflee.torbrowser-launcher

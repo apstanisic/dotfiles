@@ -1,0 +1,24 @@
+- name: Install Lutris
+  become: true
+  ansible.builtin.apt:
+    name: lutris
+  tags:
+    - gaming
+- name: Install Bottles
+  community.general.flatpak:
+    name: com.usebottles.bottles
+    method: user
+  tags:
+    - gaming
+- name: Install ProtonUp
+  community.general.flatpak:
+    name: net.davidotek.pupgui2
+    method: user
+  tags:
+    - gaming
+- name: Install AntiMicroX
+  community.general.flatpak:
+    name: io.github.antimicrox.antimicrox
+    method: user
+  tags:
+    - gaming

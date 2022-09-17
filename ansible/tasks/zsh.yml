@@ -1,0 +1,35 @@
+- name: Install zsh
+  become: true
+  # Curl is needed for zim
+  apt:
+    pkg: 
+      - curl
+      - zsh
+  tags:
+    - zsh
+- name: Change shell
+  become: true
+  shell: chsh -s `which zsh`
+  tags:
+    - zsh
+- name: Install zimfw
+  # zim wants to change shell also
+  become: true
+  shell: curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+  # Only run if zimfw is not installed
+  args:
+    creates: $HOME/.zim
+  tags:
+    - zsh
+# Zimfw modifies .zshrc, so I simply inject my zshrc from different place, so zim does not dirty it
+# This injects config, only if file exists
+- name: Link zshrc config
+  shell: grep -qF 'if [ -e $HOME/.config/zsh/zshrc ]; then . $HOME/.config/zsh/zshrc; fi' ~/.zshrc || echo 'if [ -e $HOME/.config/zsh/zshrc ]; then . $HOME/.config/zsh/zshrc; fi' >> ~/.zshrc
+  tags:
+    - zsh
+# Zimfw modifies .zshenv, so I simply inject my zshenv from different place, so zim does not dirty it
+# This injects config, only if file exists
+- name: Link zshenv config
+  shell: grep -qF 'if [ -e $HOME/.config/zsh/zshenv ]; then . $HOME/.config/zsh/zshenv; fi' ~/.zshenv || echo 'if [ -e $HOME/.config/zsh/zshenv ]; then . $HOME/.config/zsh/zshenv; fi' >> ~/.zshenv
+  tags:
+    - zsh

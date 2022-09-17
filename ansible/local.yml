@@ -1,0 +1,22 @@
+- hosts: localhost
+  environment:
+    PATH: '{{ ansible_env.PATH }}:{{ ansible_env.HOME }}/.fnm'
+  pre_tasks:
+    - name: Update apt 
+      become: true
+      apt:
+        update_cache: true
+        upgrade: dist
+  tasks:
+    - include: tasks/disable_root.yml
+    - include: tasks/apt.yml
+    - include: tasks/zsh.yml
+    - include: tasks/dotfiles.yml
+    - include: tasks/node.yml
+    - include: tasks/gui.yml
+    - include: tasks/gaming.yml
+    - include: tasks/brave.yml
+    - include: tasks/dconf.yml
+    - include: tasks/nix.yml
+
+
