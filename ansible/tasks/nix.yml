@@ -1,4 +1,6 @@
 - name: Install Nix
+  environment:
+    NIX_PATH: "{{ ansible_env.HOME }}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}"
   tags:
     - nix
   block:
@@ -19,3 +21,12 @@
     shell: "bash <(curl -L https://nixos.org/nix/install) --no-daemon"
     args:
       executable: /bin/bash
+  - name: Add Home Manager channel
+    args:
+      executable: /bin/bash
+    shell: |
+      export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH};
+      source $HOME/.profile; 
+      nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager;
+      nix-channel --update;
+      nix-shell '<home-manager>' -A install

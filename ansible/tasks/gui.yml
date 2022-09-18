@@ -1,34 +1,38 @@
-- name: Remove LibreOffice deb
-  become: true
-  apt:
-    name: libreoffice*
-    state: absent
-- name: Install tilix
-  become: true
-  apt:
-    name: tilix
-- name: Install vscode
-  # Not available in ubuntu, only in pop-os
-  ignore_errors: yes
-  become: true
-  apt:
-    name: code
-- name: Install fonts
-  become: true
-  apt:
-    pkg:
-      - fonts-firacode
-      - fonts-roboto
-      - fonts-font-awesome
-- name: Install common Flatpak apps
-  # Not available in ubuntu, only in pop-os
-  ignore_errors: yes
-  community.general.flatpak:
-    name:
-      - com.spotify.Client
-      - com.stremio.Stremio
-      - io.dbeaver.DBeaverCommunity
-      - com.transmissionbt.Transmission
-      - com.calibre_ebook.calibre
-      - org.libreoffice.LibreOffice
-      - io.github.celluloid_player.Celluloid
+- name: GUI apps
+  tags:
+    - gui
+  block:
+    - name: Install fonts
+      become: true
+      apt:
+        pkg:
+          - fonts-firacode
+          - fonts-roboto
+          - fonts-font-awesome
+    - name: Remove LibreOffice deb
+      become: true
+      apt:
+        name: libreoffice*
+        state: absent
+    - name: Install tilix
+      become: true
+      apt:
+        name: tilix
+    - name: Install vscode
+      # Not available in ubuntu, only in pop-os
+      ignore_errors: yes
+      become: true
+      apt:
+        name: code
+    - name: Install common Flatpak apps
+      # Not available in ubuntu, only in pop-os
+      ignore_errors: yes
+      community.general.flatpak:
+        name:
+          - com.spotify.Client
+          - com.stremio.Stremio
+          - io.dbeaver.DBeaverCommunity
+          - com.transmissionbt.Transmission
+          - com.calibre_ebook.calibre
+          - org.libreoffice.LibreOffice
+          - io.github.celluloid_player.Celluloid

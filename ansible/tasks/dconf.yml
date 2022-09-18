@@ -1,17 +1,15 @@
-- name: Installed deps
-  become: true
-  apt:
-    name: python3-apt
+- name: Dconf
   tags:
     - dconf
-- name: Gather info about installed packages
-  ansible.builtin.package_facts:
-    manager: auto
-  tags:
-    - dconf
-- name: Restore dconf config if in Gnome gystem
-  shell: dconf load / < "$HOME/dotfiles/machine-setup/manual-dconf-backup.dconf"
-  # Only run in gnome system
-  when: "'dconf-cli' in ansible_facts.packages"
-  tags:
-    - dconf
+  block:
+    - name: Installed deps
+      become: true
+      apt:
+        name: python3-apt
+    - name: Gather info about installed packages
+      ansible.builtin.package_facts:
+        manager: auto
+    - name: Restore dconf config if in Gnome gystem
+      shell: dconf load / < "$HOME/dotfiles/machine-setup/manual-dconf-backup.dconf"
+      # Only run in gnome system
+      when: "'dconf-cli' in ansible_facts.packages"

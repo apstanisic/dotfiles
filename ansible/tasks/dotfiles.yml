@@ -1,20 +1,24 @@
-- name: Install git and stow
-  become: true
-  apt:
-    pkg:
-      - git
-      - stow
-  tags: 
-    - dotfiles
-- name: Clone dotfiles repo
-  ansible.builtin.git:
-    repo: 'https://github.com/apstanisic/dotfiles.git'
-    dest: '{{ ansible_env.HOME }}/dotfiles'
-    version: main
+- name: Dotfiles
   tags:
     - dotfiles
-- name: Sync dotfiles
-  shell: stow --no-folding --target $HOME --dir $HOME/dotfiles --adopt dotfiles
-  tags:
-    - dotfiles
-
+  block:
+    - name: Check if ~/dotfiles exists
+      stat:
+        path: $HOME/dotfiles
+      register: is_cloned
+    - name: Install git and stow
+      become: true
+      apt:
+        pkg:
+          - git
+          - stow
+      tags:
+        - dotfiles
+    - name: Clone dotfiles repo
+      git:
+        repo: "https://github.com/apstanisic/dotfiles.git"
+        dest: "{{ ansible_env.HOME }}/dotfiles"
+        version: main
+      when: not is_cloned.stat.exists
+    - name: Sync dotfiles
+      shell: stow --no-folding --target $HOME --dir $HOME/dotfiles --adopt dotfiles

@@ -2,7 +2,7 @@
   # Since when testing, flatpak and vscode fails in ubuntu
   ignore_errors: yes
   pre_tasks:
-    - name: Update apt 
+    - name: Update apt
       become: true
       apt:
         update_cache: true
@@ -19,5 +19,3 @@
     - include: tasks/dconf.yml
     - include: tasks/nix.yml
     - include: tasks/nix_packages.yml
-
-

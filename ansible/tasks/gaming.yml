@@ -1,24 +1,18 @@
-- name: Install Lutris
-  become: true
-  apt:
-    name: lutris
-  tags:
-    - gaming
-- name: Install Bottles
-  community.general.flatpak:
-    name: com.usebottles.bottles
-    method: user
-  tags:
-    - gaming
-- name: Install ProtonUp
-  community.general.flatpak:
-    name: net.davidotek.pupgui2
-    method: user
-  tags:
-    - gaming
-- name: Install AntiMicroX
-  community.general.flatpak:
-    name: io.github.antimicrox.antimicrox
-    method: user
-  tags:
-    - gaming
+- name: Gaming
+  block:
+    - name: Install Lutris
+      become: true
+      apt:
+        name: lutris
+    - name: Install Bottles
+      community.general.flatpak:
+        name: com.usebottles.bottles
+        method: user
+    - name: Install ProtonUp
+      community.general.flatpak:
+        name: net.davidotek.pupgui2
+        method: user
+    - name: Install AntiMicroX
+      community.general.flatpak:
+        name: io.github.antimicrox.antimicrox
+        method: user
