@@ -4,25 +4,34 @@
   block:
     - name: Install zsh
       become: true
-      # Curl is needed for zim
+      # Curl and git is needed for zim
       apt:
         pkg:
           - curl
           - zsh
+          - git
+
     - name: Change shell
       become: true
       shell: chsh -s `which zsh`
+
     - name: Install zimfw
-      # zimfw wants to change shell also
-      become: true
+      # zimfw will change shell if SHELL is not zsh
+      # with this zim will know it's already set
+      # and won't require sudo, which would install
+      # in /root
+      environment:
+        SHELL: zsh
       shell: curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
       # Only run if zimfw is not installed
       args:
-        creates: $HOME/.zim
+        creates: "{{ ansible_env.HOME }}/.zim"
+
     # Zimfw modifies .zshrc, so I simply inject my zshrc from different place, so zim does not dirty it
     # This injects config, only if file exists
     - name: Link zshrc config
       shell: grep -qF 'if [ -e $HOME/.config/zsh/zshrc ]; then . $HOME/.config/zsh/zshrc; fi' ~/.zshrc || echo 'if [ -e $HOME/.config/zsh/zshrc ]; then . $HOME/.config/zsh/zshrc; fi' >> ~/.zshrc
+
     # Zimfw modifies .zshenv, so I simply inject my zshenv from different place, so zim does not dirty it
     # This injects config, only if file exists
     - name: Link zshenv config

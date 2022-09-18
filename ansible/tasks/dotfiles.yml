@@ -2,22 +2,33 @@
   tags:
     - dotfiles
   block:
-    - name: Check if ~/dotfiles exists
-      stat:
-        path: $HOME/dotfiles
-      register: is_cloned
-    - name: Install git and stow
+    - name: Install stow and deps
       become: true
       apt:
         pkg:
           - git
           - stow
-      tags:
-        - dotfiles
-    - name: Clone dotfiles repo
+    - name: Check if ~/dotfiles exists
+      stat:
+        path: $HOME/dotfiles
+      register: is_cloned
+    - name: Check if ssh exists
+      stat:
+        path: $HOME/.ssh
+      register: ssh_exists
+    - name: Clone dotfiles repo with ssh if possible
+      # Ignore error if ssh does not have access
+      # Since it will fallback to http version
+      ignore_errors: yes
+      git:
+        repo: "git@github.com:apstanisic/dotfiles.git"
+        dest: $HOME/dotfiles
+        version: main
+      when: not is_cloned.stat.exists and ssh_exists.stat.exists
+    - name: Clone dotfiles repo without ssh if needed
       git:
         repo: "https://github.com/apstanisic/dotfiles.git"
-        dest: "{{ ansible_env.HOME }}/dotfiles"
+        dest: $HOME/dotfiles
         version: main
       when: not is_cloned.stat.exists
     - name: Sync dotfiles
