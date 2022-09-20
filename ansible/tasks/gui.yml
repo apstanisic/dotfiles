@@ -1,6 +1,7 @@
 - name: GUI apps
   tags:
     - gui
+  # Only browser, terminal and IDE are apts
   block:
     - name: Install fonts
       become: true
@@ -29,6 +30,8 @@
       ignore_errors: yes
       community.general.flatpak:
         name:
+            # Testing using brave as flatpak 
+          - com.brave.Browser
           - com.spotify.Client
           - com.stremio.Stremio
           - io.dbeaver.DBeaverCommunity
@@ -36,3 +39,6 @@
           - com.calibre_ebook.calibre
           - org.libreoffice.LibreOffice
           - io.github.celluloid_player.Celluloid
+          - com.github.tchx84.Flatseal
+          - com.mattjakeman.ExtensionManager
+            # - org.wezfurlong.wezterm

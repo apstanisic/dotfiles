@@ -1,18 +1,27 @@
 - name: Gaming
   block:
-    - name: Install Lutris
-      become: true
-      apt:
-        name: lutris
     - name: Install Bottles
-      community.general.flatpak:
+      flatpak:
         name: com.usebottles.bottles
         method: user
-    - name: Install ProtonUp
-      community.general.flatpak:
-        name: net.davidotek.pupgui2
+
+    - name: Install Steam
+      flatpak:
+        name: com.valvesoftware.Steam
         method: user
+
     - name: Install AntiMicroX
-      community.general.flatpak:
+      flatpak:
         name: io.github.antimicrox.antimicrox
         method: user
+# # Maybe I do not need Lutris and ProtonUp, because of bottles
+#    - name: Install Lutris
+#      flatpak:
+#        name: net.lutris.Lutris
+#        method: user
+
+#    - name: Install ProtonUp
+#      flatpak:
+#        name: net.davidotek.pupgui2
+#        method: user
+

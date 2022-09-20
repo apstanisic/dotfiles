@@ -7,15 +7,26 @@ export KEYTIMEOUT=1
 # Starship prompt
 eval "$(starship init zsh)"
 
-# Tilix fix
-if [[ $TILIX_ID ]]; then
-    source /etc/profile.d/vte-2.91.sh
+#
+# Tilix fix. Run only if terminal is tilix
+# https://gnunn1.github.io/tilix-web/manual/vteconfig/
+# 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    if [ -e "/etc/profile.d/vte-2.91.sh" ]; then
+        # Run this on Ubuntu/Pop
+        source /etc/profile.d/vte-2.91.sh
+    elif [ -e "/etc/profile.d/vte.sh" ]; then 
+        # Run this on Fedora
+        source /etc/profile.d/vte.sh
+    fi
+
 fi
 
 # History search not working in vi mode
 bindkey '^r' history-incremental-search-backward
 
 # zoxide navigation
+# jumper
 eval "$(zoxide init zsh)"
 
 # Better history search
@@ -24,11 +35,4 @@ eval "$(mcfly init zsh)"
 
 # Set flutter to use brave instead of forcing me to install Chrome
 export CHROME_EXECUTABLE="/opt/brave.com/brave/brave-browser"
-# Flutter version manager
-export FVM_HOME="$HOME/.fvm"
-
-
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-fpath+=~/.zfunc
 

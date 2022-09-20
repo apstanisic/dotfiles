@@ -62,6 +62,9 @@ alias wt='curl wttr.in'
 # Attach to tmux session
 alias ta='tmux attach -t'
 
+# Simpler tmux
+alias zj='zellij'
+
 # Rerun previous command with sudo
 alias again='sudo $(fc -ln -1)'
 

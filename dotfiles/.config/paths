@@ -7,7 +7,7 @@
 # https://linuxize.com/post/bash-check-if-file-exists/
 # "-e" check if there is any file, "-f" checks for regular file (not folder) 
 
-# Initialize node/fnm/npm/pnpm if installed
+# Initialize fnm if installed
 if [ -e "$HOME/.fnm" ]; then
     export PATH="$PATH:$HOME/.fnm"
     eval "$(fnm env)"  
@@ -23,3 +23,10 @@ if [ -e "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]; then
 	export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
     source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 fi
+
+# Volta
+export VOLTA_HOME=$HOME/.volta
+export PATH=$PATH:$VOLTA_HOME/bin
+
+# Node global packages
+export PATH=$PATH:$HOME/.npm-global/bin

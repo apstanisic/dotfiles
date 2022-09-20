@@ -35,5 +35,10 @@ use_sudo = false
 [commands]
 # topgrade runs this command with "zsh -c" which does not source
 # .zshrc, where zim puts it's function, so we source zimfw manually
-"Zim" = "source $HOME/.zim/init.zsh && zimfw upgrade && zimfw update"
+"zim" = "source $HOME/.zim/init.zsh && zimfw upgrade && zimfw update"
+"home-manager" = "home-manager switch"
+"volta" = "volta install node@lts"
+"nix-collect-garbage" = "nix-collect-garbage"
+# "nix-store --optimise" takes long time on every run
+# "fnm" = "fnm install --lts && fnm default lts-latest && fnm use lts-latest"
 

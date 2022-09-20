@@ -1,3 +1,4 @@
+# Do not use this, switched to home-manager
 - name: Nix packages
   tags:
     - nix_pkg

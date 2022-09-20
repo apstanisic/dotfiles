@@ -1,3 +1,5 @@
+---
+# Maybe switch to flatpak version
 - name: Brave
   tags:
     - brave

@@ -11,16 +11,19 @@
       state: directory
       owner: "{{ lookup('env', 'USER') }}"
       mode: '0755'
+
   - name: Install Nix deps
     become: true
     apt:
       pkg: 
       - curl
       - xz-utils
+
   - name: Install nix
     shell: "bash <(curl -L https://nixos.org/nix/install) --no-daemon"
     args:
       executable: /bin/bash
+
   - name: Add Home Manager
     args:
       executable: /bin/bash

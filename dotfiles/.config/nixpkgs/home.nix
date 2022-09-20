@@ -43,7 +43,21 @@
     trash-cli
     xh
     zellij
-    zoxide
+	zoxide
+    # installs both node and npm
+    nodejs-16_x
+    nodePackages.pnpm
+    nodePackages.typescript
   ];
+
+  # Maybe 
+  # dconf = {
+  #   enable = true;
+  #   settings = {
+  #       "org/gnome/calculator" = {
+  #       button-mode = "programming";
+  #     };
+  #   };
+  # };
   
 }
