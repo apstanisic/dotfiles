@@ -1,33 +1,33 @@
 ---
-# This is better than uuid since hard drive label
-# will be same after reinstalling os,
-# and there is no danger that some other device
-# might be at /dev/sda1
+# Maybe mount by label
 - name: Mount drive
   tags:
-    - mount
+    - mount_uuid
   block:
-    - name: Create mount folder if it does not exist
+    - name: Get stats for drive
+      stat:
+        path: /dev/sda1
+      register: sda
+    - name: Create mount folder if it does not exist 
       file:
         path: /media/hdd500
         state: directory
         mode: '0755'
 
-    - name: Check if drive exists
-      # command return path to drive (/dev/sda1), or fails
-      # so we can simply echo false if command fails 
-      # and later check if return value is false (drive_exists.stdout)
-      shell: blkid --label HARD_DRIVE_001 || echo false
-      register: drive_exists
+    - name: Get drive UUID
+      when: sda.stat.exists and sda.stat.isblk
+      shell: blkid -o value -s UUID /dev/sda1
+      # Remember to call drive_uuid.stdout
+      register: drive_uuid
 
-    - name: Register drive by label
+    - name: Register drive
       become: true
-      when: drive_exists.stdout != "false"
+      when: sda.stat.exists and sda.stat.isblk and 1 == 2
       mount:
         # Steam uses `/media`, so will I, less chance to cause problem with games
         path: /media/hdd500
         # I have 1 hdd and 1 nvme, so hdd will always be sda1
-        src: LABEL=HARD_DRIVE_001
+        src: UUID={{ drive_uuid.stdout }}
         # It's ext4, in future maybe switch to btrfs
         fstype: ext4
         # Also possible
@@ -38,5 +38,3 @@
         # x-gvfs-show - Tell gnome to show in Files
         # x-gvfs-name - Tell gnome what name to use
         opts: x-gvfs-show,nofail,x-gvfs-name=HardDrive500
-
-

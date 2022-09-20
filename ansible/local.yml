@@ -1,5 +1,6 @@
 - hosts: localhost
-  # Since when testing, flatpak and vscode fails in ubuntu
+  # I'm testing in ubuntu docker, so it fails because flatpak and vscode
+  # are not configured in ubuntu
   ignore_errors: yes
   pre_tasks:
     - name: Update apt
