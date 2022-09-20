@@ -1,6 +1,4 @@
 ---
-# Mount hdd
-# https://github.com/ValveSoftware/Proton/wiki/Using-a-NTFS-disk-with-Linux-and-Windows
 - name: Mount drive
   tags:
     - mount
@@ -16,6 +14,12 @@
       # Remember to call drive_uuid.stdout
       register: drive_uuid
 
+    - name: Create mount folder if it does not exist 
+      file:
+        path: /media/hdd500
+        state: directory
+        mode: '0755'
+
     - name: Register drive
       become: true
       when: sda.stat.exists and sda.stat.isblk
@@ -29,17 +33,7 @@
         # fstype: ext4
         # Should be mounted
         state: present
-        opts: x-gvfs-show,nofail,x-gvfs-name=HardDrive500
-        # 
-        # steam example:
-        # UUID=38CE9483CE943AD8 /media/gamedisk ntfs uid=1000,gid=1000,rw,user,exec,umask=000 0 0
-        # uid - User's id this device belongs to
-        # gid - User's group id this device belongs to
-        # rw - It s read and write, ro means it's read only
-        # user - User is allowed to mount this device
-        # exec  - Files on this device can be executed
-        # umask - I think is like permission, only reversed, 000 is rwx
         # nofail - It will boot normally even if drive fails
         # x-gvfs-show - Tell gnome to show in Files
         # x-gvfs-name - Tell gnome what name to use
-        # opts: uid=1000,gid=1000,rw,user,exec,umask=000,x-gvfs-show,nofail,x-gvfs-name=HardDrive500
+        opts: x-gvfs-show,nofail,x-gvfs-name=HardDrive500
