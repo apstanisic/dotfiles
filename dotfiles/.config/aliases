@@ -2,6 +2,8 @@
 
 # Open neovim
 alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
 
 # Exit terminal
 alias e='exit'

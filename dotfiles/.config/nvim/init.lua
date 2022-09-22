@@ -28,6 +28,8 @@ local setConfig = function()
     vim.opt.smartindent = true
     -- show line number
     vim.opt.nu = true
+    -- when I'm 10 chars before screen end, scroll down
+    vim.opt.scrolloff = 10
     -- show relative
     vim.opt.relativenumber = true
     -- Maybe, it's annoying

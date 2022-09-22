@@ -20,7 +20,9 @@
     - include: tasks/nix.yml
     - include: tasks/neovim.yml
     - include: tasks/mount.yml
+    - include: tasks/nerd_fonts.yml
+    - include: tasks/regular_fonts.yml
       # Testing using brave as flatpak
-      #- include: tasks/brave.yml
+      # - include: tasks/brave.yml
       # not needed, using home manager
       #    - include: tasks/nix_packages.yml 

@@ -1,0 +1,80 @@
+- name: Nerd Fonts
+  tags:
+    - nerd_fonts
+  block:
+    - name: Ensure deps 
+      become: true
+      apt: name=git
+
+    - name: Check if repo is already cloned
+      stat:
+        path: /tmp/nerd-fonts
+      register: is_cloned
+
+    - name: Clone nerd fonts
+      when: not is_cloned.stat.exists
+        # there are no options in doc for filter and sparse
+        # I do not want to download GBs of font files
+        # https://github.com/ryanoasis/nerd-fonts#option-5-clone-the-repo
+        # Switch to v3 from v5 if script method does not require cloning repo
+      shell: git clone --depth 1 --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git /tmp/nerd-fonts
+
+    - name: Make installer runnable
+      file:
+        path: /tmp/nerd-fonts/install.sh
+        mode: '0755'
+
+    - name: Delete old nerd fonts
+      file:
+        path: $HOME/.local/share/fonts/NerdFonts
+        state: absent
+
+      # All 3 are default options, but just in case of future change
+      # -O - prefer otf over ttf
+      # -U - install as user font, not system
+      # -c copy files, do not link them
+    - name: Install JetBrainsMono NF
+      args:
+        chdir: /tmp/nerd-fonts 
+      shell: |
+        git sparse-checkout add patched-fonts/JetBrainsMono
+        /tmp/nerd-fonts/install.sh -cOU JetBrainsMono
+
+    - name: Install FiraCode NF
+      args:
+        chdir: /tmp/nerd-fonts 
+      shell: |
+        git sparse-checkout add patched-fonts/FiraCode
+        /tmp/nerd-fonts/install.sh -cOU FiraCode
+
+    - name: Install Hack NF
+      args:
+        chdir: /tmp/nerd-fonts 
+      shell: |
+        git sparse-checkout add patched-fonts/Hack
+        /tmp/nerd-fonts/install.sh -cOU Hack
+
+    - name: Install SourceCodePro NF
+      args:
+        chdir: /tmp/nerd-fonts 
+      shell: |
+        git sparse-checkout add patched-fonts/SourceCodePro
+        /tmp/nerd-fonts/install.sh -cOU SourceCodePro
+
+    - name: Install CascadiaCode NF
+      args:
+        chdir: /tmp/nerd-fonts 
+      shell: |
+        git sparse-checkout add patched-fonts/CascadiaCode
+        /tmp/nerd-fonts/install.sh -cOU CascadiaCode
+
+    - name: Install Roboto NF
+      args:
+        chdir: /tmp/nerd-fonts 
+      shell: |
+        git sparse-checkout add patched-fonts/RobotoMono
+        /tmp/nerd-fonts/install.sh -cOU RobotoMono
+
+    - name: Clear font cache
+      become: true
+      shell: fc-cache -fv

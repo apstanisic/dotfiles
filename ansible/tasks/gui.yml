@@ -20,6 +20,7 @@
       apt:
         name: tilix
     - name: Install vscode
+      # Switch to either Flatpak or nix, since pop-os version is lagging behind
       # Not available in ubuntu, only in pop-os
       ignore_errors: yes
       become: true
@@ -41,4 +42,5 @@
           - io.github.celluloid_player.Celluloid
           - com.github.tchx84.Flatseal
           - com.mattjakeman.ExtensionManager
+            # Shell integration does not work in flatpak 
             # - org.wezfurlong.wezterm

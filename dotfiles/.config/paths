@@ -6,6 +6,8 @@
 
 # https://linuxize.com/post/bash-check-if-file-exists/
 # "-e" check if there is any file, "-f" checks for regular file (not folder) 
+# Maybe do this, add to path only if there is not currently
+#  if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]
 
 # Initialize fnm if installed
 if [ -e "$HOME/.fnm" ]; then

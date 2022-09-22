@@ -15,39 +15,39 @@
 # Pop Cosmic extension config
 #
 [org/gnome/shell/extensions/pop-cosmic]
+# Move clock right
 clock-alignment='RIGHT'
+# Launch runner on supper
 overlay-key-action='LAUNCHER'
+# Show applications button in top left corner
 show-applications-button=true
+# Show workspaces button in top left corner
 show-workspaces-button=true
+# Show workspaces on the right, since I'm keeping my dock on the left
 workspace-picker-left=false
 
 #
 # Pop Shell extension config with some additional shortcuts
 #
 [org/gnome/shell/extensions/pop-shell]
+# Don't show border around current window
 active-hint=false
+# Add ctrl+super+a to focus on window left (better for one hand)
 focus-left=['<Super>Left', '<Super>KP_Left', '<Super>h', '<Primary><Super>a']
+# Add ctrl+super+d to focus on window left (better for one hand)
 focus-right=['<Super>Right', '<Super>KP_Right', '<Super>l', '<Primary><Super>d']
-gap-inner=uint32 1
-gap-outer=uint32 1
+# Gap between windows 
+gap-inner=uint32 3
+# Gap between window and screen edge
+gap-outer=uint32 3
+# Move to workspace bellow with shift+super+s
 pop-workspace-down=['<Shift><Super>Down', '<Shift><Super>KP_Down', '<Shift><Super>j', '<Shift><Super>s']
+# Move to workspace above with shift+super+w
 pop-workspace-up=['<Shift><Super>Up', '<Shift><Super>KP_Up', '<Shift><Super>k', '<Shift><Super>w']
-show-skip-taskbar=true
-show-title=true
+# Don't show gaps when only 1 window
 smart-gaps=true
+# Tiling enabled
 tile-by-default=true
-
-
-#
-# Gnome Shell config
-#
-[org/gnome/shell]
-# Apps visible in dock
-favorite-apps=['brave-browser.desktop', 'com.stremio.Stremio.desktop', 'org.qbittorrent.qBittorrent.desktop', 'org.gnome.Nautilus.desktop', 'firefox.desktop', 'com.spotify.Client.desktop', 'io.github.celluloid_player.Celluloid.desktop', 'code.desktop', 'com.gexperts.Tilix.desktop', 'io.dbeaver.DBeaverCommunity.desktop']
-# Disable desctop icons extension
-disabled-extensions=['ding@rastersoft.com']
-# Enabled extensions
-enabled-extensions=['pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-dock@system76.com', 'gsconnect@andyholmes.github.io', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
 
 
 #
@@ -63,7 +63,6 @@ sleep-inactive-ac-type='suspend'
 [org/gnome/desktop/session]
 idle-delay=uint32 600
 
-
 #
 # Disable some shortcuts, and enable shortcuts for mute, volume up/down
 #
@@ -77,24 +76,18 @@ www=@as []
 
 
 #
-# Tilix in Quake mode
-#
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Super>F1'
-command='tilix --quake'
-name='Quake Terminal'
-
-
-#
 # Add minimize and maximize buttons
 #
 [org/gnome/desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
 
+
 #
 # Custom shortcuts for workspaces
+# This looks ugly, since that's the char when shift is pressed
 #
 [org/gnome/desktop/wm/keybindings]
+# Can use both "Home" - by pop, or "!" (capital 1) by me
 move-to-workspace-1=['<Shift><Super>Home', '<Shift><Super>exclam']
 move-to-workspace-2=['<Shift><Super>at']
 move-to-workspace-3=['<Shift><Super>numbersign']
@@ -105,7 +98,20 @@ move-to-workspace-7=['<Shift><Super>ampersand']
 move-to-workspace-8=['<Shift><Super>asterisk']
 
 
+#
+# Gnome Shell config
+#
+[org/gnome/shell]
+# Apps visible in dock
+favorite-apps=['brave-browser.desktop', 'com.stremio.Stremio.desktop', 'org.qbittorrent.qBittorrent.desktop', 'org.gnome.Nautilus.desktop', 'firefox.desktop', 'com.spotify.Client.desktop', 'io.github.celluloid_player.Celluloid.desktop', 'code.desktop', 'com.gexperts.Tilix.desktop', 'io.dbeaver.DBeaverCommunity.desktop']
+# Disable desctop icons extension
+disabled-extensions=['ding@rastersoft.com']
+# Enabled extensions
+enabled-extensions=['pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-dock@system76.com', 'gsconnect@andyholmes.github.io', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
 
+
+
+# super+home is by pop
 switch-to-workspace-1=['<Super>Home', '<Super>1']
 switch-to-workspace-2=['<Super>2']
 switch-to-workspace-3=['<Super>3']
@@ -115,6 +121,7 @@ switch-to-workspace-6=['<Super>6']
 switch-to-workspace-7=['<Super>7']
 switch-to-workspace-8=['<Super>8']
 
+# ctrl+super+s and ctrl+super+w for one hand up/down. Others are default
 switch-to-workspace-down=['<Primary><Super>Down', '<Primary><Super>KP_Down', '<Primary><Super>j', '<Primary><Super>s']
 switch-to-workspace-up=['<Primary><Super>Up', '<Primary><Super>KP_Up', '<Primary><Super>k', '<Primary><Super>w']
 
@@ -126,10 +133,10 @@ switch-to-workspace-up=['<Primary><Super>Up', '<Primary><Super>KP_Up', '<Primary
 numlock-state=true
 
 #
-# Enable hot corner
+# Disable hot corner
 #
 [org/gnome/desktop/interface]
-enable-hot-corners=true
+enable-hot-corners=false
 
 #
 # Keyboard options
@@ -137,21 +144,16 @@ enable-hot-corners=true
 # Remap caps lock to esc
 #
 [org/gnome/desktop/input-sources]
+# Selected at index 0 (US)
 current=uint32 0
-mru-sources=[('xkb', 'us'), ('xkb', 'rs+latin')]
-per-window=false
+# Options (idk why there are 2)
 sources=[('xkb', 'us'), ('xkb', 'rs+latin')]
+mru-sources=[('xkb', 'us'), ('xkb', 'rs+latin')]
+# Every window will have same keyboard
+per-window=false
+# remap caps lock to esc
 xkb-options=['caps:escape']
 
-#
-# Celluloid Video Player
-# Use mpv config for celluloid
-#
-[io/github/celluloid-player/celluloid]
-always-use-floating-controls=true
-mpv-input-config-enable=true
-mpv-input-config-file='/home/aleksandar/.config/mpv/input.conf'
-settings-migrated=true
 
 #
 # Emoji are interfering with vscode, so we are using some random shortcut
@@ -159,6 +161,24 @@ settings-migrated=true
 [desktop/ibus/panel/emoji]
 hotkey=['<Control><Alt><Shift><Meta><Super>e']
 unicode-hotkey=['<Control><Alt><Shift><Meta><Super>u']
+
+
+# Disable access to location
+[org/gnome/system/location]
+enabled=false
+
+#
+# Celluloid Video Player
+# Use mpv config for celluloid
+#
+# Switched to flatpak, no longer aplicable?
+# [io/github/celluloid-player/celluloid]
+# always-use-floating-controls=true
+# mpv-input-config-enable=true
+# mpv-input-config-file='/home/aleksandar/.config/mpv/input.conf'
+# settings-migrated=true
+
+
 
 #
 # Tilix
@@ -245,9 +265,6 @@ use-system-font=false
 use-theme-colors=true
 visible-name='My Default'
 
-# Disable access to location
-[org/gnome/system/location]
-enabled=false
 
 # Nautilus file manager config
 [org/gnome/nautilus/preferences]

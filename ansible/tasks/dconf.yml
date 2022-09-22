@@ -10,6 +10,6 @@
       package_facts:
         manager: auto
     - name: Restore dconf config if in Gnome gystem
-      shell: dconf load / < "$HOME/dotfiles/machine-setup/manual-dconf-backup.dconf"
+      shell: dconf load / < "$HOME/dotfiles/dconf-backup.dconf"
       # Only run in gnome system
       when: "'dconf-cli' in ansible_facts.packages"
