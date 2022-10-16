@@ -21,11 +21,14 @@
         mode: u+x
 
       # relative to local.yml
-    - name: Install SourceCodePro
-      shell: ./copy_normal_fonts.bash SourceCodePro
-     
+    - name: Install FiraCode
+      shell: ./copy_normal_fonts.bash FiraCode
+
     - name: Install JetBrainsMono
       shell: ./copy_normal_fonts.bash JetBrainsMono
+
+    - name: Install SourceCodePro
+      shell: ./copy_normal_fonts.bash SourceCodePro
 
     - name: Install CascadiaCode
       shell: ./copy_normal_fonts.bash CascadiaCode

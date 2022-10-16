@@ -15,6 +15,7 @@
     - include: tasks/dotfiles.yml
     - include: tasks/node.yml
     - include: tasks/gui.yml
+    - include: tasks/dev.yml
     - include: tasks/gaming.yml
     - include: tasks/dconf.yml
     - include: tasks/nix.yml
@@ -22,6 +23,8 @@
     - include: tasks/mount.yml
     - include: tasks/nerd_fonts.yml
     - include: tasks/regular_fonts.yml
+    - include: tasks/home_links.yml
+    - include: tasks/docker.yml
       # Testing using brave as flatpak
       # - include: tasks/brave.yml
       # not needed, using home manager

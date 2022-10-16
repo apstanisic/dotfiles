@@ -44,10 +44,17 @@
     xh
     zellij
 	zoxide
+    distrobox
+    # Problem with desktop integration
+#     vscode
+    # For some reason `npx -y only-allow pnpm`
+    # throws when using nix versions, but not with volta
     # installs both node and npm
-    nodejs-16_x
-    nodePackages.pnpm
-    nodePackages.typescript
+#    nodejs-16_x
+#    nodePackages.pnpm
+#    nodePackages.typescript
+     # Can't access network for some reason??
+#     nodePackages.npm-check-updates
   ];
 
   # Maybe 

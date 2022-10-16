@@ -35,6 +35,10 @@ disabled = true
 [dotnet]
 disabled = true
 
+# Hide context since when using rootless docker it shows whole socket path
+[docker_context]
+format = "via 🐋 "
+
 [golang]
 disabled = true
 

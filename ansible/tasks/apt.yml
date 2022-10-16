@@ -5,14 +5,14 @@
       apt:
         pkg:
           - curl
+          - wget
           - apt-transport-https
           - git
-          - wget
           - libssl-dev
           - build-essential
           - zip
           - p7zip-full
-          - stow
-          - docker.io
           - android-tools-adb
           - android-tools-fastboot
+            # installed in dotfiles.yml
+            #          - stow

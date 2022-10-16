@@ -32,3 +32,13 @@ export PATH=$PATH:$VOLTA_HOME/bin
 
 # Node global packages
 export PATH=$PATH:$HOME/.npm-global/bin
+
+# PNPM
+export PNPM_HOME="/home/aleksandar/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# Docker
+# export DOCKER_BIN=$HOME/.docker-bin
+# Add rootless docker to path
+export PATH=/home/aleksandar/.docker-bin:$PATH
+export DOCKER_HOST=unix:///run/user/1000/docker.sock

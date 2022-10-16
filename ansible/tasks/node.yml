@@ -20,3 +20,11 @@
       npm:
         name: pnpm
         global: true
+    - name: Install typescript
+      npm:
+        name: typescript
+        global: true
+    - name: Install npm-check-updates
+      npm:
+        name: npm-check-updates
+        global: true

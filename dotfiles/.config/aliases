@@ -95,6 +95,7 @@ alias .........='cd ../../../../../../../..'
 alias ..........='cd ../../../../../../../../..'
 
 alias cloud-sync="rclone sync --progress /home/aleksandar/HDD/Media KoofrEncrpypted:"
+alias backup-projects="sudo rsync -av --delete --exclude='node_modules/' ~/Projects ~/HDD"
 
 # Copy file to clipboard. Does not work in wayland
 # cb file.txt

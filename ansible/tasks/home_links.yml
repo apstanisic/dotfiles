@@ -1,0 +1,50 @@
+---
+- name: Replace home links
+  tags:
+    - home_links
+  block:
+    - name: Create hdd folder link
+      file:
+        src: /media/hdd500
+        dest: $HOME/HDD
+        state: link
+
+    - name: Create games folder link
+      file:
+        src: $HOME/HDD/Games
+        dest: $HOME/Games
+        state: link
+
+    - name: Remove Downloads folder
+      file:
+        path: $HOME/Downloads
+        state: absent
+
+    - name: Create Downloads folder link
+      file:
+        src: $HOME/HDD/Downloads
+        dest: $HOME/Downloads
+        state: link
+
+    - name: Remove Pictures folder
+      file:
+        path: $HOME/Pictures
+        state: absent
+
+    - name: Create Pictures folder link
+      file:
+        src: $HOME/HDD/Media/Photos
+        dest: $HOME/Pictures
+        state: link
+
+    - name: Remove Documents folder
+      file:
+        path: $HOME/Documents
+        state: absent
+
+    - name: Create Documents folder link
+      file:
+        src: $HOME/HDD/Media/Documents
+        dest: $HOME/Documents
+        state: link
+

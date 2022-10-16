@@ -3,44 +3,49 @@
     - gui
   # Only browser, terminal and IDE are apts
   block:
-    - name: Install fonts
-      become: true
-      apt:
-        pkg:
-          - fonts-firacode
-          - fonts-roboto
-          - fonts-font-awesome
     - name: Remove LibreOffice deb
       become: true
       apt:
         name: libreoffice*
         state: absent
-    - name: Install tilix
+
+    - name: Install tilix as deb
       become: true
       apt:
         name: tilix
-    - name: Install vscode
-      # Switch to either Flatpak or nix, since pop-os version is lagging behind
-      # Not available in ubuntu, only in pop-os
-      ignore_errors: yes
-      become: true
-      apt:
-        name: code
-    - name: Install common Flatpak apps
-      # Not available in ubuntu, only in pop-os
-      ignore_errors: yes
-      community.general.flatpak:
-        name:
-            # Testing using brave as flatpak 
-          - com.brave.Browser
-          - com.spotify.Client
-          - com.stremio.Stremio
-          - io.dbeaver.DBeaverCommunity
-          - com.transmissionbt.Transmission
-          - com.calibre_ebook.calibre
-          - org.libreoffice.LibreOffice
-          - io.github.celluloid_player.Celluloid
-          - com.github.tchx84.Flatseal
-          - com.mattjakeman.ExtensionManager
-            # Shell integration does not work in flatpak 
-            # - org.wezfurlong.wezterm
+
+    - name: Install Brave
+      flatpak:
+        name: com.brave.Browser
+
+    - name: Install Calibre
+      flatpak:
+        name: com.calibre_ebook.calibre
+
+    - name: Install Flatseal
+      flatpak:
+        name: com.github.tchx84.Flatseal
+
+    - name: Install Extensions Manager
+      flatpak:
+        name: com.mattjakeman.ExtensionManager
+
+    - name: Install Spotify
+      flatpak:
+        name: com.spotify.Client
+
+    - name: Install Stremio
+      flatpak:
+        name: com.stremio.Stremio
+
+    - name: Install Transmission
+      flatpak:
+        name: com.transmissionbt.Transmission
+
+    - name: Install LibreOffice
+      flatpak:
+        name: org.libreoffice.LibreOffice
+
+    - name: Install Celluloid
+      flatpak:
+        name: io.github.celluloid_player.Celluloid
