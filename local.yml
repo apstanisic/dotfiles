@@ -1,0 +1,32 @@
+- hosts: localhost
+  # I'm testing in ubuntu docker, so it fails because flatpak and vscode
+  # are not configured in ubuntu
+  ignore_errors: yes
+  pre_tasks:
+    - name: Update apt
+      become: true
+      apt:
+        update_cache: true
+        upgrade: dist
+  tasks:
+    - include: ansible/tasks/disable_root.yml
+    - include: ansible/tasks/apt.yml
+    - include: ansible/tasks/zsh.yml
+    - include: ansible/tasks/dotfiles.yml
+    - include: ansible/tasks/node.yml
+    - include: ansible/tasks/gui.yml
+    - include: ansible/tasks/replace_debs.yml
+    - include: ansible/tasks/dev.yml
+    - include: ansible/tasks/gaming.yml
+    - include: ansible/tasks/dconf.yml
+    - include: ansible/tasks/nix.yml
+    - include: ansible/tasks/neovim.yml
+    - include: ansible/tasks/mount.yml
+    - include: ansible/tasks/nerd_fonts.yml
+    - include: ansible/tasks/regular_fonts.yml
+    - include: ansible/tasks/home_links.yml
+    - include: ansible/tasks/docker.yml
+      # Testing using brave as flatpak
+      # - include: tasks/brave.yml
+      # not needed, using home manager
+      #    - include: tasks/nix_packages.yml

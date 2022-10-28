@@ -15,6 +15,7 @@
     - include: tasks/dotfiles.yml
     - include: tasks/node.yml
     - include: tasks/gui.yml
+    - include: tasks/replace_debs.yml
     - include: tasks/dev.yml
     - include: tasks/gaming.yml
     - include: tasks/dconf.yml

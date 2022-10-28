@@ -16,36 +16,45 @@
 
     - name: Install Brave
       flatpak:
+        method: user
         name: com.brave.Browser
 
     - name: Install Calibre
       flatpak:
+        method: user
         name: com.calibre_ebook.calibre
 
     - name: Install Flatseal
       flatpak:
+        method: user
         name: com.github.tchx84.Flatseal
 
     - name: Install Extensions Manager
       flatpak:
+        method: user
         name: com.mattjakeman.ExtensionManager
 
     - name: Install Spotify
       flatpak:
+        method: user
         name: com.spotify.Client
 
     - name: Install Stremio
       flatpak:
+        method: user
         name: com.stremio.Stremio
 
     - name: Install Transmission
       flatpak:
+        method: user
         name: com.transmissionbt.Transmission
 
     - name: Install LibreOffice
       flatpak:
+        method: user
         name: org.libreoffice.LibreOffice
 
     - name: Install Celluloid
       flatpak:
+        method: user
         name: io.github.celluloid_player.Celluloid

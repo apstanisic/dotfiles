@@ -50,7 +50,7 @@
     # For some reason `npx -y only-allow pnpm`
     # throws when using nix versions, but not with volta
     # installs both node and npm
-#    nodejs-16_x
+#    nodejs-18_x
 #    nodePackages.pnpm
 #    nodePackages.typescript
      # Can't access network for some reason??
