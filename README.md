@@ -10,7 +10,7 @@ To bootstrap machine, run
 
 ```bash
 sudo apt-get update -y && sudo apt-get install -y ansible software-properties-common
-sudo ansible-pull -U https://github.com/apstanisic/dotfiles.git
+ansible-pull -K -U https://github.com/apstanisic/dotfiles.git
 ```
 
 ## Scripts
