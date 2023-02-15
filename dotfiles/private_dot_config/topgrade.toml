@@ -3,7 +3,7 @@ only = [
   "flatpak",
   "nix",
   "deno",
-  "node",
+# "node",
   "custom_commands",
   "tldr",
   "gnome_shell_extensions",
@@ -38,7 +38,8 @@ use_sudo = false
 "zim" = "source $HOME/.zim/init.zsh && zimfw upgrade && zimfw update"
 "home-manager" = "home-manager switch"
 "volta" = "volta install node@lts"
-"nix-collect-garbage" = "nix-collect-garbage"
+# Do not do this every time, it might wear out ssd faster
+# "nix-collect-garbage" = "nix-collect-garbage"
 # "nix-store --optimise" takes long time on every run
 # "fnm" = "fnm install --lts && fnm default lts-latest && fnm use lts-latest"
 

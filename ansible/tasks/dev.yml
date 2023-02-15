@@ -2,19 +2,21 @@
   tags:
     - dev
   block:
-    - name: Install docker
-      apt:
-        pkg:
-          - docker.io
-          - docker-compose
+    #    - name: Install docker
+    #  apt:
+    #    pkg:
+    #      - docker.io
+    #      - docker-compose
       # Flatpak is still weird and complex
     - name: Install VS Code as deb
+      become: true
       apt:
         name: code
     - name: Install DBeaver
       flatpak:
         method: user
         name: io.dbeaver.DBeaverCommunity
+      # Switch this to dev, not working the best as flatpak
     - name: Install wezterm
       flatpak:
         method: user

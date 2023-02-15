@@ -14,5 +14,3 @@
           - p7zip-full
           - android-tools-adb
           - android-tools-fastboot
-            # installed in dotfiles.yml
-            #          - stow

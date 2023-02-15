@@ -1,0 +1,20 @@
+- name: Flutter
+  tags:
+    - flutter
+  block:
+    - name: Install deps
+      become: true
+      apt:
+        pkg:
+          - git
+    - name: Check if ~/.local/share/flutter-git exists
+      stat:
+        path: $HOME/.local/share/flutter-git
+      register: is_cloned
+    - name: Clone flutter repo
+      git:
+        repo: "https://github.com/flutter/flutter.git"
+        dest: $HOME/.local/share/flutter-git
+        version: stable
+        depth: 1
+      when: not is_cloned.stat.exists

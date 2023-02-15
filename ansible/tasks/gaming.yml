@@ -1,5 +1,10 @@
 - name: Gaming
   block:
+    - name: Install gamepad support for Steam Flatpak
+      become: true
+      apt:
+        name: steam-devices
+
     - name: Install Bottles
       flatpak:
         name: com.usebottles.bottles

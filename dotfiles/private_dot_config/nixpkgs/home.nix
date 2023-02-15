@@ -21,6 +21,7 @@
 
   # All manually installed Nix packages. 
   home.packages = with pkgs; [ 
+    sqlite
     bat
     delta
     deno
@@ -37,14 +38,25 @@
     ripgrep
     rsync
     starship
-    tldr
+    # tldr, Rust version alt
+    tealdeer
     tmux
+    # upgrade 
     topgrade
-    trash-cli
+    # trush cli alt in rust 
+    trashy
+    # httpie alt
     xh
+    # tmux alt
     zellij
+    # jumper
 	zoxide
     distrobox
+    # github cli
+    gh
+    # 
+    chezmoi
+    wl-clipboard
     # Problem with desktop integration
 #     vscode
     # For some reason `npx -y only-allow pnpm`

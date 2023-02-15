@@ -11,9 +11,14 @@
 
     - name: Create games folder link
       file:
-        src: $HOME/HDD/Games
+        src: /media/hdd500/Games
         dest: $HOME/Games
         state: link
+
+    - name: Create Projects folder
+      file:
+        path: $HOME/Projects
+        state: directory
 
     - name: Remove Downloads folder
       file:
@@ -22,19 +27,19 @@
 
     - name: Create Downloads folder link
       file:
-        src: $HOME/HDD/Downloads
+        src: /media/hdd500/Downloads
         dest: $HOME/Downloads
         state: link
 
     - name: Remove Pictures folder
       file:
-        path: $HOME/Pictures
+        path: $HOME/Pictures/HDD
         state: absent
 
     - name: Create Pictures folder link
       file:
-        src: $HOME/HDD/Media/Photos
-        dest: $HOME/Pictures
+        src: /media/hdd500/Media/Photos
+        dest: $HOME/Pictures/HDD
         state: link
 
     - name: Remove Documents folder
@@ -44,7 +49,7 @@
 
     - name: Create Documents folder link
       file:
-        src: $HOME/HDD/Media/Documents
+        src: /media/hdd500/Media/Documents
         dest: $HOME/Documents
         state: link
 

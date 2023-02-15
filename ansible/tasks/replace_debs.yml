@@ -41,10 +41,10 @@
       flatpak:
         method: user
         name: org.gnome.TextEditor
-    - name: Install Weather
-      flatpak:
-        method: user
-        name: org.gnome.Weather
+          #    - name: Install Weather
+          #      flatpak:
+          #        method: user
+          #        name: org.gnome.Weather
     - name: Install document viewer
       flatpak:
         method: user

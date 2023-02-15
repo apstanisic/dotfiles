@@ -42,3 +42,10 @@ export PATH="$PNPM_HOME:$PATH"
 # Add rootless docker to path
 export PATH=/home/aleksandar/.docker-bin:$PATH
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
+
+# General use case
+export PATH=$PATH:$HOME/.local/bin
+
+# Flutter if installed
+export PATH=$PATH:$HOME/.local/share/flutter-git/bin
+export PATH="$PATH":"$HOME/.pub-cache/bin"

@@ -1,0 +1,4 @@
+sourceDir = "/home/aleksandar/.dotfiles/dotfiles"
+[diff]
+    pager = "delta"
+

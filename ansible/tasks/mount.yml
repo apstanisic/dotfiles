@@ -8,9 +8,12 @@
     - mount
   block:
     - name: Create mount folder if it does not exist
+      become: true
       file:
         path: /media/hdd500
         state: directory
+        owner: aleksandar
+        group: aleksandar
         mode: '0755'
 
     - name: Check if drive exists

@@ -13,7 +13,8 @@
 
     - name: Change shell
       become: true
-      shell: chsh -s `which zsh`
+      shell: usermod -s `which zsh` aleksandar
+        #shell: chsh -s `which zsh`
 
     - name: Install zimfw
       # zimfw will change shell if SHELL is not zsh

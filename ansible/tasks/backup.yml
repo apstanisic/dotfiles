@@ -1,0 +1,11 @@
+- name: Backup
+  tags:
+    - backup
+  block:
+    - name: Create cron job to backup
+      cron:
+        name: "rclone_backup"
+        # Every half an hour
+        minute: "*/30"
+        hour: "*"
+        job: /home/aleksandar/.dotfiles/scripts/rclone-backup.sh

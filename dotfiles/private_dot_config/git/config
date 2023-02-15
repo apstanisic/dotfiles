@@ -13,7 +13,7 @@
 	required = true
 
 [pull]
-	rebase = false
+	rebase = true
 
 [interactive]
     diffFilter = delta --color-only
