@@ -1,7 +1,26 @@
 local wezterm = require "wezterm"
 
+function scheme_for_appearance(appearance)
+  if appearance:find "Dark" then
+    return "GitHub Dark"
+  else
+    return "Google (light) (terminal.sexy)"
+  end
+end
+
+wezterm.on('window-config-reloaded', function(window, pane)
+  local overrides = window:get_config_overrides() or {}
+  local appearance = window:get_appearance()
+  local scheme = scheme_for_appearance(appearance)
+  if overrides.color_scheme ~= scheme then
+    overrides.color_scheme = scheme
+    window:set_config_overrides(overrides)
+  end
+end)
+
 -- local theme = "GruvboxDark (Gogh)"
-local theme = "GitHub Dark"
+-- local theme = "GitHub Dark"
+local theme = scheme_for_appearance(wezterm.gui.get_appearance())
 local theme_scheme = wezterm.color.get_builtin_schemes()[theme]
 local theme_bg = wezterm.color.parse(theme_scheme.background)
 local theme_fg = wezterm.color.parse(theme_scheme.foreground)
@@ -57,6 +76,7 @@ end
 local is_fancy = true
 
 return {
+    warn_about_missing_glyphs = false,
     keys = shortcuts,
     -- window_decorations = "RESIZE",
     -- not working
@@ -81,52 +101,14 @@ return {
     -- only applied if use_fancy_bat_bar = false
     -- tab_max_width = 30,
     -- font to be used
-    -- font = wezterm.font 'Fira Code',
-    font = wezterm.font "JetBrainsMono Nerd Font Mono",
+    -- font = wezterm.font "Fira Code",
+    font = wezterm.font_with_fallback { "Fira Code Nerd Font Mono", "JetBrainsMono Nerd Font Mono" },
     -- font size
     font_size = 13,
     -- add little space between lines
     line_height = 1.05,
+    -- always show cursor 
     hide_mouse_cursor_when_typing = false,
-
-    -- tab ui
-    window_frame = 
-        {
-            active_titlebar_bg = theme_bg,
-            inactive_titlebar_bg = theme_bg
-        } ,
-    colors = 
-        {
-            tab_bar = {
-                -- line between tabs
-                inactive_tab_edge = "#FFF",
-                inactive_tab = {
-                    fg_color = theme_fg,
-                    bg_color = theme_bg,
-                },
-                inactive_tab_hover = {
-                    bg_color = theme_bg:lighten(0.1),
-                    fg_color = theme_fg:lighten(0.1),
-                },
-                active_tab = {
-                    bg_color = "#000",
-                    fg_color = "#fff",
-                },
-
-                new_tab = {
-                    bg_color = "#000",
-                    fg_color = "#fff",
-                },
-                new_tab_hover = {
-                    bg_color = theme_bg:lighten(0.1),
-                    fg_color = "#fff",
-                }
-
-            },
-            scrollbar_thumb = theme_bg:lighten(0.1),
-            split = theme_bg:lighten(0.2)
-
-        },
     window_padding = {
         left = 0,
         -- 1 char width, used for displaying scrollbar

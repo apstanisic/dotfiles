@@ -74,6 +74,9 @@ alias tks='tmux kill-server'
 # Simpler tmux
 alias zj='zellij'
 
+# Switch from Docker to Podman
+alias docker='podman'
+
 # Rerun previous command with sudo
 alias again='sudo $(fc -ln -1)'
 

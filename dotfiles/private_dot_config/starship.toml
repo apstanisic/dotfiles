@@ -3,7 +3,7 @@ add_newline = false
 
 # For some reason default char is to big in my terminal
 # This looks prettier
-# You must have Nerd Fonts installed
+# Nerd Fonts required
 [character]
 success_symbol= "[](green)"
 error_symbol= "[](red)"

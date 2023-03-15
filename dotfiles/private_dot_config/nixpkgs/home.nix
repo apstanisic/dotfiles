@@ -57,6 +57,7 @@
     # 
     chezmoi
     wl-clipboard
+    mprocs
     # Problem with desktop integration
 #     vscode
     # For some reason `npx -y only-allow pnpm`

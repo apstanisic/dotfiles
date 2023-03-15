@@ -3,22 +3,15 @@
 - name: Docker
   tags:
     - docker
-  environment:
-    DOCKER_BIN: "{{ ansible_env.HOME }}/.docker-bin"
   block:
-    - name: Ensure dependencies
+    - name: Install podman
       become: true
-      apt:
-        pkg: 
-        - uidmap
-        - dbus-user-session
-    - name: Install rootless Docker
-      shell: curl -fsSL https://get.docker.com/rootless | sh
+      apt: 
+        name: podman
+    - name: Start Podman on startup
+      systemd: 
+        name: podman.socket
+        enabled: true
+        scope: user
+        state: started
 
-    - name: Start on startup
-      shell: systemctl --user enable docker
-        # To keep user active after logout
-        # sudo loginctl enable-linger $(whoami)
-
-    - name: Start Docker
-      shell: systemctl --user start docker

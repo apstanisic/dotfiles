@@ -10,17 +10,11 @@
           - neovim
           - git 
           - curl
-    - name: Install packer
+    - name: Install AstroNvim
       git:
-        repo: 'https://github.com/wbthomason/packer.nvim'
-        dest: '{{ ansible_env.HOME }}/.local/share/nvim/site/pack/packer/start/packer.nvim'
+        repo: 'https://github.com/AstroNvim/AstroNvim'
+        dest: '{{ ansible_env.HOME }}/.config/nvim'
         depth: 1
-    - name: Check if neovim config exists
-      stat:
-        path: $HOME/.config/nvim/init.lua
-      register: config_exists
 
-    - name: Install neovim packages
-      shell: nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-      when: config_exists.stat.exists
-
+#    - name: Init AstroNvim
+#      shell: nvim --headless -c 'autocmd User LazyDone quitall'

@@ -12,6 +12,8 @@ only = [
   "composer"
 ]
 
+# Remove annoying notification before running topgrade
+skip_notify = true
 
 # Do not stop execution and ask me to retry
 no_retry = true
