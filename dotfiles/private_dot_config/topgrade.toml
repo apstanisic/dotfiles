@@ -37,7 +37,8 @@ use_sudo = false
 [commands]
 # topgrade runs this command with "zsh -c" which does not source
 # .zshrc, where zim puts it's function, so we source zimfw manually
-"zim" = "source $HOME/.zim/init.zsh && zimfw upgrade && zimfw update"
+#"zim" = "source $HOME/.zim/init.zsh && zimfw upgrade && zimfw update"
+"zsh" = "zsh $HOME/.dotfiles/scripts/update_zsh_plugins.zsh"
 "home-manager" = "home-manager switch"
 "volta" = "volta install node@lts"
 # Do not do this every time, it might wear out ssd faster

@@ -1,0 +1,20 @@
+# Load before zsh-utils
+zsh-users/zsh-completions
+
+zimfw/termtitle
+
+belak/zsh-utils path:editor
+belak/zsh-utils path:history
+belak/zsh-utils path:prompt
+belak/zsh-utils path:utility
+belak/zsh-utils path:completion
+
+# mattmc3/zephyr
+
+zsh-users/zsh-autosuggestions
+zdharma-continuum/fast-syntax-highlighting kind:defer
+# zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+
+# Improved vi mode. Provides proper cursor 
+ohmyzsh/ohmyzsh path:plugins/vi-mode

@@ -4,7 +4,7 @@
 
 [core]
 	editor = nvim
-    pager = delta
+  pager = delta
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -16,13 +16,13 @@
 	rebase = true
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
-    navigate = true
+  navigate = true
 
 [merge]
-    conflictstyle = diff3
+  conflictstyle = diff3
 
 [diff]
-    colorMoved = default
+  colorMoved = default

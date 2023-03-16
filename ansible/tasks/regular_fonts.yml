@@ -17,21 +17,21 @@
 
     - name: Ensure script is runnable
       file:
-        path: ./ansible/copy_normal_fonts.bash
+        path: ./scripts/copy_normal_fonts.bash
         mode: u+x
 
       # relative to local.yml
     - name: Install FiraCode
-      shell: ./ansible/copy_normal_fonts.bash FiraCode
+      shell: ./scripts/copy_normal_fonts.bash FiraCode
 
     - name: Install JetBrainsMono
-      shell: ./ansible/copy_normal_fonts.bash JetBrainsMono
+      shell: ./scripts/copy_normal_fonts.bash JetBrainsMono
 
     - name: Install SourceCodePro
-      shell: ./ansible/copy_normal_fonts.bash SourceCodePro
+      shell: ./scripts/copy_normal_fonts.bash SourceCodePro
 
     - name: Install CascadiaCode
-      shell: ./ansible/copy_normal_fonts.bash CascadiaCode
+      shell: ./scripts/copy_normal_fonts.bash CascadiaCode
 
     - name: Clear font cache
       become: true

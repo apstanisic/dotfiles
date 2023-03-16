@@ -1,0 +1,5 @@
+if [ -e $HOME/.config/zsh/zshenv ]; then . $HOME/.config/zsh/zshenv; fi
+
+if [ -e /home/aleksandar/.nix-profile/etc/profile.d/nix.sh ]; then . /home/aleksandar/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+. "$HOME/.cargo/env"
+
