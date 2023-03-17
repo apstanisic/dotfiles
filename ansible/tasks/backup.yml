@@ -2,6 +2,9 @@
   tags:
     - backup
   block:
+    - name: Restore secrets
+      shell: bash $HOME/.dotfiles/scripts/backup_secrets.bash restore
+
     - name: Create cron job to backup
       cron:
         name: "rclone_backup"

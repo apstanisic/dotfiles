@@ -15,10 +15,10 @@
         name: com.valvesoftware.Steam
         method: user
 
-    - name: Install AntiMicroX
-      flatpak:
-        name: io.github.antimicrox.antimicrox
-        method: user
+    # - name: Install AntiMicroX
+    #   flatpak:
+    #     name: io.github.antimicrox.antimicrox
+    #     method: user
 # # Maybe I do not need Lutris and ProtonUp, because of bottles
 #    - name: Install Lutris
 #      flatpak:

@@ -25,6 +25,7 @@
         path: $HOME/Downloads
         state: absent
 
+      # I want to use hard drive for Downloads, prevent ssd wear
     - name: Create Downloads folder link
       file:
         src: /media/hdd500/Downloads

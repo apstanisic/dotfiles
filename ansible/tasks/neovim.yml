@@ -2,14 +2,14 @@
   tags: 
     - neovim
   block:
-    - name: Install neovim
-      become: true
-      apt:
-        # Neovim should be installed with nix
-        pkg: 
-          - neovim
-          - git 
-          - curl
+    # - name: Install neovim
+    #   become: true
+    #   apt:
+    #     # Neovim should be installed with nix
+    #     pkg: 
+    #       - neovim
+    #       - git 
+    #       - curl
     - name: Install AstroNvim
       git:
         repo: 'https://github.com/AstroNvim/AstroNvim'

@@ -1,4 +1,6 @@
 #!/usr/bin/zsh
 
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote update
+# Added to scripts since I need to run it with topgrade
+source ~/.znap/zsh-snap/znap.zsh  # Start Znap
+znap pull
+znap compile

@@ -1,13 +1,9 @@
 - name: Dev
   tags:
     - dev
+      # Docker is installed in docker.yml 
   block:
-    #    - name: Install docker
-    #  apt:
-    #    pkg:
-    #      - docker.io
-    #      - docker-compose
-      # Flatpak is still weird and complex
+      # Flatpak is still weird and complex for vscode and terminal
     - name: Install VS Code as deb
       become: true
       apt:
@@ -16,8 +12,13 @@
       flatpak:
         method: user
         name: io.dbeaver.DBeaverCommunity
-      # Switch this to dev, not working the best as flatpak
-    - name: Install wezterm
-      flatpak:
-        method: user
-        name: org.wezfurlong.wezterm
+
+    - name: Download nightly wezterm.deb
+      get_url: 
+        url: https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Ubuntu22.04.deb
+        dest: /tmp/wezterm.deb
+
+    - name: Install wezterm.deb package
+      become: true
+      apt:
+        deb: /tmp/wezterm.deb

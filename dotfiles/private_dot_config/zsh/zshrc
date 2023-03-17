@@ -1,4 +1,21 @@
-# We need to configure this before loading plugins
+
+# Load plugin manager
+# Download Znap, if it's not there yet.
+# This should never happen, but just in case
+[[ -f ~/.znap/zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.znap/zsh-snap
+
+# Start Znap
+source ~/.znap/zsh-snap/znap.zsh  
+
+# Starship prompt
+# Set prompt as fast as possible
+znap eval starship 'starship init zsh --print-full-init'
+znap prompt
+# eval "$(starship init zsh)"
+
+# Configure title
 # This will use current dir as a title, 
 # unless command is running, then it will use command name
 # There are ugly spaces at the end, but it's the only way 
@@ -6,18 +23,35 @@
 zstyle ':zim:termtitle' hooks 'preexec' 'precmd'
 zstyle ':zim:termtitle:preexec' format '${${(A)=1}}    '
 zstyle ':zim:termtitle:precmd'  format '%2~           '
+znap source zimfw/termtitle
 
-# Load plugin manager
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load
+znap source belak/zsh-utils editor
+znap source belak/zsh-utils history
+znap source belak/zsh-utils prompt
+znap source belak/zsh-utils utility
+# znap source belak/zsh-utils completion
+znap source zdharma-continuum/fast-syntax-highlighting 
+# zsh-users/zsh-syntax-highlighting
+znap source zsh-users/zsh-history-substring-search
+znap source zsh-users/zsh-autosuggestions
+
+# Improved vi mode. Provides proper cursor 
+znap source ohmyzsh/ohmyzsh plugins/vi-mode 
+# For oh-my-zsh vi plugin. Change cursor to block when in command mode, to line in insert mode
+export VI_MODE_SET_CURSOR=true
+
+# Load before zimfw completions
+znap source zsh-users/zsh-completions
+# better than belak completions since I can type middle and end of the word
+znap source sorin-ionescu/prezto modules/completion
+# This logs error in terminal
+# (anon):zcompile:29: can't open file: /home/aleksandar/.zcompdump
+# znap source zimfw/completion
 
 # Enable vim mode
 bindkey -v
 # Disable timeout for vi mode
 export KEYTIMEOUT=1
-
-# Starship prompt
-eval "$(starship init zsh)"
 
 # zoxide navigation. jumper
 eval "$(zoxide init zsh)"
@@ -28,9 +62,3 @@ eval "$(mcfly init zsh)"
 export MCFLY_KEY_SCHEME=vim
 # Do not order by rank, order by time 
 export MCFLY_RESULTS_SORT=LAST_RUN
-
-# For oh-my-zsh vi plugin. Change cursor to block when in command mode, line in insert mode
-export VI_MODE_SET_CURSOR=true
-
-# History search not working in vi mode
-# bindkey '^r' history-incremental-search-backward

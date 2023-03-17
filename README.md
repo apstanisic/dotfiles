@@ -5,7 +5,11 @@ Dotfiles, ansible and scripts that are used to setup PopOS machine.
 To setup machine, run
 
 ```bash
+# Update packages and install ansible
 sudo apt-get update -y && sudo apt-get install -y ansible software-properties-common
+# Replace ANSIBLE_SECRET_KEY with key from Bitwarden
+echo "ANSIBLE_SECRET_KEY" > $HOME/.ans-key
+# Run ansible
 ansible-pull -K -U https://github.com/apstanisic/dotfiles.git
 ```
 
