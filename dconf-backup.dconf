@@ -1,3 +1,15 @@
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=false
+night-light-schedule-automatic=false
+night-light-schedule-from=21.0
+night-light-schedule-to=6.0
+night-light-temperature=uint32 2914
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>F3'
+command='/home/aleksandar/.dotfiles/scripts/toggle-night-light.sh'
+name='Toggle Blue Light Filter'
+
 [desktop/ibus/panel/emoji]
 hotkey=['<Control><Alt><Shift><Meta><Super><Hyper>8']
 unicode-hotkey=['<Control><Alt><Shift><Meta><Super><Hyper>9']
