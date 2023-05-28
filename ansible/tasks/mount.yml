@@ -6,10 +6,18 @@
   block:
     - name: Unlock LUKS
       become: true
+      community.crypto.luks_device:
+        uuid: af27ae1d-5df4-4d86-864b-717e3987bd31
+        keyfile: "{{ ansible_env.HOME }}/.config/hdd500-secret-key.txt"
+        state: opened
+        name: hdd-drive
+
+    - name: Unlock LUKS on startup
+      become: true
       no_log: true
       community.general.crypttab:
         backing_device: UUID=af27ae1d-5df4-4d86-864b-717e3987bd31
-        password: /home/aleksandar/.config/hdd500-secret-key.txt
+        password: "{{ ansible_env.HOME }}/.config/hdd500-secret-key.txt"
         name: /dev/mapper/hdd-drive
         state: present
         opts: luks
@@ -21,7 +29,7 @@
         state: directory
         owner: aleksandar
         group: aleksandar
-        mode: "0755"
+        mode: "0777"
 
 
     - name: Mount drive on startup
@@ -37,7 +45,8 @@
         # Also possible
         # fstype: auto
         # Should be mounted
-        state: present
+        # state: present
+        state: mounted
         # nofail - It will boot normally even if drive fails
         # x-gvfs-show - Tell gnome to show in Files
         # x-gvfs-name - Tell gnome what name to use
