@@ -2,6 +2,8 @@
 # It's still possible to enter root
 # with `sudo su root`, but it's still better
 - name: Disable root login
+  tags:
+    - disable_root
   become: true
   user:
     name: root

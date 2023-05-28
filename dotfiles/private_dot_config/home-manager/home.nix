@@ -14,7 +14,7 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.05";
+  home.stateVersion = "23.05";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -25,7 +25,7 @@
     bat
     delta
     deno
-    docker-compose
+    # docker-compose
     duf
     exa
     fd
@@ -50,34 +50,21 @@
     # tmux alt
     zellij
     # jumper
-	zoxide
+	  zoxide
     distrobox
     # github cli
     gh
-    # 
+    # Dotfiles manager
     chezmoi
     wl-clipboard
+    # Run multiple processes within TUI
     mprocs
-    # Problem with desktop integration
-#     vscode
-    # For some reason `npx -y only-allow pnpm`
-    # throws when using nix versions, but not with volta
-    # installs both node and npm
-#    nodejs-18_x
-#    nodePackages.pnpm
-#    nodePackages.typescript
-     # Can't access network for some reason??
-#     nodePackages.npm-check-updates
+    # Speed test
+    speedtest-go
+    # To create bootable flash drive
+    ventoy
+    # Node version manager
+    fnm
   ];
-
-  # Maybe 
-  # dconf = {
-  #   enable = true;
-  #   settings = {
-  #       "org/gnome/calculator" = {
-  #       button-mode = "programming";
-  #     };
-  #   };
-  # };
   
 }

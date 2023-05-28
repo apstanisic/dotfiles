@@ -2,9 +2,7 @@
   tags:
     - backup
   block:
-    - name: Restore secrets
-      shell: bash $HOME/.dotfiles/scripts/backup_secrets.bash restore
-
+    # Every 30 minutes run backup script
     - name: Create cron job to backup
       cron:
         name: "rclone_backup"

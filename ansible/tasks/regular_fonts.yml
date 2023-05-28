@@ -2,18 +2,18 @@
   tags:
     - regular_fonts
   block:
-    - name: Ensure deps     
-      become: true    
-      apt: name=git    
-     
-    - name: Check if repo is already cloned    
-      stat:    
-        path: /tmp/nerd-fonts    
-      register: is_cloned    
-     
-    - name: Clone nerd fonts    
-      when: not is_cloned.stat.exists    
-      shell: git clone --depth 1 --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git /tmp/nerd-fonts    
+    - name: Ensure deps
+      become: true
+      apt: name=git
+
+    - name: Check if repo is already cloned
+      stat:
+        path: /tmp/nerd-fonts
+      register: is_cloned
+
+    - name: Clone nerd fonts
+      when: not is_cloned.stat.exists
+      shell: git clone --depth 1 --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git /tmp/nerd-fonts
 
     - name: Ensure script is runnable
       file:
@@ -36,4 +36,3 @@
     - name: Clear font cache
       become: true
       shell: fc-cache -fv
-

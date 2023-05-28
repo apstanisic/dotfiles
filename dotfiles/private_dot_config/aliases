@@ -75,7 +75,7 @@ alias tks='tmux kill-server'
 alias zj='zellij'
 
 # Switch from Docker to Podman
-alias docker='podman'
+# alias docker='podman'
 
 # Rerun previous command with sudo
 alias again='sudo $(fc -ln -1)'
@@ -116,6 +116,9 @@ alias cb-paste='wl-paste'
 alias cbc='wl-copy'
 alias cbp='wl-paste'
 
+# Better cat
+alias cat='bat'
+
 # Run command multiple times
 # Weird () is creating inner shell so i can call `set -e` without affecting global
 # many() {(
@@ -127,3 +130,7 @@ alias cbp='wl-paste'
 #       $@
 #     done
 # )}
+
+# to-env() {
+#   eval $(cat $1);
+# }

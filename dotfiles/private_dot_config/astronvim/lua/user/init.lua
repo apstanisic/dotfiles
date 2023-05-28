@@ -1,5 +1,5 @@
 return {
-  colorscheme = "github_dark_default",
+  colorscheme = "github_dark_high_contrast",
 
   plugins = {
     {

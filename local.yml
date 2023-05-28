@@ -9,17 +9,25 @@
         update_cache: true
         upgrade: dist
   tasks:
-    - include: ansible/tasks/disable_root.yml
+    # Install required apt packages
     - include: ansible/tasks/apt.yml
-    - include: ansible/tasks/zsh.yml
+    # Clone this repo and copy dotfiles
     - include: ansible/tasks/dotfiles.yml
+    # Decrypt it's secrets
+    - include: ansible/tasks/decrypt.yml
+    # Install nix and home-manager packages
+    - include: ansible/tasks/nix.yml
+    # Disable root
+    - include: ansible/tasks/disable_root.yml
+    # Configure zsh
+    - include: ansible/tasks/zsh.yml
+    # Install NodeJS
     - include: ansible/tasks/node.yml
     - include: ansible/tasks/gui.yml
     - include: ansible/tasks/replace_debs.yml
     - include: ansible/tasks/dev.yml
     - include: ansible/tasks/gaming.yml
     - include: ansible/tasks/dconf.yml
-    - include: ansible/tasks/nix.yml
     - include: ansible/tasks/neovim.yml
     - include: ansible/tasks/mount.yml
     - include: ansible/tasks/nerd_fonts.yml
@@ -28,7 +36,3 @@
     - include: ansible/tasks/docker.yml
     - include: ansible/tasks/flutter.yml
     - include: ansible/tasks/backup.yml
-      # Testing using brave as flatpak
-      # - include: tasks/brave.yml
-      # not needed, using home manager
-      #    - include: tasks/nix_packages.yml

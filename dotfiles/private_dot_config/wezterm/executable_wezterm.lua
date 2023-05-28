@@ -10,6 +10,10 @@ function get_theme(appearance)
 end
 
 return {
+    -- Join title bar and tabs (like in browsers)
+    window_decorations = "INTEGRATED_BUTTONS|RESIZE",
+    -- Use Gnome style buttons in top right corner
+    integrated_title_button_style = "Gnome",
     -- Tab bar
     window_frame = {
         -- increase size of tabs a little
@@ -37,8 +41,6 @@ return {
     hide_mouse_cursor_when_typing = false,
     -- always show scroll bar (there is no dynamic)
     enable_scroll_bar = true,
-    -- use thin cursor (disabled because it's hard to use with zsh's vi mode)
-    -- default_cursor_style ="SteadyBar",
     keys = {
         -- Open panel to the right
         {

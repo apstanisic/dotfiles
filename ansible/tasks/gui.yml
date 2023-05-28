@@ -1,7 +1,7 @@
 - name: GUI apps
   tags:
     - gui
-  # Only browser, terminal and IDE are apts
+  # Only terminal and IDE are apts
   block:
     - name: Remove LibreOffice deb
       become: true
@@ -9,10 +9,10 @@
         name: libreoffice*
         state: absent
 
-    - name: Install tilix as deb
-      become: true
-      apt:
-        name: tilix
+    # - name: Install tilix as deb
+    #   become: true
+    #   apt:
+    #     name: tilix
 
     - name: Install Brave
       flatpak:
@@ -58,3 +58,8 @@
       flatpak:
         method: user
         name: io.github.celluloid_player.Celluloid
+
+    - name: Install Slack
+      flatpak:
+        method: user
+        name: com.slack.Slack

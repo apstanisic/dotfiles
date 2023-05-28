@@ -1,6 +1,8 @@
 - name: apt
+  tags:
+    - apt
   block:
-    - name: Install packages
+    - name: Install common packages
       become: true
       apt:
         pkg:
@@ -14,3 +16,5 @@
           - p7zip-full
           - android-tools-adb
           - android-tools-fastboot
+          - android-sdk-platform-tools
+          - unrar

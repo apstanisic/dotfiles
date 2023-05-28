@@ -1,6 +1,6 @@
 [user]
-	email = aleksandar@tuta.io
 	name = Aleksandar Stanisic
+	email = aleksandar@tuta.io
 
 [core]
 	editor = nvim
@@ -26,3 +26,7 @@
 
 [diff]
   colorMoved = default
+
+; This will use work specific config when in ~/Work folder 
+[includeIf "gitdir:~/Work/"]
+  path = work.inc

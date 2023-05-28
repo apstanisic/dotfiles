@@ -1,6 +1,7 @@
 - name: Flutter
   tags:
     - flutter
+    - never
   block:
     - name: Install deps
       become: true

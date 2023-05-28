@@ -12,7 +12,7 @@ backup_single() {
     # Convert folder to single file 
     tar -cf $temp_file -C $where .
     # Encrypt that file
-    ansible-vault encrypt --vault-password-file ~/.ans-key $temp_file
+    ansible-vault encrypt --vault-password-file ~/.config/ansible-vault-key.txt $temp_file
     # Move encrypted file to hard drive
     mv -f $temp_file /media/hdd500/Media/Documents/Secrets
   else
@@ -41,7 +41,7 @@ restore_single() {
     # Copy encrypted file to dest parent folder
     cp /media/hdd500/Media/Documents/Secrets/$name $where.tar
     # Decrypt it. It will return tar archive
-    ansible-vault decrypt --vault-password-file ~/.ans-key $where.tar
+    ansible-vault decrypt --vault-password-file ~/.config/ansible-vault-key.txt $where.tar
     # Make dir to extract
     mkdir -p $where
     # Extract to destination

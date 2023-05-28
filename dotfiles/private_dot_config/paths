@@ -27,8 +27,10 @@ if [ -e "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]; then
 fi
 
 # Volta
-export VOLTA_HOME=$HOME/.volta
-export PATH=$PATH:$VOLTA_HOME/bin
+# export VOLTA_HOME=$HOME/.volta
+# export PATH=$PATH:$VOLTA_HOME/bin
+#
+eval "$(/home/aleksandar/.nix-profile/bin/fnm env)"
 
 # Node global packages
 export PATH=$PATH:$HOME/.npm-global/bin
@@ -43,7 +45,7 @@ export PATH="$PNPM_HOME:$PATH"
 # export PATH=/home/aleksandar/.docker-bin:$PATH
 # export DOCKER_HOST=unix:///run/user/1000/docker.sock
 # Experimenting with switching to podman
-export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
+# export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
 
 
 # General use case

@@ -7,49 +7,54 @@
       become: true
       apt:
         purge: true
-        pkg:
-        - gnome-calendar
-        - gnome-contacts
-        - gnome-calculator
-        - gnome-weather
-        - gedit
-          # video player
-        - totem
-          # document viewer
-        - evince
-          # disk usage
-        - baobab
-          # image viewer
-        - eog
-          # document scanner
-        - simple-scan
-          # email
-        - geary
-          # extensions app (using extensions manager)
-        - gnome-shell-extension-prefs
         state: absent
+        pkg:
+          # Calendar
+          - gnome-calendar
+          # Contacts
+          - gnome-contacts
+          # Calculator
+          - gnome-calculator
+          # Weather
+          - gnome-weather
+          # Text editor
+          - gedit
+            # video player
+          - totem
+            # document viewer
+          - evince
+            # disk usage
+          - baobab
+            # image viewer
+          - eog
+            # document scanner
+          - simple-scan
+            # email
+          - geary
+            # extensions app (using extensions manager)
+          - gnome-shell-extension-prefs
 
     - name: Install Calculator
       flatpak:
         method: user
         name: org.gnome.Calculator
+
     - name: Install Calendar
       flatpak:
         method: user
         name: org.gnome.Calendar
+
     - name: Install Text editor
       flatpak:
         method: user
         name: org.gnome.TextEditor
-          #    - name: Install Weather
-          #      flatpak:
-          #        method: user
-          #        name: org.gnome.Weather
+
     - name: Install document viewer
       flatpak:
         method: user
         name: org.gnome.Evince
+
     - name: Install image viewer
       flatpak:
         method: user
-        name: org.gnome.eog
+        name: org.gnome.Loupe

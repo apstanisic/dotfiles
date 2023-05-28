@@ -1,0 +1,18 @@
+--- 
+# Compose is installed with nix & home-manager
+- name: Docker
+  tags:
+    - docker
+    - never
+  block:
+    - name: Install podman
+      become: true
+      apt: 
+        name: podman
+    - name: Start Podman on startup
+      systemd: 
+        name: podman.socket
+        enabled: true
+        scope: user
+        state: started
+

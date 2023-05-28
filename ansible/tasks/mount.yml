@@ -1,12 +1,19 @@
 ---
-# This is better than uuid since hard drive label
-# will be same after reinstalling os,
-# and there is no danger that some other device
-# might be at /dev/sda1
-- name: Mount drive
+- name: Mount internal hard drive
   tags:
     - mount
+    - personal
   block:
+    - name: Unlock LUKS
+      become: true
+      no_log: true
+      community.general.crypttab:
+        backing_device: UUID=af27ae1d-5df4-4d86-864b-717e3987bd31
+        password: /home/aleksandar/.config/hdd500-secret-key.txt
+        name: /dev/mapper/hdd-drive
+        state: present
+        opts: luks
+
     - name: Create mount folder if it does not exist
       become: true
       file:
@@ -14,23 +21,17 @@
         state: directory
         owner: aleksandar
         group: aleksandar
-        mode: '0755'
+        mode: "0755"
 
-    - name: Check if drive exists
-      # command return path to drive (/dev/sda1), or fails
-      # so we can simply echo false if command fails 
-      # and later check if return value is false (drive_exists.stdout)
-      shell: blkid --label HARD_DRIVE_001 || echo false
-      register: drive_exists
 
-    - name: Register drive by label
+    - name: Mount drive on startup
       become: true
-      when: drive_exists.stdout != "false"
       mount:
         # Steam uses `/media`, so will I, less chance to cause problem with games
         path: /media/hdd500
-        # I have 1 hdd and 1 nvme, so hdd will always be sda1
-        src: LABEL=HARD_DRIVE_001
+        # src: LABEL=HARD_DRIVE_001
+        # This is path of mapped LUKS drive
+        src: /dev/mapper/hdd-drive
         # It's ext4, in future maybe switch to btrfs
         fstype: ext4
         # Also possible
@@ -41,5 +42,3 @@
         # x-gvfs-show - Tell gnome to show in Files
         # x-gvfs-name - Tell gnome what name to use
         opts: x-gvfs-show,nofail,x-gvfs-name=HardDrive500
-
-

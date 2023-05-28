@@ -8,9 +8,9 @@ To setup machine, run
 # Update packages and install ansible
 sudo apt-get update -y && sudo apt-get install -y ansible software-properties-common
 # Replace ANSIBLE_SECRET_KEY with key from Bitwarden
-echo "ANSIBLE_SECRET_KEY" > $HOME/.ans-key
+echo "ANSIBLE_SECRET_KEY" > $HOME/.config/ansible-vault-key.txt
 # Run ansible
-ansible-pull -K -U https://github.com/apstanisic/dotfiles.git
+ansible-pull -K -U https://github.com/apstanisic/dotfiles.git --vault-password-file $HOME/.config/ansible-vault-key.txt
 ```
 
 To rerun some tasks locally

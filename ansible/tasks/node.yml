@@ -1,29 +1,27 @@
---- 
-# Test home-manager for both node and node global packages
-# I currently had no need to use multiple versions of node,
-# so home-manager is good enough
+---
+# FNM is installed with nix/home-manager
 - name: Node
   tags:
     - node
-  environment:
-    VOLTA_HOME: "{{ ansible_env.HOME }}/.volta"
-    PATH: "{{ ansible_env.PATH }}:{{ ansible_env.HOME }}/.volta/bin"
   block:
-    - name: Ensure dependencies
-      become: true
-      apt: name=curl
-    - name: Install Volta
-      shell: curl https://get.volta.sh | bash -s -- --skip-setup
     - name: Install NodeJS
-      shell: volta install node
+      shell: fnm install --lts
+
+    - name: Install yarn
+      npm:
+        name: yarn
+        global: true
+
     - name: Install pnpm
       npm:
         name: pnpm
         global: true
+
     - name: Install typescript
       npm:
         name: typescript
         global: true
+
     - name: Install npm-check-updates
       npm:
         name: npm-check-updates

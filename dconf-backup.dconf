@@ -1,7 +1,7 @@
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=false
 night-light-schedule-automatic=false
-night-light-schedule-from=21.0
+night-light-schedule-from=22.0
 night-light-schedule-to=6.0
 night-light-temperature=uint32 2914
 
