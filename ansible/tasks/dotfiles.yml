@@ -41,7 +41,7 @@
     - name: Copy chezmoi config
       copy: 
         src: "$HOME/.dotfiles/dotfiles/private_dot_config/chezmoi/chezmoi.toml"
-        desc: "$HOME/.config/chezmoi/chezmoi.toml"
+        dest: "$HOME/.config/chezmoi/chezmoi.toml"
         mode: '0644'
 
     - name: Sync dotfiles
