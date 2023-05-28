@@ -1,5 +1,5 @@
 # Where chezmoi files are stored
-sourceDir = "/home/aleksandar/.dotfiles/dotfiles"
+sourceDir = "~/.dotfiles/dotfiles"
 # Use `delta` to see chezmoi diff
 [diff]
     pager = "delta"

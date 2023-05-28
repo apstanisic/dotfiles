@@ -39,7 +39,7 @@
       when: not is_cloned.stat.exists
 
     - name: Sync dotfiles
-      shell: $HOME/.local/bin/chezmoi apply --force
+      shell: $HOME/.local/bin/chezmoi apply --force --config $HOME/.dotfiles/dotfiles/private_dot_config/chezmoi/chezmoi.toml
 
       # Nix will install it later with home-manager
     - name: Remove local chezmoi

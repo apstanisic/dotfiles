@@ -30,13 +30,13 @@ fi
 # export VOLTA_HOME=$HOME/.volta
 # export PATH=$PATH:$VOLTA_HOME/bin
 #
-eval "$(/home/aleksandar/.nix-profile/bin/fnm env)"
+eval "$($HOME/.nix-profile/bin/fnm env)"
 
 # Node global packages
 export PATH=$PATH:$HOME/.npm-global/bin
 
 # PNPM
-export PNPM_HOME="/home/aleksandar/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # Docker
