@@ -38,17 +38,23 @@
         version: main
       when: not is_cloned.stat.exists
 
+    - name: Create chezmoi config folder
+      file:
+        path: "{{ ansible_env.HOME }}/.config/chezmoi"
+        state: directory
+        recurse: true
+
     - name: Copy chezmoi config
       copy: 
-        src: "$HOME/.dotfiles/dotfiles/private_dot_config/chezmoi/chezmoi.toml"
-        dest: "$HOME/.config/chezmoi/chezmoi.toml"
+        src: "{{ ansible_env.HOME }}/.dotfiles/dotfiles/private_dot_config/chezmoi/chezmoi.toml"
+        dest: "{{ ansible_env.HOME }}/.config/chezmoi/chezmoi.toml"
         mode: '0644'
 
     - name: Sync dotfiles
-      shell: $HOME/.local/bin/chezmoi apply --force 
+      shell:  "{{ ansible_env.HOME }}/.local/bin/chezmoi apply --force"
 
       # Nix will install it later with home-manager
     - name: Remove local chezmoi
       file:
-        path: $HOME/.local/bin/chezmoi
+        path: "{{ ansible_env.HOME }}/.local/bin/chezmoi"
         state: absent

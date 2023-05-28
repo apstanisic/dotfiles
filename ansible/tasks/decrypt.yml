@@ -2,37 +2,49 @@
   tags:
     - decrypt
   block:
+    - name: Creates git config dir
+      file:
+        path: "{{ ansible_env.HOME }}/.config/git"
+        state: directory
+        recurse: yes
+
+    - name: Creates rclone config dir
+      file:
+        path: "{{ ansible_env.HOME }}/.config/rclone"
+        state: directory
+        recurse: yes
+
     - name: Add git work profile
       copy:
         src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/git-work-profile.inc.enc"
         dest: "{{ lookup('env','HOME') }}/.config/git/work.inc"
-        mode: '0644'
+        mode: "0644"
 
     - name: Add rclone config
       copy:
         src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/rclone.conf.enc"
         dest: "{{ lookup('env','HOME') }}/.config/rclone/rclone.conf"
-        mode: '0600'
+        mode: "0600"
 
     - name: Add LUKS config
       copy:
         src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/hdd500-secret-key.txt.enc"
         dest: "{{ lookup('env','HOME') }}/.config/hdd500-secret-key.txt"
-        mode: '0640'
+        mode: "0640"
 
-      # So I do not have to type password after first time 
+      # So I do not have to type password after first time
     - name: Add ansible vault key
       copy:
         src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/ansible-vault-key.txt.enc"
         dest: "{{ lookup('env','HOME') }}/.config/ansible-vault-key.txt"
-        mode: '0600'
+        mode: "0600"
 
       # I have to tar it since it's a folder
     - name: Decrypt ssh
       copy:
         src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/ssh.tar.enc"
         dest: "/tmp/ssh.tar"
-        mode: '0600'
+        mode: "0600"
 
     # Folder is created with
     # tar -cf ssh.tar -C ~ .ssh
@@ -42,10 +54,9 @@
       unarchive:
         src: /tmp/ssh.tar
         dest: "{{ lookup('env','HOME') }}"
-        mode: '0700'
+        mode: "0700"
 
     - name: Remove ssh tar
       file:
         path: /tmp/ssh.tar
         state: absent
-
