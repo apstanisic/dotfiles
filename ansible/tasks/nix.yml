@@ -12,7 +12,10 @@
     args:
       executable: /bin/bash
     shell: |
-      source $HOME/.profile; 
+      # Default nix installer add path to this
+      source $HOME/.profile;
+      # nix-installer adds path here
+      source /etc/bashrc;
       nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager;
       nix-channel --update;
       nix-shell '<home-manager>' -A install
