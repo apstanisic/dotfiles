@@ -6,6 +6,8 @@
   block:
     - name: Install NodeJS
       shell: fnm install --lts
+      environment:
+        PATH: "$PATH:{{ ansible_env.HOME }}/.nix-profile/bin"
 
     - name: Install yarn
       npm:
