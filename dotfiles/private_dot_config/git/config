@@ -30,3 +30,6 @@
 ; This will use work specific config when in ~/Work folder 
 [includeIf "gitdir:~/Work/"]
   path = work.inc
+
+[init]
+	defaultBranch = main

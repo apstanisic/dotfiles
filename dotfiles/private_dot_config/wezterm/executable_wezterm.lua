@@ -4,8 +4,10 @@ function get_theme(appearance)
     if appearance:find "Dark" then
         return "GitHub Dark"
     else
+        -- TODO Figure out why it's always light theme
+        return "GitHub Dark"
         -- Do not use github light here, since yellow is illegible
-        return "Google Light (base16)"
+        -- return "Google Light (base16)"
     end
 end
 
@@ -29,9 +31,9 @@ return {
     enable_tab_bar = true,
     -- font to be used, with fallback if font does not exist
     font = wezterm.font_with_fallback {
+        "JetBrainsMono Nerd Font",
         "FiraCode Nerd Font",
-        "Fira Code",
-        "JetBrainsMono Nerd Font"
+        "Fira Code"
     },
     -- font size
     font_size = 13,

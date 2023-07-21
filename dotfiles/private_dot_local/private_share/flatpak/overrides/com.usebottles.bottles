@@ -1,0 +1,4 @@
+[Context]
+devices=shm;kvm;dri
+features=canbus
+filesystems=xdg-data/applications;home;host-etc;host-os;host

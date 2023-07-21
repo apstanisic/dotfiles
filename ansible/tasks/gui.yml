@@ -34,10 +34,10 @@
         method: user
         name: com.mattjakeman.ExtensionManager
 
-    - name: Install Spotify
-      flatpak:
-        method: user
-        name: com.spotify.Client
+    # - name: Install Spotify
+    #   flatpak:
+    #     method: user
+    #     name: com.spotify.Client
 
     - name: Install Stremio
       flatpak:

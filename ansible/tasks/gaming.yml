@@ -1,4 +1,7 @@
 - name: Gaming
+  tags:
+    - home
+    - gaming
   block:
     - name: Install gamepad support for Steam Flatpak
       become: true

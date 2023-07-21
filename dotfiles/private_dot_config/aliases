@@ -119,6 +119,11 @@ alias cbp='wl-paste'
 # Better cat
 alias cat='bat'
 
+alias work='cd /home/aleksandar/Work && mprocs'
+alias pr='gh pr checkout'
+alias setup='npm run setup-dev'
+alias gcd='git checkout develop'
+
 # Run command multiple times
 # Weird () is creating inner shell so i can call `set -e` without affecting global
 # many() {(

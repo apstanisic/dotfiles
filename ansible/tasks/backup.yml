@@ -1,6 +1,7 @@
 - name: Backup
   tags:
     - backup
+    - home
   block:
     # Every 30 minutes run backup script
     - name: Create cron job to backup

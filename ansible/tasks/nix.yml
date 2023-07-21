@@ -5,7 +5,7 @@
     - nix
   block:
   - name: Install nix
-    shell: curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix/tag/v0.9.0 | sh -s -- install --no-confirm
+    shell: curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix/tag/v0.10.0 | sh -s -- install --no-confirm
     become: true
 
   - name: Add Home Manager

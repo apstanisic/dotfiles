@@ -1,9 +1,9 @@
 [org/gnome/settings-daemon/plugins/color]
-night-light-enabled=false
+night-light-enabled=true
 night-light-schedule-automatic=false
 night-light-schedule-from=22.0
 night-light-schedule-to=6.0
-night-light-temperature=uint32 2914
+night-light-temperature=uint32 3200
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>F3'

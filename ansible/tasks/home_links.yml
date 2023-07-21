@@ -2,6 +2,7 @@
 - name: Replace home links
   tags:
     - home_links
+    - home
   block:
     - name: Create hdd folder link
       file:

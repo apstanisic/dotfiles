@@ -2,7 +2,7 @@
 - name: Mount internal hard drive
   tags:
     - mount
-    - personal
+    - home
   block:
     - name: Unlock LUKS
       become: true

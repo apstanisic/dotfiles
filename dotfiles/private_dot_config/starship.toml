@@ -5,9 +5,9 @@ add_newline = false
 # This looks prettier
 # Nerd Fonts required
 [character]
-success_symbol= "[](green)"
-error_symbol= "[](red)"
-vicmd_symbol = "[](bold blue)"
+# success_symbol= "[](green)"
+# error_symbol= "[](red)"
+# vicmd_symbol = "[](bold blue)"
 
 [directory]
 # Show max 8 directories
