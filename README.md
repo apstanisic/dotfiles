@@ -11,6 +11,8 @@ sudo apt-get update -y && sudo apt-get install -y ansible software-properties-co
 echo "ANSIBLE_SECRET_KEY" > $HOME/.config/ansible-vault-key.txt
 # Run ansible
 ansible-pull -K -U https://github.com/apstanisic/dotfiles.git --vault-password-file $HOME/.config/ansible-vault-key.txt
+# For laptop
+ansible-pull -K -U https://github.com/apstanisic/dotfiles.git --vault-password-file $HOME/.config/ansible-vault-key.txt --skip-tags "home"
 ```
 
 To rerun some tasks locally
