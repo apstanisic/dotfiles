@@ -29,10 +29,10 @@
     - include: ansible/tasks/gaming.yml
     - include: ansible/tasks/dconf.yml
     - include: ansible/tasks/neovim.yml
-    - include: ansible/tasks/mount.yml
+    # - include: ansible/tasks/mount.yml
     - include: ansible/tasks/nerd_fonts.yml
     - include: ansible/tasks/regular_fonts.yml
-    - include: ansible/tasks/home_links.yml
+    # - include: ansible/tasks/home_links.yml
     - include: ansible/tasks/docker.yml
-    - include: ansible/tasks/flutter.yml
+    # - include: ansible/tasks/flutter.yml
     - include: ansible/tasks/backup.yml
