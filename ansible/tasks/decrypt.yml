@@ -2,13 +2,13 @@
   tags:
     - decrypt
   block:
-    - name: Creates git config dir
+    - name: Creates git config dir, if missing
       file:
         path: "{{ ansible_env.HOME }}/.config/git"
         state: directory
         recurse: yes
 
-    - name: Creates rclone config dir
+    - name: Creates rclone config dir, if missing
       file:
         path: "{{ ansible_env.HOME }}/.config/rclone"
         state: directory
@@ -25,12 +25,6 @@
         src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/rclone.conf.enc"
         dest: "{{ lookup('env','HOME') }}/.config/rclone/rclone.conf"
         mode: "0600"
-
-    # - name: Add LUKS config
-    #   copy:
-    #     src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/hdd500-secret-key.txt.enc"
-    #     dest: "{{ lookup('env','HOME') }}/.config/hdd500-secret-key.txt"
-    #     mode: "0640"
 
       # So I do not have to type password after first time
     - name: Decrypt and add ansible vault key

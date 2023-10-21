@@ -3,17 +3,6 @@
     - gui
   # Only terminal and IDE are apts
   block:
-    - name: Remove LibreOffice deb
-      become: true
-      apt:
-        name: libreoffice*
-        state: absent
-
-    # - name: Install tilix as deb
-    #   become: true
-    #   apt:
-    #     name: tilix
-
     - name: Install Brave
       flatpak:
         method: user
@@ -48,11 +37,6 @@
       flatpak:
         method: user
         name: com.transmissionbt.Transmission
-
-    - name: Install LibreOffice
-      flatpak:
-        method: user
-        name: org.libreoffice.LibreOffice
 
     - name: Install Celluloid
       flatpak:

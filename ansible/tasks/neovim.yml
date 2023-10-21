@@ -1,20 +1,15 @@
 - name: Neovim
   tags: 
     - neovim
+  environment:
+    PATH: "{{ ansible_env.PATH }}:{{ ansible_env.HOME }}/.nix-profile/bin"
   block:
-    # - name: Install neovim
-    #   become: true
-    #   apt:
-    #     # Neovim should be installed with nix
-    #     pkg: 
-    #       - neovim
-    #       - git 
-    #       - curl
+    # Neovim should be installed with nix
     - name: Install AstroNvim
       git:
         repo: 'https://github.com/AstroNvim/AstroNvim'
         dest: '{{ ansible_env.HOME }}/.config/nvim'
         depth: 1
 
-#    - name: Init AstroNvim
-#      shell: nvim --headless -c 'autocmd User LazyDone quitall'
+    - name: Init AstroNvim
+      shell: nvim --headless +q

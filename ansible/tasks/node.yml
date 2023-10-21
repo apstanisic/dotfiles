@@ -1,30 +1,24 @@
 ---
 # FNM is installed with nix/home-manager
 - name: Node
+  environment:
+    PATH: "{{ ansible_env.PATH }}:{{ ansible_env.HOME }}/.nix-profile/bin"
   tags:
     - node
   block:
     - name: Install NodeJS
       shell: fnm install --lts
-      environment:
-        PATH: "$PATH:{{ ansible_env.HOME }}/.nix-profile/bin"
 
+    # We do not have access to npm at this point, so we have to use fnm
+    # TODO See if we can use `fnm env` to set paths in ansible
     - name: Install yarn
-      npm:
-        name: yarn
-        global: true
+      shell: fnm exec --using=default npm install -g yarn
 
     - name: Install pnpm
-      npm:
-        name: pnpm
-        global: true
+      shell: fnm exec --using=default npm install -g pnpm
 
-    - name: Install typescript
-      npm:
-        name: typescript
-        global: true
+    - name: Install pnpm
+      shell: fnm exec --using=default npm install -g typescript
 
     - name: Install npm-check-updates
-      npm:
-        name: npm-check-updates
-        global: true
+      shell: fnm exec --using=default npm install -g npm-check-updates

@@ -4,20 +4,18 @@
   block:
     - name: Install zsh
       become: true
-      # Curl and git is needed for zim
       apt:
         pkg:
-          - curl
           - zsh
-          - git
 
     - name: Change shell
       become: true
-      # shell: usermod -s `which zsh` aleksandar
       user:
         name: aleksandar
         shell: /usr/bin/zsh
         state: present
+      # Old method
+      # shell: usermod -s `which zsh` aleksandar
 
     - name: Install plugin manager
       git:
@@ -28,10 +26,11 @@
     - name: Install plugins
       shell: zsh $HOME/.dotfiles/scripts/update_zsh_plugins.zsh 
 
+    # This is because some programs (for example zimfw) modify .zshrc, and .zshenv. This way
+    # nobody will change my config
+    # This injects config, only if file exists
     - name: Link zshrc config
       shell: grep -qF 'if [ -e $HOME/.config/zsh/zshrc ]; then . $HOME/.config/zsh/zshrc; fi' ~/.zshrc || echo 'if [ -e $HOME/.config/zsh/zshrc ]; then . $HOME/.config/zsh/zshrc; fi' >> ~/.zshrc
 
-    # Zimfw modifies .zshenv, so I simply inject my zshenv from different place, so zim does not dirty it
-    # This injects config, only if file exists
     - name: Link zshenv config
       shell: grep -qF 'if [ -e $HOME/.config/zsh/zshenv ]; then . $HOME/.config/zsh/zshenv; fi' ~/.zshenv || echo 'if [ -e $HOME/.config/zsh/zshenv ]; then . $HOME/.config/zsh/zshenv; fi' >> ~/.zshenv

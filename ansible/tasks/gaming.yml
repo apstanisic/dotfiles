@@ -13,10 +13,10 @@
         name: com.usebottles.bottles
         method: user
 
-    - name: Install Steam
-      flatpak:
-        name: com.valvesoftware.Steam
-        method: user
+    # - name: Install Steam
+    #   flatpak:
+    #     name: com.valvesoftware.Steam
+    #     method: user
 
     # - name: Install AntiMicroX
     #   flatpak:

@@ -2,6 +2,7 @@
 - name: Docker
   tags:
     - docker
+    - dev
   block:
     - name: Install docker
       become: true

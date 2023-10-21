@@ -7,6 +7,8 @@
 #
 
 source ~/.znap/zsh-snap/znap.zsh  # Start Znap
+# Do not use git maintenance mode
+zstyle ':znap:*:*' git-maintenance off
 znap pull
 # Causes problems for some reason
 # znap compile

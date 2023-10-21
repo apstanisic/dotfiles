@@ -14,6 +14,7 @@
         method: user
         name: io.dbeaver.DBeaverCommunity
 
+    # Using nightly since it has stable URL
     - name: Download nightly wezterm.deb
       get_url: 
         url: https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly.Ubuntu22.04.deb

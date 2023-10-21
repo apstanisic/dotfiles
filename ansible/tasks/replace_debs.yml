@@ -34,6 +34,17 @@
             # extensions app (using extensions manager)
           - gnome-shell-extension-prefs
 
+    - name: Remove LibreOffice deb
+      become: true
+      apt:
+        name: libreoffice*
+        state: absent
+
+    - name: Install LibreOffice 
+      flatpak:
+        method: user
+        name: org.libreoffice.LibreOffice
+
     - name: Install Calculator
       flatpak:
         method: user
