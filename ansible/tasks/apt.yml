@@ -12,9 +12,9 @@
           - git
           - libssl-dev
           - build-essential
-          - zip
-          - p7zip-full
           - android-tools-adb
           - android-tools-fastboot
           - android-sdk-platform-tools
+          - zip
           - unrar
+          - p7zip-full

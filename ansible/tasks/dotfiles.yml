@@ -2,59 +2,15 @@
   tags:
     - dotfiles
   block:
-    # TODO Download chezmoi only if there is no local version available
-    - name: Install chezmoi
-      shell: sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin
-
-    - name: Install deps
-      become: true
-      apt:
-        pkg:
-          - git
-    - name: Check if ~/.dotfiles exists
-      stat:
-        path: $HOME/.dotfiles
-      register: is_cloned
-
-    - name: Check if ssh exists
-      stat:
-        path: $HOME/.ssh
-      register: ssh_exists
-
-      # Ignore error if ssh does not have access
-      # Since it will fallback to http version
-    - name: Clone dotfiles repo with ssh if possible
-      ignore_errors: yes
-      git:
-        repo: "git@github.com:apstanisic/dotfiles.git"
-        dest: $HOME/.dotfiles
-        version: main
-      when: not is_cloned.stat.exists and ssh_exists.stat.exists
-
-    - name: Clone dotfiles repo without ssh if needed
+    - name: Clone dotfiles repo
       git:
         repo: "https://github.com/apstanisic/dotfiles.git"
         dest: $HOME/.dotfiles
         version: main
-      when: not is_cloned.stat.exists
 
-    - name: Create chezmoi config folder
-      file:
-        path: "{{ ansible_env.HOME }}/.config/chezmoi"
-        state: directory
-        recurse: true
+    # -b is for binary location. We will install it properly later with nix,
+    # so we are simply putting it in /tmp.
+    # We already cloned our dotfiles, so we only need to provide source
+    - name: Setup dotfiles
+      shell: sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /tmp init --apply --source=~/dotfiles/dotfiles
 
-    - name: Copy chezmoi config
-      copy: 
-        src: "{{ ansible_env.HOME }}/.dotfiles/dotfiles/private_dot_config/chezmoi/chezmoi.toml"
-        dest: "{{ ansible_env.HOME }}/.config/chezmoi/chezmoi.toml"
-        mode: '0644'
-
-    - name: Sync dotfiles
-      shell:  "{{ ansible_env.HOME }}/.local/bin/chezmoi apply --force"
-
-      # Nix will install it later with home-manager
-    - name: Remove local chezmoi
-      file:
-        path: "{{ ansible_env.HOME }}/.local/bin/chezmoi"
-        state: absent

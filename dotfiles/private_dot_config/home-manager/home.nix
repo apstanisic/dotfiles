@@ -27,7 +27,8 @@
     deno
     # docker-compose
     duf
-    exa
+    # exa
+    eza
     fd
     fzf
     gdu

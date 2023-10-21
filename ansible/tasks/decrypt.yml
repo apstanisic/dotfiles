@@ -14,26 +14,26 @@
         state: directory
         recurse: yes
 
-    - name: Add git work profile
+    - name: Decrypt and add git work profile
       copy:
         src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/git-work-profile.inc.enc"
         dest: "{{ lookup('env','HOME') }}/.config/git/work.inc"
         mode: "0644"
 
-    - name: Add rclone config
+    - name: Decrypt and add rclone config
       copy:
         src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/rclone.conf.enc"
         dest: "{{ lookup('env','HOME') }}/.config/rclone/rclone.conf"
         mode: "0600"
 
-    - name: Add LUKS config
-      copy:
-        src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/hdd500-secret-key.txt.enc"
-        dest: "{{ lookup('env','HOME') }}/.config/hdd500-secret-key.txt"
-        mode: "0640"
+    # - name: Add LUKS config
+    #   copy:
+    #     src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/hdd500-secret-key.txt.enc"
+    #     dest: "{{ lookup('env','HOME') }}/.config/hdd500-secret-key.txt"
+    #     mode: "0640"
 
       # So I do not have to type password after first time
-    - name: Add ansible vault key
+    - name: Decrypt and add ansible vault key
       copy:
         src: "{{ lookup('env','HOME') }}/.dotfiles/encrypted/ansible-vault-key.txt.enc"
         dest: "{{ lookup('env','HOME') }}/.config/ansible-vault-key.txt"

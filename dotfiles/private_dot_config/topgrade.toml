@@ -1,3 +1,4 @@
+[misc]
 only = [
   "system",
   "flatpak",
@@ -40,7 +41,7 @@ use_sudo = false
 #"zim" = "source $HOME/.zim/init.zsh && zimfw upgrade && zimfw update"
 "zsh" = "zsh $HOME/.dotfiles/scripts/update_zsh_plugins.zsh"
 "home-manager" = "home-manager switch"
-"volta" = "volta install node@lts"
+# "volta" = "volta install node@lts"
 # Do not do this every time, it might wear out ssd faster
 # "nix-collect-garbage" = "nix-collect-garbage"
 # "nix-store --optimise" takes long time on every run
