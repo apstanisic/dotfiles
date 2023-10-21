@@ -7,6 +7,17 @@
         repo: "https://github.com/apstanisic/dotfiles.git"
         dest: $HOME/.dotfiles
         version: main
+        remote: http-remote
+
+    - name: Add ssh remote
+      # Adds only if it's missing
+      shell: |
+        git remote | grep -w origin || git remote add origin git@github.com:apstanisic/dotfiles.git
+        # This does not work currently, cause I do not have ssh access at this point
+        # git fetch origin
+        # git branch --set-upstream-to origin/main
+      args:
+        chdir: $HOME/.dotfiles
 
     # -b is for binary location. We will install it properly later with nix,
     # so we are simply putting it in /tmp.
